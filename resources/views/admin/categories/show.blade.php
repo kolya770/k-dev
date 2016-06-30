@@ -3,7 +3,7 @@
 @section('content')
 
 <table class = "table table-bordered">
-   <caption>All categories</caption>   
+   <caption>Category</caption>   
    <thead>
       <tr>
          <th>id</th>

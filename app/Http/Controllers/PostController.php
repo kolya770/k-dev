@@ -73,6 +73,7 @@ class PostController extends Controller
 		
     	
         $post->content = $dom->saveHTML();
+        $post->category_id = $request->category;
         $post->save();
         
         return back();
@@ -81,7 +82,18 @@ class PostController extends Controller
     public function edit($id) {
     	$post = Post::find($id);
 
+    	return view('admin.posts.edit')->withPost($post);
 
+
+    }
+
+    public function update(Request $request, $id) {
+    	$post = Post::find($id);
+    	$post->update($request->all());
+
+   		$post->save();
+
+   		return back();
     }
 
     public function destroy($id) {
@@ -89,5 +101,11 @@ class PostController extends Controller
     	$post->delete();
     	
     	return back();
+    }
+
+    public function show($id) {
+    	$post = Post::find($id);
+
+    	return view('admin.posts.show')->withPost($post); 
     }
 }

@@ -9,6 +9,7 @@
          <th>id</th>
          <th>Title</th>
          <th>Image</th>
+         <th>Category</th>
          <th></th>
          <th></th>
       </tr>
@@ -19,6 +20,7 @@
          <td>{{$post->id}}</td>
          <td>{{$post->title}}</td>
          <td>{{$post->preview}}</td>
+         <td>{{$post->category_id}}
          <td><a class="btn btn-link" href="{{action('PostController@edit', ['posts'=>$post->id])}}">Edit</a></td>
 
          <td><form method="POST" action="{{action('PostController@destroy', ['posts'=>$post->id])}}">

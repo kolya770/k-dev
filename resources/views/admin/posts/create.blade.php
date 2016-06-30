@@ -56,6 +56,15 @@
                                 {!! Form::textarea('content', null, ['class' => 'form-control', 'id' => 'summernote']) !!}
                             </div>
                         </div>
+                         <div class="form-group"><label class="col-sm-2 control-label">Category</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="category">
+                                        @foreach ($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->title}}</option>
+                                        @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
                                 {!! Form::submit('Create post', ['class' => 'btn btn-sm']) !!}
