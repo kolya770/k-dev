@@ -23,29 +23,30 @@ class CategoriesController extends Controller
     	$this->validate($request, [
     		'title' => 'required|max:255'
     		]);
-        Category::create($request -> all());
+        Category::create($request->all());
         
-        return view('admin.categories.create') -> with('message','Category added');
+        return view('admin.categories.create')->with('message','Category added');
     }
 
     public function destroy($id)
 	{
 		$category = Category::find($id); 
-		$category -> delete();
-		return back()-> with('message', "Категория " . $category -> title . " удалена");
+		$category->delete();
+
+		return back()->with('message', "Категория " . $category->title . " удалена");
 	}
 
 	public function edit($id) 
 	{
 		$category = Category::find($id);
 		
-		return view('admin.categories.edit') -> with('category', $category);
+		return view('admin.categories.edit')->with('category', $category);
 	}
 
 	public function update(Request $request, $id)
 	{
 		$category = Category::find($id);
-		$category->update($request -> all());
+		$category->update($request->all());
 		$category->save();
 		
 		return back()->with('message','Категория обновлена');
@@ -53,11 +54,11 @@ class CategoriesController extends Controller
 
 	public function index() {
 		$categories = Category::all();
-		return view ('admin.categories.index')->with ('categories', $categories); 
+		return view('admin.categories.index')->with ('categories', $categories); 
 	}
 
 	public function show($id) {
 		$category = Category::find($id);
-		return view('admin.categories.show', ['category'  => $category]);
+		return view('admin.categories.show', ['category' => $category]);
 	}
 }

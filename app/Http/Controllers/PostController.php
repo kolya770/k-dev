@@ -12,6 +12,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
+    	$this->middleware('auth');
         $this->middleware('role');
     }
 
@@ -98,6 +99,7 @@ class PostController extends Controller
 
     public function destroy($id) {
     	$post = Post::find($id);
+    	
     	$post->delete();
     	
     	return back();
