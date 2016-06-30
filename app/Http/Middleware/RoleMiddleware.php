@@ -14,10 +14,10 @@ class RoleMiddleware
      * @param  string    $role
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next)
     {
-        if (! $request->user()->hasRole($role)) {
-            return redirect('home');
+        if (! (($request->user()->is('admin')) || $request->user()->is('root'))) {
+            return redirect('index.php');
         }
         return $next($request);
     }

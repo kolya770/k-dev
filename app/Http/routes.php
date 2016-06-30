@@ -19,9 +19,7 @@ Route::group(['prefix'=>'admin'], function()
 	{
     	return view('admin.index');
 	});
-	Route::get('/users/', function() {
-		return view('admin.users');
-	});
+	Route::get('/users/', 'UserController@index');
 	Route::get('/categories/create', 'CategoriesController@create');
 	Route::get('/categories/', 'CategoriesController@index');
 	Route::get('/posts/create', 'PostController@create');
