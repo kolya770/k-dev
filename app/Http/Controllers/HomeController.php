@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = Post::all();
+        return view('home')->with('posts', $posts);
+    }
+
+    public function show($id) {
+        $post = Post::find($id);
+        return view('show')->with('post', $post);
     }
 }

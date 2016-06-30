@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'FrontController@index');
-Route::get('/show/{id}','FrontController@show');
+Route::get('/', 'HomeController@index');
+Route::get('/show/{id}','HomeController@show');
 Route::group(['prefix'=>'admin'], function()
 {
 	Route::get('/', function()

@@ -17,22 +17,30 @@ class PostController extends Controller
 
     public function create() {
     	$categories = Category::all();
+    	
     	return view('admin.posts.create')->withCategories($categories);
     }
 
     public function index() {
     	$posts = Post::all();
-    	return view('admin.posts.index') -> withPosts($posts); 
+    	
+    	return view('admin.posts.index')->withPosts($posts); 
     }
 
     public function store(Request $request) {
+    	$this->validate($request, [
+            'title'   => 'required',
+            'content' => 'required',
+            'preview' => 'mimes:jpeg,bmp,png,jpg'
+        ]);
+
     	$post = new Post();
         $post->title = $request->get('title');
     	$dom = new \DomDocument();
-		$dom->loadHtml($request->content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    	libxml_use_internal_errors(true);
+		$dom->loadHtml($request->content);//, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
     
 		$images = $dom->getElementsByTagName('img');
-		
 		
 		
 		// foreach <img> in the submited message
@@ -66,12 +74,20 @@ class PostController extends Controller
     	
         $post->content = $dom->saveHTML();
         $post->save();
+        
         return back();
+    }
+
+    public function edit($id) {
+    	$post = Post::find($id);
+
+
     }
 
     public function destroy($id) {
     	$post = Post::find($id);
     	$post->delete();
+    	
     	return back();
     }
 }

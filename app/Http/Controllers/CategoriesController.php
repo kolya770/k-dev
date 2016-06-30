@@ -19,7 +19,7 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
-    	$this -> validate($request, [
+    	$this->validate($request, [
     		'title' => 'required|max:255'
     		]);
         Category::create($request -> all());
@@ -44,15 +44,15 @@ class CategoriesController extends Controller
 	public function update(Request $request, $id)
 	{
 		$category = Category::find($id);
-		$category -> update($request -> all());
-		$category -> save();
+		$category->update($request -> all());
+		$category->save();
 		
-		return back() -> with('message','Категория обновлена');
+		return back()->with('message','Категория обновлена');
 	}
 
 	public function index() {
 		$categories = Category::all();
-		return view ('admin.categories.index') -> with ('categories', $categories); 
+		return view ('admin.categories.index')->with ('categories', $categories); 
 	}
 
 	public function show($id) {
