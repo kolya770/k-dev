@@ -24,7 +24,7 @@ class CategoriesController extends Controller
     	if ($category->validate($request->all())) {
         	Category::create($request->all());
 
-        	return view('admin.categories.create')->with('message','Category added');
+        	return view('admin.categories.create')->with('message', 'Category added');
         } else {
         	$errors = $category->errors();
 
@@ -37,7 +37,7 @@ class CategoriesController extends Controller
 		$category = Category::find($id); 
 		$category->delete();
 
-		return back()->with('message', "Категория " . $category->title . " удалена");
+		return back()->with('message', 'Category deleted');
 	}
 
 	public function edit($id) 
@@ -53,7 +53,7 @@ class CategoriesController extends Controller
 		$category->update($request->all());
 		$category->save();
 		
-		return back()->with('message','Категория обновлена');
+		return back()->with('message','Category updated');
 	}
 
 	public function index() {

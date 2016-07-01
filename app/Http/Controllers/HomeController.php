@@ -26,11 +26,13 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all();
+
         return view('home')->with('posts', $posts);
     }
 
     public function show($id) {
         $post = Post::find($id);
+        
         return view('show')->with('post', $post);
     }
 }

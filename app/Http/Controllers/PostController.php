@@ -61,9 +61,9 @@ class PostController extends Controller
     				  ->encode($mimetype, 100) 	// encode file to the specified mimetype
     				  ->save(public_path($filepath));
     				
-    				$new_src = asset($filepath);
+    				$newSrc = asset($filepath);
     				$img->removeAttribute('src');
-    				$img->setAttribute('src', $new_src);
+    				$img->setAttribute('src', $newSrc);
     			} // <!--endif
     		} // <!--endforeach
     		
