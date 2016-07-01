@@ -30,52 +30,52 @@ class PostController extends Controller
     }
 
     public function store(Request $request) {
-    	$this->validate($request, [
-            'title'   => 'required',
-            'content' => 'required',
-            'preview' => 'mimes:jpeg,bmp,png,jpg'
-        ]);
-
     	$post = new Post();
-        $post->title = $request->get('title');
-    	$dom = new DomDocument();
-    	libxml_use_internal_errors(true);
-		$dom->loadHtml($request->content);
-    
-		$images = $dom->getElementsByTagName('img');
-		
-		// foreach <img> in the submited message
-		foreach($images as $img){
-			$src = $img->getAttribute('src');
-			
-			// if the img source is 'data-url'
-			if(preg_match('/data:image/', $src)){
-				
-				// get the mimetype
-				preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
-				$mimetype = $groups['mime'];
-				
-				// Generating a random filename
-				$filename = uniqid();
-				$filepath = "images/$filename.$mimetype";
-				$post->preview = $filepath;
-				// @see http://image.intervention.io/api/
-				$image = Image::make($src)
-				  // resize if required
-				  /* ->resize(300, 200) */
-				  ->encode($mimetype, 100) 	// encode file to the specified mimetype
-				  ->save(public_path($filepath));
-				
-				$new_src = asset($filepath);
-				$img->removeAttribute('src');
-				$img->setAttribute('src', $new_src);
-			} // <!--endif
-		} // <!--endforeach
-		
-    	
-        $post->content = $dom->saveHTML();
-        $post->category_id = $request->category;
-        $post->save();
+        if ($post->validate($request->all())) {
+            $post->title = $request->get('title');
+        	$dom = new DomDocument();
+        	libxml_use_internal_errors(true);
+    		$dom->loadHtml($request->content);
+        
+    		$images = $dom->getElementsByTagName('img');
+    		
+    		// foreach <img> in the submited message
+    		foreach($images as $img){
+    			$src = $img->getAttribute('src');
+    			
+    			// if the img source is 'data-url'
+    			if (preg_match('/data:image/', $src)) {
+    				
+    				// get the mimetype
+    				preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
+    				$mimetype = $groups['mime'];
+    				
+    				// Generating a random filename
+    				$filename = uniqid();
+    				$filepath = "images/$filename.$mimetype";
+    				$post->preview = $filepath;
+    				// @see http://image.intervention.io/api/
+    				$image = Image::make($src)
+    				  // resize if required
+    				  /* ->resize(300, 200) */
+    				  ->encode($mimetype, 100) 	// encode file to the specified mimetype
+    				  ->save(public_path($filepath));
+    				
+    				$new_src = asset($filepath);
+    				$img->removeAttribute('src');
+    				$img->setAttribute('src', $new_src);
+    			} // <!--endif
+    		} // <!--endforeach
+    		
+        	
+            $post->content = $dom->saveHTML();
+            $post->category_id = $request->category;
+            $post->save();
+        }
+        else {
+            // validation failure, get errors
+            $errors = $post->errors();
+        }
         
         return back();
     }

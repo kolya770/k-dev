@@ -20,12 +20,16 @@ class CategoriesController extends Controller
 
     public function store(Request $request)
     {
-    	$this->validate($request, [
-    		'title' => 'required|max:255'
-    		]);
-        Category::create($request->all());
-        
-        return view('admin.categories.create')->with('message','Category added');
+    	$category = new Category();
+    	if ($category->validate($request->all())) {
+        	Category::create($request->all());
+
+        	return view('admin.categories.create')->with('message','Category added');
+        } else {
+        	$errors = $category->errors();
+
+        	return back();
+        }     
     }
 
     public function destroy($id)
@@ -60,7 +64,7 @@ class CategoriesController extends Controller
 
 	public function show($id) {
 		$category = Category::find($id);
-		
+
 		return view('admin.categories.show', ['category' => $category]);
 	}
 }
