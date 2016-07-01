@@ -10,12 +10,14 @@ class Role extends Model
 	 * @var array
 	 */
 	protected $fillable = ['name', 'slug', 'description', 'special'];
+	
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
 	protected $table = 'roles';
+	
 	/**
 	 * Roles can belong to many users.
 	 *
@@ -25,6 +27,7 @@ class Role extends Model
 	{
 		return $this->belongsToMany(config('auth.model') ?: config('auth.providers.users.model'))->withTimestamps();
 	}
+	
 	/**
 	 * Roles can have many permissions.
 	 *
@@ -34,6 +37,7 @@ class Role extends Model
 	{
 		return $this->belongsToMany('\Caffeinated\Shinobi\Models\Permission')->withTimestamps();
 	}
+	
 	/**
 	 * Get permission slugs assigned to role.
 	 *
@@ -43,6 +47,7 @@ class Role extends Model
 	{
 		return $this->permissions->lists('slug')->all();
 	}
+	
 	/**
 	 * Checks if the role has the given permission.
 	 *
@@ -86,6 +91,7 @@ class Role extends Model
 		$intersectionCount  = count($intersection);
 		return ($intersectionCount > 0) ? true : false;
 	}
+	
 	/**
 	 * Assigns the given permission to the role.
 	 *
@@ -100,6 +106,7 @@ class Role extends Model
 		}
 		return false;
 	}
+	
 	/**
 	 * Revokes the given permission from the role.
 	 *
@@ -110,6 +117,7 @@ class Role extends Model
 	{
 		return $this->permissions()->detach($permissionId);
 	}
+	
 	/**
 	 * Syncs the given permission(s) with the role.
 	 *
@@ -120,6 +128,7 @@ class Role extends Model
 	{
 		return $this->permissions()->sync($permissionIds);
 	}
+	
 	/**
 	 * Revokes all permissions from the role.
 	 *

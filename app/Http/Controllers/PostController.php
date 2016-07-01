@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
+use \DomDocument;
 use App\Http\Requests;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -37,12 +38,11 @@ class PostController extends Controller
 
     	$post = new Post();
         $post->title = $request->get('title');
-    	$dom = new \DomDocument();
+    	$dom = new DomDocument();
     	libxml_use_internal_errors(true);
-		$dom->loadHtml($request->content);//, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+		$dom->loadHtml($request->content);
     
 		$images = $dom->getElementsByTagName('img');
-		
 		
 		// foreach <img> in the submited message
 		foreach($images as $img){
@@ -83,6 +83,7 @@ class PostController extends Controller
     public function edit($id) {
     	$post = Post::find($id);
     	$categories = Category::all();
+
     	return view('admin.posts.edit')->withPost($post)->withCategories($categories);
 
 
@@ -91,15 +92,13 @@ class PostController extends Controller
     public function update(Request $request, $id) {
     	$post = Post::find($id);
     	$post->update($request->all());
-
    		$post->save();
 
    		return back();
     }
 
     public function destroy($id) {
-    	$post = Post::find($id);
-    	
+    	$post = Post::find($id);	
     	$post->delete();
     	
     	return back();

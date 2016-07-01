@@ -9,12 +9,14 @@ class Permission extends Model
 	 * @var array
 	 */
 	protected $fillable = ['name', 'slug', 'description'];
+	
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
 	protected $table = 'permissions';
+	
 	/**
 	 * Permissions can belong to many roles.
 	 *
@@ -24,6 +26,7 @@ class Permission extends Model
 	{
 		return $this->belongsToMany('\Caffeinated\Shinobi\Models\Role')->withTimestamps();
 	}
+	
 	/**
 	 * Assigns the given role to the permission.
 	 *
@@ -38,6 +41,7 @@ class Permission extends Model
 		}
 		return false;
 	}
+	
 	/**
 	 * Revokes the given role from the permission.
 	 *
@@ -48,6 +52,7 @@ class Permission extends Model
 	{
 		return $this->roles()->detach($roleId);
 	}
+	
 	/**
 	 * Syncs the given role(s) with the permission.
 	 *
@@ -58,6 +63,7 @@ class Permission extends Model
 	{
 		return $this->roles()->sync($roleIds);
 	}
+	
 	/**
 	 * Revokes all roles from the permission.
 	 *
