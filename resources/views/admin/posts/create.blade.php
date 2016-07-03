@@ -72,13 +72,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                    </div>
+                    <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
                                 {!! Form::submit('Create post', ['class' => 'btn btn-sm']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
-                    </div>
                 </div>
             </div>
         </div>
