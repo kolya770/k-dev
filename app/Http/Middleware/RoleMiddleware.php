@@ -19,6 +19,7 @@ class RoleMiddleware
         if (! (($request->user()->is('admin')) || $request->user()->is('root'))) {
             return redirect('index.php');
         }
+        
         return $next($request);
     }
 }

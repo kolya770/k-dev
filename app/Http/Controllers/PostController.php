@@ -51,7 +51,7 @@ class PostController extends Controller
     				$mimetype = $groups['mime'];
     				
     				// Generating a random filename
-    				$filename = uniqid();
+    				$filename = str_random(10);
     				$filepath = "images/$filename.$mimetype";
     				$post->preview = $filepath;
     				// @see http://image.intervention.io/api/
