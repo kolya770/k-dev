@@ -1,5 +1,12 @@
 @extends('layouts.admin')
 
+@section ('css')
+    
+    {!! Html::style('admin/css/plugins/summernote/summernote.css') !!}
+    {!! Html::style('admin/css/plugins/summernote/summernote-bs3.css') !!}
+
+@endsection
+
 @section('content')
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -9,9 +16,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif
-
-     
+    @endif     
   
   <div class="wrapper wrapper-content">
         <div class="row">
@@ -80,13 +85,18 @@
 @endsection
 
 @section('js')
-<script type="text/javascript">
-        $(document).ready(function() {
-            $('#summernote').summernote({
-              height:300,
+    <script type="text/javascript">
+            $(document).ready(function() {
+                $('#summernote').summernote({
+                  height:300,
+                });
             });
-        });
-</script>
+    </script>
+
+       <!-- SUMMERNOTE -->
+    {!! HTML::script('admin/js/plugins/summernote/summernote.min.js') !!}
+    {!! HTML::script('admin/js/admin.js') !!}
+    {!! HTML::script('admin/js/plugins/slick/slick.min.js') !!}
 <!--<script>
     $.ajaxSetup({
             headers: {

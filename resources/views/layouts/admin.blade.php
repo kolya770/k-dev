@@ -10,17 +10,10 @@
     <title>Blog</title>
     {!! Html::style('admin/css/bootstrap.css') !!}
     {!! Html::style('admin/font-awesome/css/font-awesome.css') !!}
-            <!-- Morris -->
-    {!! Html::style('admin/css/plugins/morris/morris-0.4.3.min.css') !!}
-    {!! Html::style('admin/css/plugins/summernote/summernote.css') !!}
-    {!! Html::style('admin/css/plugins/summernote/summernote-bs3.css') !!}
-    {!! Html::style('admin/css/plugins/dropzone/dropzone.css') !!}
+      
     {!! Html::style('admin/css/animate.css') !!}
     {!! Html::style('admin/css/style.css') !!}
-    {!! Html::style('admin/css/slick.css') !!}
-    {!! Html::style('admin/css/slick-theme.css') !!}
-    {!! Html::style('admin/css/app.css') !!}
-
+@yield ('css')
 
 </head>
 
@@ -74,21 +67,6 @@
     <!-- Mainly scripts -->
 {!! HTML::script('admin/js/jquery-2.1.1.js') !!}
 {!! HTML::script('admin/js/bootstrap.min.js') !!}
-{!! HTML::script('admin/js/plugins/metisMenu/jquery.metisMenu.js') !!}
-{!! HTML::script('admin/js/plugins/slimscroll/jquery.slimscroll.min.js') !!}
-
-        <!-- Custom and plugin javascript -->
-{!! HTML::script('admin/js/inspinia.js') !!}
-{!! HTML::script('admin/js/plugins/pace/pace.min.js') !!}
-
-        <!-- SUMMERNOTE -->
-{!! HTML::script('admin/js/plugins/summernote/summernote.min.js') !!}
-{!! HTML::script('admin/js/admin.js') !!}
-{!! HTML::script('admin/js/plugins/slick/slick.min.js') !!}
-
-        <!-- DROPZONE -->
-{!! HTML::script('admin/js/plugins/dropzone/dropzone.js') !!}
-
 
 
 @yield('js')
