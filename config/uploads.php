@@ -1,0 +1,5 @@
+return [
+	'local' => [
+		'directory' => 'uploads',
+	]
+]
