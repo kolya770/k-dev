@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Models
 use Config;
 use Illuminate\Database\Eloquent\Model;
 class Role extends Model

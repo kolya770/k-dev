@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 class Permission extends Model
 {
@@ -39,6 +39,7 @@ class Permission extends Model
 		if (! $roles->contains($roleId)) {
 			return $this->roles()->attach($roleId);
 		}
+		
 		return false;
 	}
 	

@@ -1,5 +1,7 @@
+<?php
+
 return [
 	'local' => [
-		'directory' => 'uploads',
+		'directory' => 'images',
 	]
-]
+];

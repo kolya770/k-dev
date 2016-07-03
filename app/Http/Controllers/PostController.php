@@ -52,7 +52,8 @@ class PostController extends Controller
     				
     				// Generating a random filename
     				$filename = str_random(10);
-    				$filepath = "images/$filename.$mimetype";
+                    $rootpath = config('uploads.local.directory');
+    				$filepath = $rootpath ."/". $filename .".". $mimetype;
     				$post->preview = $filepath;
     				// @see http://image.intervention.io/api/
     				$image = Image::make($src)
