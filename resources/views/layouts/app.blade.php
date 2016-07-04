@@ -9,7 +9,7 @@
     <title>Blog</title>
     {!! Html::style('admin/css/bootstrap.css') !!}
     {!! Html::style('admin/font-awesome/css/font-awesome.css') !!}
-            <!-- Morris -->
+            
     {!! Html::style('admin/css/animate.css') !!}
     {!! Html::style('admin/css/style.css') !!}
 
@@ -18,6 +18,16 @@
 
 <body>
     <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="/forms/"> <span class="nav-label">Forms</span> </a>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
         <div id="page-wrapper" class="gray-bg">
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">

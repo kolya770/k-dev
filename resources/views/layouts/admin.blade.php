@@ -38,6 +38,9 @@
                 <li>
                     <a href="/admin/categories/create"><span class="nav-label">Create Category</span> </a>
                 </li>
+                <li>
+                    <a href="/admin/forms/create"><span class="nav-label">Create Form</span> </a>
+                </li>
             </ul>
         </div>
     </nav>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\Post;
+use App\Models\Form;
+use App\Models\Field;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -34,5 +36,11 @@ class HomeController extends Controller
         $post = Post::find($id);
         
         return view('show')->with('post', $post);
+    }
+
+    public function forms() {
+        $forms = Form::all();
+
+        return view('forms')->with('forms', $forms); 
     }
 }
