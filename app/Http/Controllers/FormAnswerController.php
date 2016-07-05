@@ -21,11 +21,12 @@ class FormAnswerController extends Controller
     	$formAnswer = new FormAnswer();
     	$formAnswer->title = $request->get('title');
     	$formAnswer->form_id = $request->get('form_id');
-    	$formAnswer->author_id = $request->user()->id;
+    	$formAnswer->user_id = $request->user()->id;
     	$formAnswer->save();
     	for ($i = 1; $i <= $request->get('size'); $i++) {
     		$fieldAnswer = new FieldAnswer();
     		$fieldAnswer->answer = $request->get('field' . $i);
+    		$fieldAnswer->field_id = $i;
     		$fieldAnswer->form_answer_id = $formAnswer->id;
     		$fieldAnswer->save();
     	}

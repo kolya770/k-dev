@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Form;
 use App\Models\Field;
+use App\Models\FormAnswer;
+use App\Models\FieldAnswer;
 use App\Http\Requests;
 
 class FormController extends Controller
@@ -31,5 +33,11 @@ class FormController extends Controller
     		$field->save();
     	}
  		return back();
+    }
+
+    public function index() {
+    	$formAnswers = FormAnswer::all();
+    	
+    	return view('admin.forms.answers')->with('formAnswers', $formAnswers);
     }
 }

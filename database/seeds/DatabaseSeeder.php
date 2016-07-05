@@ -17,5 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(permissions_table_seeder::class);
         $this->call(posts_table_seeder::class);
         $this->call(role_user_table_seeder::class);
+        $this->call(forms_table_seeder::class);
+        $this->call(fields_table_seeder::class);
+        $this->call(form_answer_table_seeder::class);
+        $this->call(field_answer_table_seeder::class);
     }
 }

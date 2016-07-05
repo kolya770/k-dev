@@ -14,4 +14,11 @@ class FieldAnswer extends Model
     public function form() {
     	return $this->belongsTo('App\Models\FormAnswer');
     }
+
+    /**
+     * Get a field user has answered.
+     */
+    public function field() {
+    	return $this->belongsTo('App\Models\Field');
+    }
 }

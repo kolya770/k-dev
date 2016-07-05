@@ -40,7 +40,7 @@
                                     <div class="form-group">
                                         <label>{!! $field->question !!}</label>
                                         {!! Form::text('field' . $field->id, null, ['class' => 'form-control']) !!}
-
+                                        
                                     </div>
                                     @endforeach
                                     {!! Form::text('size', $form->size, ['class' => 'hidden']) !!}

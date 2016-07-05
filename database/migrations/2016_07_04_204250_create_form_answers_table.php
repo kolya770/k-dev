@@ -20,8 +20,8 @@ class CreateFormAnswersTable extends Migration
                     ->references('id')
                     ->on('forms')
                     ->onDelete('cascade');
-            $table->integer('author_id')->unsigned()->index();
-            $table->foreign('author_id')
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
                     ->onDelete('cascade');

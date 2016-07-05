@@ -14,4 +14,8 @@ class FormAnswer extends Model
     public function fields() {
     	return $this->hasMany('App\Models\FieldAnswer');
     }
+
+    public function user() {
+    	return $this->belongsTo('App\Models\User');
+    }
 }

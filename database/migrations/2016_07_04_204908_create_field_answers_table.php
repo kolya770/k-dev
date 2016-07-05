@@ -14,6 +14,11 @@ class CreateFieldAnswersTable extends Migration
     {
         Schema::create('field_answers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('field_id')->unsigned()->index();
+            $table->foreign('field_id')
+                ->references('id')
+                ->on('fields')
+                ->onDelete('cascade');
             $table->text('answer');
             $table->integer('form_answer_id')->unsigned()->index();
             $table->foreign('form_answer_id')
