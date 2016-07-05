@@ -11,31 +11,33 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/show/{id}','HomeController@show');
-Route::get('/forms/', 'HomeController@forms');
-Route::resource('FormAnswers','FormAnswerController');
-Route::group(['prefix'=>'admin'], function()
-{
-	Route::get('/', function()
+Route::group(['middleware' => 'web'], function() {
+	Route::get('/', 'HomeController@index');
+	Route::get('/show/{id}','HomeController@show');
+	Route::get('/forms/', 'HomeController@forms');
+	Route::resource('FormAnswers','FormAnswerController');
+	Route::group(['prefix'=>'admin'], function()
 	{
-    	return view('admin.index');
+		Route::get('/', function()
+		{
+	    	return view('admin.index');
+		});
+		Route::get('/users/', 'UserController@index');
+		Route::get('/categories/create', 'CategoriesController@create');
+		Route::get('/categories/', 'CategoriesController@index');
+		Route::get('/posts/create', 'PostController@create');
+		Route::get('/categories/{id}','CategoriesController@show');
+		Route::get('/posts/', 'PostController@index');
+		Route::get('/forms/create', 'FormController@create');
+		Route::get('/forms/answers', 'FormController@index');
+		Route::get('/forms/', 'FormController@indexAdmin');
+		//Route::get('categories/')
+		Route::resource('Posts','PostController');
+		Route::resource('Forms','FormController');
+
+		Route::resource('Categories','CategoriesController');
+
 	});
-	Route::get('/users/', 'UserController@index');
-	Route::get('/categories/create', 'CategoriesController@create');
-	Route::get('/categories/', 'CategoriesController@index');
-	Route::get('/posts/create', 'PostController@create');
-	Route::get('/categories/{id}','CategoriesController@show');
-	Route::get('/posts/', 'PostController@index');
-	Route::get('/forms/create', 'FormController@create');
-	Route::get('/forms/answers', 'FormController@index');
-	Route::get('/forms/', 'FormController@indexAdmin');
-	//Route::get('categories/')
-	Route::resource('Posts','PostController');
-	Route::resource('Forms','FormController');
 
-	Route::resource('Categories','CategoriesController');
-
+	Route::auth();
 });
-
-Route::auth();

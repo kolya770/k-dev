@@ -16,7 +16,7 @@ class Category extends Model
     	'title'   => 'required',
     );
 
-     private $errors;
+    private $errors;
 
     public function validate($data)
     {

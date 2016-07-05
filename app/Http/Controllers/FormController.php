@@ -34,7 +34,7 @@ class FormController extends Controller
     		$field->save();
     	}
 
- 		return back();
+ 		return back()->with('message', 'Form added!');
     }
 
     public function index() {

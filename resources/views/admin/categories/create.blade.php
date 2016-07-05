@@ -18,15 +18,7 @@
                             </div>
                         @endif
 
-                        @if(Session::has('message'))
-                            <div class="alert">
-                            	<ul>
-                        			@foreach (Session::get('message') as $message)
-                        				<li>{{ $message }}</li>
-                        			@endforeach
-                        		</ul>
-                        	</div>
-                    	@endif
+                       
                         <h5>Make a new category</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
@@ -66,11 +58,25 @@
                             </div>
                         </div>
                         {!! Form::close() !!}
+                        @if (Session::has('message')) 
+                            <div class="alert alert-success">
+                               {{Session::get('message')}}
+                            </div>
+                        @endif
+                        @if (count($errors) > 0)
+                            @foreach($errors as $error)
+                                    <div class="alert alert-danger">
+                                       {{$error}}
+                                    </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
+   
 @endsection
 
 @section('js')

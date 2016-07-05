@@ -72,14 +72,19 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
+                        <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
                                 {!! Form::submit('Create post', ['class' => 'btn btn-sm']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
+                    </div>                   
                 </div>
+                @if (Session::has('message')) 
+                        <div class="alert alert-success">
+                           {{Session::get('message')}}
+                        </div>
+                @endif
             </div>
         </div>
     </div> 

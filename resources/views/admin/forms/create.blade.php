@@ -7,25 +7,9 @@
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                         <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                       
 
-                        @if(Session::has('message'))
-                            <div class="alert">
-                            	<ul>
-                        			@foreach (Session::get('message') as $message)
-                        				<li>{{ $message }}</li>
-                        			@endforeach
-                        		</ul>
-                        	</div>
-                    	@endif
+                        
                         <h5>Make a new form</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
@@ -77,6 +61,18 @@
                         {!! Form::close() !!}
                     </div>
                 </div>
+                @if (Session::has('message')) 
+                        <div class="alert alert-success">
+                           {{Session::get('message')}}
+                        </div>
+                @endif
+                 @if (count($errors) > 0)
+                 	@foreach($errors as $error)
+                            <div class="alert alert-danger">
+                               {{$error}}
+                            </div>
+                	@endforeach
+                @endif
             </div>
         </div>
     </div>

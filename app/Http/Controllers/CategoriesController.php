@@ -24,7 +24,7 @@ class CategoriesController extends Controller
     	if ($category->validate($request->all())) {
         	Category::create($request->all());
 
-        	return view('admin.categories.create')->with('message', 'Category added');
+        	return back()->with('message', 'Category added');
         } else {
         	$errors = $category->errors();
 

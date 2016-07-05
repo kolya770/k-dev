@@ -1,5 +1,8 @@
 @extends('layouts.admin')
-
+@section ('css')
+  <!-- Toastr style -->
+   {!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
+@endsection
 @section('content')
 
 <table class = "table table-bordered">
@@ -24,11 +27,17 @@
          <td><form method="POST" action="{{action('FormController@destroy', ['forms' => $form->id])}}">
 					<input type="hidden" name="_method" value="delete"/>
 					<input type="hidden" name="_token" value="{{csrf_token()}}"/>
-					<input type="submit" class="btn mini blue-stripe" value="Delete"/>
+					<input type="submit" id = 'delete' class="btn mini blue-stripe" value="Delete"/>
 				</form></td>
       </tr>
       @endforeach   
    </tbody>	
 </table>
+ 
 
+@if (Session::has('message')) 
+<div class="alert alert-success">
+   {{Session::get('message')}}
+</div>
+@endif
 @endsection

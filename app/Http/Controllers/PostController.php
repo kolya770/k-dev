@@ -78,7 +78,7 @@ class PostController extends Controller
             $errors = $post->errors();
         }
         
-        return back();
+        return back()->with('message', 'Post added!');
     }
 
     public function edit($id) {
@@ -95,14 +95,14 @@ class PostController extends Controller
     	$post->update($request->all());
    		$post->save();
 
-   		return back();
+   		return back()->with('message', 'Post updated!');
     }
 
     public function destroy($id) {
     	$post = Post::find($id);	
     	$post->delete();
     	
-    	return back();
+    	return back()->with('message', 'Post deleted!');
     }
 
     public function show($id) {
