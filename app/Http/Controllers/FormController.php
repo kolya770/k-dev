@@ -26,12 +26,14 @@ class FormController extends Controller
     	$form->title = $request->get('title');
     	$form->size = $request->get('size');
     	$form->save();
+    	
     	for ($i = 1; $i <= $request->get('size'); $i++) {
     		$field = new Field();
     		$field->question = $request->get('field' . $i);
     		$field->form_id = $form->id;
     		$field->save();
     	}
+
  		return back();
     }
 

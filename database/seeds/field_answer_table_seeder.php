@@ -15,7 +15,7 @@ class field_answer_table_seeder extends Seeder
         foreach (range(1, 3) as $index) {
 	        DB::table('field_answers')->insert([
 	            'answer' => $faker->sentence($nbWords = 3),
-	            'form_answer_id' => $index,
+	            'form_answer_id' => 1,
 	            'field_id' => $index,
 	        ]);
         }
@@ -23,7 +23,7 @@ class field_answer_table_seeder extends Seeder
         foreach (range(1, 3) as $index) {
 	        DB::table('field_answers')->insert([
 	            'answer' => $faker->sentence($nbWords = 3),
-	            'form_answer_id' => $index,
+	            'form_answer_id' => 2,
 	            'field_id' => $index + 3,
 	        ]);
         }
@@ -31,7 +31,7 @@ class field_answer_table_seeder extends Seeder
         foreach (range(1, 3) as $index) {
 	        DB::table('field_answers')->insert([
 	            'answer' => $faker->sentence($nbWords = 3),
-	            'form_answer_id' => $index,
+	            'form_answer_id' => 3,
 	            'field_id' => $index + 6,
 	        ]);
         }

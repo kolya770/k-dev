@@ -23,6 +23,7 @@ class FormAnswerController extends Controller
     	$formAnswer->form_id = $request->get('form_id');
     	$formAnswer->user_id = $request->user()->id;
     	$formAnswer->save();
+    	
     	for ($i = 1; $i <= $request->get('size'); $i++) {
     		$fieldAnswer = new FieldAnswer();
     		$fieldAnswer->answer = $request->get('field' . $i);
@@ -31,6 +32,7 @@ class FormAnswerController extends Controller
     		$fieldAnswer->save();
     	}
     	$forms = Form::all();
+    	
     	return view('forms')->with('forms', $forms);
     }
 }
