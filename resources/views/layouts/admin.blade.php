@@ -32,6 +32,9 @@
                 <li>
                    <a href="/admin/categories/"> <span class="nav-label">Categories</span> </a>
                 </li>
+                <li>
+                   <a href="/admin/forms/"> <span class="nav-label">Forms</span> </a>
+                </li>
                  <li>
                     <a href="/admin/forms/answers"><span class="nav-label">Form Answers</span> </a>
                 </li>

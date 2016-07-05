@@ -29,6 +29,7 @@ Route::group(['prefix'=>'admin'], function()
 	Route::get('/posts/', 'PostController@index');
 	Route::get('/forms/create', 'FormController@create');
 	Route::get('/forms/answers', 'FormController@index');
+	Route::get('/forms/', 'FormController@indexAdmin');
 	//Route::get('categories/')
 	Route::resource('Posts','PostController');
 	Route::resource('Forms','FormController');
