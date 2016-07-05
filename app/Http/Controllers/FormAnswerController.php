@@ -14,7 +14,6 @@ class FormAnswerController extends Controller
 	 public function __construct()
     {
     	$this->middleware('auth');
-        $this->middleware('role');
     }
 
     public function store(Request $request) {
@@ -23,7 +22,7 @@ class FormAnswerController extends Controller
     	$formAnswer->form_id = $request->get('form_id');
     	$formAnswer->user_id = $request->user()->id;
     	$formAnswer->save();
-    	
+
     	for ($i = 1; $i <= $request->get('size'); $i++) {
     		$fieldAnswer = new FieldAnswer();
     		$fieldAnswer->answer = $request->get('field' . $i);
