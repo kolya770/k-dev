@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Models\Post;
 use App\Models\Form;
 use App\Models\Field;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,9 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $reviews = Review::all();
 
-        return view('landing'); //('home')->with('posts', $posts);
+        return view('landing')->with('reviews', $reviews); //('home')->with('posts', $posts);
     }
 
     public function show($id) {

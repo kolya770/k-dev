@@ -39,6 +39,9 @@
                     <a href="/admin/forms/answers"><span class="nav-label">Form Answers</span> </a>
                 </li>
                 <li>
+                    <a href="/admin/reviews"><span class="nav-label">Reviews</span> </a>
+                </li>
+                <li>
                     <a href="/admin/posts/create"> <span class="nav-label">Create Post</span> </a>
                 </li>
                 <li>
@@ -46,6 +49,9 @@
                 </li>
                 <li>
                     <a href="/admin/forms/create"><span class="nav-label">Create Form</span> </a>
+                </li>
+                 <li>
+                    <a href="/admin/reviews/create"><span class="nav-label">Create Review</span> </a>
                 </li>
             </ul>
         </div>

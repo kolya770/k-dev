@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(fields_table_seeder::class);
         $this->call(form_answer_table_seeder::class);
         $this->call(field_answer_table_seeder::class);
+        $this->call(reviews_table_seeder::class);
     }
 }
