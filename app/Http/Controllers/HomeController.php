@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Form;
 use App\Models\Field;
 use App\Models\Review;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,13 +30,10 @@ class HomeController extends Controller
     public function index()
     {
         $reviews = Review::all();
-
-        return view('landing')->with('reviews', $reviews); //('home')->with('posts', $posts);
+        $projects = Project::all();
+        return view('landing')->with(array('reviews' => $reviews, 'projects' => $projects)); //('home')->with('posts', $posts);
     }
 
-    public function portfolio() {
-        return view('portfolio');
-    }
 
     public function show($id) {
         $post = Post::find($id);

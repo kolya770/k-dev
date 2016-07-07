@@ -4,29 +4,18 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1>PORTFOLIO ITEM</h1>
+                <h1>{{ $project->title }}</h1>
             </div>
         </div>
         <div class="row block-center">
             <div class="col-xs-12 position-portfolio">
                 <div class="top-block">
-                    <img src="/img/portfolio-item.png">
+                    <img src="{{ $project->image }}">
                 </div>
                 <div class="bot-block">
-                    <h2>PORTFOLIO ITEM</h2>
-                    <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
-                        Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        Lorem ipsum dolar sit amet
-                    </p>
-                    <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
-                        Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                    </p>
-                    <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
-                        Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        Lorem ipsum dolar sit amet, conse ctetur aclipising elit
+                    <h2>{{ $project->title }}</h2>
+                    <p>
+                        {{ $project->description }}
                     </p>
                 </div>
             </div>

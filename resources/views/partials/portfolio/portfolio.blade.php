@@ -4,76 +4,23 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1 class="title">PORTFOLIO</h1>
+                <h1 class>PORTFOLIO</h1>
             </div>
         </div>
         <div class="row block-center">
+            @foreach ($projects as $project)
             <div class="col-xs-4 position-portfolio">
-                <a href="#">
+                <a href="{{action('PortfolioController@show',['id'=>$project->id])}}">
                     <div class="top-block">
-                        <img src="/img/portfolio.png">
+                        <img src="{{$project->image}}">
                     </div>
                     <div class="bot-block">
-                        <h1>WORK TITLE WORK TITLE WORK</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.</p>
+                        <h1>{{$project->title}}</h1>
+                        <p>{{$project->brief}}</p>
                     </div>
                 </a>
             </div>
-            <div class="col-xs-4 position-portfolio">
-                <a href="#">
-                    <div class="top-block">
-                        <img src="/img/portfolio.png">
-                    </div>
-                    <div class="bot-block">
-                        <h1>WORK TITLE WORK TITLE WORK</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-4 position-portfolio">
-                <a href="#">
-                    <div class="top-block">
-                        <img src="/img/portfolio.png">
-                    </div>
-                    <div class="bot-block">
-                        <h1>WORK TITLE WORK TITLE WORK</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-4 position-portfolio">
-                <a href="#">
-                    <div class="top-block">
-                        <img src="/img/portfolio.png">
-                    </div>
-                    <div class="bot-block">
-                        <h1>WORK TITLE WORK TITLE WORK</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-4 position-portfolio">
-                <a href="#">
-                    <div class="top-block">
-                        <img src="/img/portfolio.png">
-                    </div>
-                    <div class="bot-block">
-                        <h1>WORK TITLE WORK TITLE WORK</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xs-4 position-portfolio">
-                <a href="#">
-                    <div class="top-block">
-                        <img src="/img/portfolio.png">
-                    </div>
-                    <div class="bot-block">
-                        <h1>WORK TITLE WORK TITLE WORK</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.</p>
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

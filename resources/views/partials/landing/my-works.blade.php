@@ -7,20 +7,17 @@
         <div class="row">
             <div class="col-md-5 col-md-offset-1 col-md-push-5 col-xs-10 col-xs-offset-1">
                 <div class="img-wrapper">
-                    <img src="img/browser.png" alt="browser"/>
-                    <img src="img/phone.png" alt="phone"/>
+                    <img src="{{$projects->get(0)->image}}" alt="preview"/>
                 </div>
             </div>
             <div class="col-md-5 col-md-offset-0 col-md-pull-5 col-xs-10 col-xs-offset-1 text-wrapper">
-                <h3>PROJECT TITLE</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi vitae faucibus orci. Nam efficitur urna vitae augue
-                    finibus, et tincidunt lacus fringilla.
-                    <br/><br/>
-                    Mauris ut lacus et turpis pretium mattis vitae a neque.
-                    Nullam posuere pharetra posuere. Lorem ipsum dolor sit
+                <h3>{{$projects->get(0)->title}}</h3>
+                <p>
+                {{$projects->get(0)->brief}}
                 </p>
+                <form action="{{action('PortfolioController@show',['id'=>$projects->get(0)->id])}}">
                 <button class="border-btn">VIEW PROJECT</button>
+                </form>
             </div>
         </div>
     </div>
