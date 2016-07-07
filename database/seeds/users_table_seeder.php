@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
+
 class users_table_seeder extends Seeder
 {
     /**
@@ -11,7 +11,7 @@ class users_table_seeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
+        
         DB::table('users')->insert([
 	            'name' => 'root',
 	            'email' => 'root@foo.com',

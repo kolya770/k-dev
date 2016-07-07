@@ -1,0 +1,33 @@
+.intro.wrap {
+    position: relative;
+    z-index: 11;
+
+    background: -webkit-linear-gradient(left, rgba(107,171,211,0.3), rgba(34,194,196,0.3));
+    background: -o-linear-gradient(right, rgba(107,171,211,0.3), rgba(34,194,196,0.3));
+    background: -moz-linear-gradient(right, rgba(107,171,211,0.3), rgba(34,194,196,0.3));
+    background: linear-gradient(to right, rgba(107,171,211,0.3), rgba(34,194,196,0.3));
+}
+
+.navbar {
+    z-index: 11;
+}
+
+h1,h3 {
+    text-align: center;
+}
+
+.contact-me {
+    background-color: transparent!important;
+    color: #fff!important;
+    border: 2px solid #54b2ce!important;
+    padding: 10px 50px!important;
+
+    left: 50%;
+    width: 250px!important;
+    position: absolute;
+    margin-left: -125px!important;
+}
+
+.contact-me:active {
+
+}
