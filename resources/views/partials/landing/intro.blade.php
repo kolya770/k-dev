@@ -2,7 +2,8 @@
         <div class="first-bg"></div>
         <div class="main-screen-bg"></div>
     -->
-<div id="video-wrap">
+<div id="intro">
+  <div id="video-wrap">
     <video id="cover-video" preload="metadata" autoplay loop>
         <source src="cover/landing/Hello-World.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
         <source src="cover/landing/Hello-World.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
@@ -36,4 +37,5 @@
             </div>
         </div>
     </section>
+  </div>
 </div>

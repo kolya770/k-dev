@@ -31,3 +31,13 @@ h1,h3 {
 .contact-me:active {
 
 }
+
+.affix {
+    top: 0;
+    width: 100%;
+    position:fixed;
+}
+
+.affix + .container-fluid {
+    padding-top: 70px;
+}

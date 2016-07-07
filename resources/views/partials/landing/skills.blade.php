@@ -1,3 +1,4 @@
+<div id="skills">
 <section class="skills wrap">
     <div class="container">
         <div class="row">
@@ -40,3 +41,4 @@
         </div>
     </div>
 </section>
+</div>

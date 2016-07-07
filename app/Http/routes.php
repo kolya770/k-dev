@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/show/{id}','HomeController@show');
 Route::get('/forms/', 'HomeController@forms');
 Route::resource('FormAnswers','FormAnswerController');
+Route::resource('portfolio','PortfolioController');
 Route::group(['prefix'=>'admin'], function()
 {
 	Route::get('/', function()
@@ -30,7 +31,7 @@ Route::group(['prefix'=>'admin'], function()
 	Route::resource('posts','PostController');
 	Route::resource('forms','FormController');
 	Route::resource('reviews', 'ReviewController');
-
+	Route::resource('projects', 'ProjectController');
 	Route::resource('categories','CategoriesController');
 
 });

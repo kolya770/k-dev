@@ -1,7 +1,8 @@
+<div id="works">
 <section class="my-works wrap">
     <div class="container">
         <div class="row">
-            <h1 class="title">PORTFOLIO</h1>
+            <h1 class="title"><a href="/portfolio/">PORTFOLIO</a></h1>
         </div>
         <div class="row">
             <div class="col-md-5 col-md-offset-1 col-md-push-5 col-xs-10 col-xs-offset-1">
@@ -24,3 +25,4 @@
         </div>
     </div>
 </section>
+</div>

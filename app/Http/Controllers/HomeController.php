@@ -33,6 +33,10 @@ class HomeController extends Controller
         return view('landing')->with('reviews', $reviews); //('home')->with('posts', $posts);
     }
 
+    public function portfolio() {
+        return view('portfolio');
+    }
+
     public function show($id) {
         $post = Post::find($id);
         

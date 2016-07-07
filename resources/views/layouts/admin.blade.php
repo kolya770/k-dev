@@ -42,6 +42,9 @@
                     <a href="/admin/reviews"><span class="nav-label">Reviews</span> </a>
                 </li>
                 <li>
+                    <a href="/admin/projects"><span class="nav-label">Projects</span> </a>
+                </li>
+                <li>
                     <a href="/admin/posts/create"> <span class="nav-label">Create Post</span> </a>
                 </li>
                 <li>
@@ -52,6 +55,9 @@
                 </li>
                  <li>
                     <a href="/admin/reviews/create"><span class="nav-label">Create Review</span> </a>
+                </li>
+                <li>
+                    <a href="/admin/projects/create"><span class="nav-label">Add project</span> </a>
                 </li>
             </ul>
         </div>
