@@ -90,8 +90,8 @@
   margin-top: 15px;
 }
 .navbar-inverse .navbar-toggle {
-  border-color: #0e5656;
-  background-color: #126c6c;
+  border-color: #617078;
+  background-color: #617078;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #24d9da;
@@ -103,6 +103,11 @@
 .navbar-inverse .navbar-collapse {
   border: none;
   box-shadow: none;
+}
+
+.collapse.in {
+    background-color: #4d7283;
+    display: block;
 }
 .navbarCustom {
   position: absolute;
