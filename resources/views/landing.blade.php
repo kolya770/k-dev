@@ -31,6 +31,7 @@
     @include('partials.landing.skills')
     @include('partials.landing.about-me')
     @include('partials.landing.what-people-say')
+    @include('partials.landing.blog')
     @include('partials.write-to-me')
     @include('partials.footer')
 
