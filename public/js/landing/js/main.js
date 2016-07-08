@@ -1,4 +1,3 @@
-
 window.onload = function() {
     //popup
     $("#send-message").on("click", function() {
