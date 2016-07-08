@@ -16,7 +16,7 @@
                 <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#about">ABOUT ME</a></li>
                 <li><a href="#contacts">CONTACTS</a></li>
-                <li><a href="#">BLOG</a></li>
+                <li><a href="../blog/">BLOG</a></li>
             </ul>
         </div>
     </div>

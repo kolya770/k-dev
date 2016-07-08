@@ -1,4 +1,3 @@
-
 window.onload = function() {
     //popup
     $("#send-message").on("click", function() {
@@ -18,7 +17,3 @@ window.onload = function() {
 		  $(this).prev('label').css('color', '#415058');
 	  });
 };
-
-$(document).ready(function() {
-    $($ ('#cover-video')).backgroundVideo();
-});

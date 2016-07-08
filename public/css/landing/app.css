@@ -120,6 +120,10 @@
 .navbarCustom li {
   list-style: none;
 }
+
+.navbar-inverse .navbar-nav>.active>a {
+  background-color: #75A9BA;
+}
 .navbarCustom li:hover {
   background-color: #158282;
 }

@@ -267,3 +267,65 @@ body {
 }
 
 /*# sourceMappingURL=app.css.map */
+.popup {
+  display: none;
+}
+.popup .popup-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(69, 79, 85, 0.5);
+  z-index: 5;
+  box-sizing: border-box;
+}
+.popup .popup-wrapper form {
+  position: relative;
+  width: 55%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 5%;
+  margin: auto;
+  z-index: 10;
+  border-radius: 5px;
+  background-color: #95a3aa;
+}
+.popup .popup-wrapper form label {
+  font-family: 'PT Sans';
+  font-size: 16px;
+  color: #415058;
+}
+.popup .popup-wrapper form input,
+.popup .popup-wrapper form textarea {
+  background-color: #d9d6d6;
+  border-radius: 2px;
+}
+.popup .popup-wrapper form input:focus,
+.popup .popup-wrapper form textarea:focus {
+  outline: none !important;
+  border: 1px solid white;
+  box-shadow: 0 0 10px #719ECE;
+}
+.popup .popup-wrapper form .send-message-popup {
+  float: right;
+  display: block;
+  width: 240px;
+  margin-top: 30px;
+  padding: 5px;
+  font-size: 24px;
+  font-family: 'UniSansThin';
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.popup .popup-wrapper form .send-message-popup:hover {
+  background: #798a93;
+}
+.popup .popup-wrapper form .send-message-popup:active {
+  background: #617078;
+}
+.popup .popup-wrapper form .txt-area-wrap {
+  margin-top: 15px;
+}

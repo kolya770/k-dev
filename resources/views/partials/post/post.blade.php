@@ -5,22 +5,15 @@
         <div class="row block-center">
             <div class="col-xs-10 col-xs-offset-1 position-content">
                 <div class="top-block">
-                    <img src="img/blog.png">
+                    <img src="{{$post->preview}}">
                 </div>
                 <div class="bot-block">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1>EDUCATION</h1>
-                            <h4>September 7, 2015</h4>
-                            <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                                Lorem ipsum dolar sit amet, conse ctetur aclipising elit
+                            <h1>{{$post->title}}</h1>
+                            <h4>{{$post->created_at}}</h4>
+                            <p>
+                            {!! $post->content !!}
                             </p><hr/>
                             <div class="col-sm-12 col-md-4 share-block">
                                 <div class="share">
@@ -28,13 +21,13 @@
                                 </div>
                                 <div class="left-btn">
                                     <button class="btn btn-default share-btn">
-                                        <img src="img/fb.png">
+                                        <img src="/img/fb.png">
                                     </button>
                                     <button class="btn btn-default share-btn">
-                                        <img src="img/tw.png">
+                                        <img src="/img/tw.png">
                                     </button>
                                     <button class="btn btn-default share-btn">
-                                        <img src="img/vk.png">
+                                        <img src="/img/vk.png">
                                     </button>
                                 </div>
                             </div>
@@ -57,7 +50,7 @@
                         <h1>MORE POSTS</h1>
                     </div>
                     <div class="photo-img">
-                        <img src="img/post-photo.png" alt="">
+                        <img src="/img/post-photo.png" alt="">
                     </div>
                     <div class="show-more">
                         <h4>September 7, 2015</h4>
@@ -68,7 +61,7 @@
                         </p><hr/>
                     </div>
                     <div class="photo-img">
-                        <img src="img/post-photo.png" alt="">
+                        <img src="/img/post-photo.png" alt="">
                     </div>
                     <div class="show-more">
                         <h4>September 7, 2015</h4>
@@ -79,7 +72,7 @@
                         </p><hr/>
                     </div>
                     <div class="photo-img">
-                        <img src="img/post-photo.png" alt="">
+                        <img src="/img/post-photo.png" alt="">
                     </div>
                     <div class="show-more">
                         <h4>September 7, 2015</h4>
@@ -95,7 +88,7 @@
                         <h1>COMMENTS</h1>
                     </div>
                     <div class="photo-img">
-                        <img src="img/avatar.png" alt="">
+                        <img src="/img/avatar.png" alt="">
                     </div>
                     <div class="show-more">
                         <h4>September 7, 2015</h4>

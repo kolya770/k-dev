@@ -46,4 +46,10 @@ class HomeController extends Controller
 
         return view('forms')->with('forms', $forms); 
     }
+
+    public function blog() {
+        $posts = Post::all();
+
+        return view('blog')->with('posts', $posts);
+    }
 }

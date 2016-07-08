@@ -2,26 +2,28 @@
 <div class="main-screen-bg"></div>
 <section class="blog wrap">
     <div class="container">
-        @foreach($blogs as $blog)
+        @foreach($posts as $post)
         <div class="row block-center">
             <div class="col-xs-10 col-xs-offset-1 position-content">
                 <div class="top-block">
-                    <img src="{{ "uploads/".$blog -> picture_path }}" class="img-responsive">
+                    <img src="{{$post->preview}}" class="img-responsive">
                 </div>
                 <div class="bot-block">
-                    <h1>{{$blog -> title}}</h1>
-                    <h4>{{$blog -> created_at}}</h4>
-                    <p>{!! $blog -> body!!}</p>
+                    <h1>{{$post->title}}</h1>
+                    <h4>{{$post->created_at}}</h4>
+                    <p>{!!$post->content!!}</p>
                     <div class="share">
                         <h3>SHARE:</h3>
                     </div>
                     <div class="left-btn">
-                        <button class="btn btn-default share-btn"><img src="img/fb.png"></button>
-                        <button class="btn btn-default share-btn"><img src="img/tw.png"></button>
-                        <button class="btn btn-default share-btn"><img src="img/vk.png"></button>
+                        <button class="btn btn-default share-btn"><img src="/img/fb.png"></button>
+                        <button class="btn btn-default share-btn"><img src="/img/tw.png"></button>
+                        <button class="btn btn-default share-btn"><img src="/img/vk.png"></button>
                     </div>
                     <div class="right-btn">
-                        <button class="btn btn-primary read-more">READ MORE</button>
+                        <form action="{{action('HomeController@show', ['id' => $post->id])}}">
+                            <button class="btn btn-primary read-more">READ MORE</button>
+                        </form>
                     </div>
                 </div>
             </div>
