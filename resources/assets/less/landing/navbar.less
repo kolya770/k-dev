@@ -1,0 +1,41 @@
+@aquamarine: rgb(32,195,196);
+
+.navbar-inverse .navbar-toggle {
+  border-color:darken(@aquamarine, 25%);
+  background-color: darken(@aquamarine, 20%) ;
+  .icon-bar {
+    background-color: lighten(@aquamarine, 5%);
+  }
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  background-color:darken(@aquamarine, 15%);
+}
+.navbar-inverse .navbar-collapse {
+  border: none;
+  box-shadow: none;
+}
+.navbarCustom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  border: none;
+  .gradient(rgba(107, 171, 211, 0.3), rgba(34, 194, 196, 0.3));
+  li {
+    list-style: none;
+    &:hover{
+      background-color: darken( @aquamarine, 15%);
+    }
+    a {
+      padding: 5px 20px;
+      line-height: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #d3e1e7 !important;
+      &:hover{
+        color: white !important;
+      }
+    }
+  }
+}

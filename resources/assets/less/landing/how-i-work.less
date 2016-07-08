@@ -1,0 +1,52 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: transparent;
+    border: 1px red;
+}
+
+.nav-tabs {
+  li {
+    .active {
+      background-color:transparent;
+      border: 1px red;
+    }
+  }
+}
+
+.how-i-work { 
+
+  padding: 3% 0 5% 0;
+  background-image: url('/img/hiw-bg.png');
+  font-family: 'UniSansThin';
+  color: #ffffff;
+  .title {
+    margin-bottom: 0;
+  }
+  
+
+  .skill-item {
+    margin: 50px auto 0;
+    transition: .6s ease-in .1s;
+    img {
+      @size-width: 55px;
+      @size-height:47px;
+      width: @size-width;
+      height: @size-height;
+      position: relative;
+      left: 50%;
+      margin-left: -@size-width/2;
+      top: 50%;
+      margin-top: -@size-height/2;
+    }
+    &:hover {
+      //transform: rotate(370deg);
+      //cursor: pointer;
+    }
+  }
+  span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,48 @@
+.write-to-me {
+  padding: 3% 0;
+  .gradient(#6babd3 , #22c2c4);
+  .write-heading {
+    margin-bottom: 3%;
+    color: #fff;
+    font-family: 'UniSansHeavy';
+    font-size: 36px;
+    h1 {  text-align: right;  }
+  }
+  .send-message {
+    display: block;
+    width: 240px;
+    margin: 3% auto;
+    padding: 5px;
+    font-size: 24px;
+    font-family: 'UniSansThin';
+    border: none;
+    border-radius: 5px;
+    border-color: white;
+    background: #fff;
+    transition: background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+    &:hover {  background: #d0edf2;  }
+    &:active {  .button-active;  }
+  }
+}
+footer {
+  background-color: #22282b;
+  p {
+    margin: 30px 0;
+    color: #fff;
+    text-align: center;
+    font-family: 'UniSansHeavy';
+    font-size: 24px;
+    span {
+      color: #54b2ce;
+      font-family: 'PT Sans';
+      font-weight: bold;
+    }
+  }
+
+}
+@media (min-width: 750px) {
+
+  .send-message {  margin: 3% !important;  }
+}

@@ -247,6 +247,10 @@
   top: 50%;
   margin-top: -23.5px;
 }
+
+.nav-tabs>li.active>a {
+  background-color: transparent;
+}
 .how-i-work span {
   display: block;
   text-align: center;

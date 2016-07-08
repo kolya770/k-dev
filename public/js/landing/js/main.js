@@ -20,4 +20,20 @@ window.onload = function() {
 
 $(document).ready(function() {
     $($ ('#cover-video')).backgroundVideo();
+    $("#myTab a").click(function(e){
+    e.preventDefault();
+    $(this).tab('show');
+    /**
+     * Script made for slider element in the landing page with kenwheeler/slick
+     * tool.
+     */
+    $('.reviews').slick({
+      dots: true,
+      infinite:true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      speed: 2000
+    });
+  });
 });
+

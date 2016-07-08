@@ -1,0 +1,40 @@
+.project-1 {
+  padding: 5% 0 4% 0;
+  font-family: 'UniSansThin';
+  color: #ffffff;
+  background: url('/img/bg1-01.svg') center center no-repeat #454f55;
+  background-size: 150% 200%;
+  .img-wrapper {
+    margin-bottom: 40px;
+    margin-top: 20px;
+    img:first-of-type {
+      float: right;
+    }
+  }
+  .text-wrapper {
+    h3 {
+      margin-top: 15px;
+    }
+    .border-btn {
+      span {
+        background-color: #454f55;
+        &:hover {
+          .button-hover;
+        }
+        &:active {
+          .button-active;
+        }
+      }
+    }
+  }
+}
+.without-mobile {
+  .img-wrapper {
+    img {
+      float: none !important;
+      position: relative;
+      width: 100%;
+      bottom: 0;
+    }
+  }
+}
