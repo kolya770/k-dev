@@ -44,6 +44,14 @@
                     <button class="btn btn-primary small-button">Tag</button>
                 </div>
             </div>
+            <div class="row">
+                <div class="side-block">
+                    <h3>Categories</h3>
+                    <button class="btn btn-primary big-button">Category</button>
+                    <button class="btn btn-primary big-button">Category</button>
+                    <button class="btn btn-primary big-button">Category</button>
+                </div>
+            </div>
         </div>
         </div>
         
