@@ -33,14 +33,21 @@ class HomeController extends Controller
     {
         $reviews = Review::all();
         $projects = Project::all();
-        return view('landing')->with(array('reviews' => $reviews, 'projects' => $projects)); //('home')->with('posts', $posts);
+        return view('landing')->with(array(
+            'reviews' => $reviews, 
+            'projects' => $projects
+        )); 
     }
 
 
     public function show($id) {
+        $posts = Post::where('id', '!=', $id);
         $post = Post::find($id);
         
-        return view('show')->with('post', $post);
+        return view('show')->with(array(
+            'post'  => $post,
+            'posts' => $posts
+        ));
     }
 
     public function forms() {
@@ -55,7 +62,8 @@ class HomeController extends Controller
         $categories = Category::all();
         return view('blog')->with(array(
                     'posts' => $posts,
-                    'tags' => $tags,
-                    'categories' => $categories));
+                    'tags'  => $tags,
+                    'categories' => $categories
+        ));
     }
 }

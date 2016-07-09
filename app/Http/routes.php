@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/show/{id}','HomeController@show');
 Route::get('/forms/', 'HomeController@forms');
 Route::get('/blog/', 'HomeController@blog');
+Route::resource('comments', 'CommentController');
 Route::resource('FormAnswers','FormAnswerController');
 Route::resource('portfolio','PortfolioController');
 Route::group(['prefix'=>'admin'], function()

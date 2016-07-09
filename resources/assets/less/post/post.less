@@ -15,6 +15,44 @@
   height: 100%;
 }
 
+.comments {
+  h3 {
+    font-size: 14pt;
+  }
+  .date {
+    color: #cccccc;
+    font-family: 'PT Sans';
+  }
+
+  .content {
+    color: #000000;
+    font-family: 'PT Sans';
+  }
+
+  .name {
+    color: #000000;
+    font-family: 'RobotoCondensedBold';
+  }
+
+  .small-button {
+            border-radius: 5px;
+            border: 2px solid rgb(84, 178, 206);
+            float: right;
+            margin-right: 3px;
+            font-family: RobotoCondensed;
+            color: #31383c;
+            font-size: 1em;
+            line-height: 1em;
+            font-weight: 700;
+            box-sizing: border-box;
+            background-color:  rgba(49, 56, 60, 0);
+
+            @media (min-width: 768px) {
+              margin-top: 10px;
+            }
+          }
+}
+
 .block-center {
   margin-bottom: 50px;
   margin-top: 60px;
@@ -107,9 +145,18 @@
       }
 
       .right-block {
-
-
-
+        .tags{ 
+         display: inline-block;
+          
+        h3 {
+            font-family: RobotoCondensedBold;
+            color: #cccccc;
+            font-size: 1em;
+            line-height: 16px;
+            text-align: left;
+            margin: 15px 0;
+          }
+          }
 
         .right-btn {
 
@@ -145,8 +192,7 @@
           .small-button {
             border-radius: 5px;
             border:1px solid #999999;
-            width: 50px;
-            height: 35px;
+            
             margin-right: 3px;
             font-family: RobotoCondensed;
             color: #31383c;
@@ -173,9 +219,10 @@
       float: left;
       margin: 0 5% 5% 0;
     }
-    .show-more {
+    .center-button {
+      float: center;
       text-align: center;
-      button {
+      
         width: 60%;
         border-radius: 5px;
         border: 2px solid rgb(84, 178, 206);
@@ -186,7 +233,11 @@
         font-weight: 700;
         line-height: 11px;
         background-color:  rgba(255, 255, 255, 0);
-      }
+      
+    }
+
+    .control-label {
+      font-family: RobotoCondensed;
     }
   }
 }
