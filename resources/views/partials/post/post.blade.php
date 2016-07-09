@@ -5,7 +5,7 @@
         <div class="row block-center">
             <div class="col-xs-10 col-xs-offset-1 position-content">
                 <div class="top-block">
-                    <img src="{{$post->preview}}">
+                    <img src="{{'/'.$post->preview}}">
                 </div>
                 <div class="bot-block">
                     <div class="row">

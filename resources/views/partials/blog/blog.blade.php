@@ -2,11 +2,14 @@
 <div class="main-screen-bg"></div>
 <section class="blog wrap">
     <div class="container">
-        @foreach($posts as $post)
+        <div class="row">
+        <div class = "col-xs-8 col xs-offset-1">
+         @foreach($posts as $post)
         <div class="row block-center">
-            <div class="col-xs-10 col-xs-offset-1 position-content">
+
+            <div class="position-content">
                 <div class="top-block">
-                    <img src="{{$post->preview}}" class="img-responsive">
+                    <img src="{{'/'.$post->preview}}" class="img-responsive">
                 </div>
                 <div class="bot-block">
                     <h1>{{$post->title}}</h1>
@@ -28,7 +31,22 @@
                 </div>
             </div>
         </div>
-        @endforeach
+            @endforeach
+        </div>
+
+        <div class="col-xs-3 position-block">
+            <div class="row">
+                <div class="side-block">
+                    <h3>Tags</h3>
+                    <button class="btn btn-primary small-button">Tag</button>
+                    <button class="btn btn-primary small-button">Tag</button>
+                    <button class="btn btn-primary small-button">Tag</button>
+                    <button class="btn btn-primary small-button">Tag</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        
         <div class="col-lg-6 col-lg-offset-3 col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11 search">
             <div class="btn-toolbar" role="toolbar" aria-label="...">
                 <div class="btn-group ps-search" role="group" aria-label="">

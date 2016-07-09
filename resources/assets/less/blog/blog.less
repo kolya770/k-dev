@@ -15,9 +15,73 @@
   height: 100%;
 }
 
+ .position-block { 
+    margin-top: 103px;
+    height: 100%;
+    .side-block {
+          padding-top: 5px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+      color: #000000;
+      background-color: #ffffff;
+      border-radius: 5px;
+      font-family: 'RobotoCondensed';
+          h3 {
+            margin-bottom: 30px;
+          }
+          .big-button {
+            border-radius: 5px;
+            border:1px solid @aquamarine;
+            width: 110px;
+            height: 35px;
+            font-family: RobotoCondensed;
+            color: #31383c;
+            font-size: 1em;
+            line-height: 1em;
+            margin-right: 3px;
+            font-weight: 700;
+            box-sizing: border-box;
+            background-color:  rgba(49, 56, 60, 0);
+            @media (min-width: 768px) {
+              margin-top: 10px;
+            }
+            @media (min-width: 1200px) {
+              margin-top: 0;
+            }
+          }
+          .small-button {
+            border-radius: 5px;
+            border:1px solid @aquamarine;
+            width: 50px;
+            height: 35px;
+            margin-right: 3px;
+            font-family: RobotoCondensed;
+            color: #31383c;
+            font-size: 1em;
+            line-height: 1em;
+            font-weight: 700;
+            box-sizing: border-box;
+            background-color:  rgba(49, 56, 60, 0);
+            margin-bottom: 10px;
+            margin-right: 5px;
+            @media (min-width: 768px) {
+              margin-top: 10px;
+
+            }
+            @media (min-width: 1200px) {
+              margin-top: 0;
+            }
+          }
+        
+    }
+  }      
+  
 .block-center {
+  padding: 3% 5% 5% 5%;
   margin-bottom: 50px;
   margin-top: 60px;
+  margin-left: 3%;
 
   .position-content {
     margin-top: 3%;
@@ -30,14 +94,15 @@
     .top-block {
       img {
         width: 100%;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
       }
     }
     .bot-block {
       padding: 3% 5% 5% 5%;
       height: 100%;
-      background-color: #ffffff;
+      background-color: white;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       h1 {
@@ -108,6 +173,7 @@
           font-weight: 700;
         }
       }
+
     }
   }
 }

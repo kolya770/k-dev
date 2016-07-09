@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Svyatoslav Svitlychnyi</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    {!! Html::style('css/blog/app.css') !!}
+    {!! Html::style('css/blog/main.css') !!}
     {!! Html::style('css/landing/preloader.css') !!}
 	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
