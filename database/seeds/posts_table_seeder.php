@@ -14,9 +14,10 @@ class posts_table_seeder extends Seeder
     	$faker = Faker::create();
         foreach (range(1, 5) as $index) {
 	        DB::table('posts')->insert([
-	            'title' => $faker->word,
+	            'title' => $faker->sentence,
 	            'content' => $faker->paragraph,
 	            'category_id' => $faker->numberBetween(1, 3),
+                'preview' => 'img/blog.png'
 	        ]);
         }
     }

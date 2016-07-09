@@ -44,6 +44,9 @@
                 <li>
                     <a href="/admin/projects"><span class="nav-label">Projects</span> </a>
                 </li>
+                 <li>
+                    <a href="/admin/tags"><span class="nav-label">Tags</span> </a>
+                </li>
                 <li>
                     <a href="/admin/posts/create"> <span class="nav-label">Create Post</span> </a>
                 </li>

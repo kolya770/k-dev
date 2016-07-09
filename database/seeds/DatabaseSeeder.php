@@ -23,5 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(field_answer_table_seeder::class);
         $this->call(reviews_table_seeder::class);
         $this->call(projects_table_seeder::class);
+        $this->call(tag_table_seeder::class);
+        $this->call(post_tag_table_seeder::class);
     }
 }

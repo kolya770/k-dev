@@ -38,6 +38,7 @@ Route::group(['prefix'=>'admin'], function()
 	Route::resource('reviews', 'ReviewController');
 	Route::resource('projects', 'ProjectController');
 	Route::resource('categories','CategoriesController');
+	Route::resource('tags','TagController');
 
 });
 

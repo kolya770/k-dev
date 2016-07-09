@@ -41,4 +41,8 @@ class Post extends Model
     {
         return $this->errors;
     }
+
+    public function tags() {
+        return $this->belongsToMany('App\Models\Tag');
+    }
 }
