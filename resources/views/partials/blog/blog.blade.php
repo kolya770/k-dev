@@ -38,18 +38,17 @@
             <div class="row">
                 <div class="side-block">
                     <h3>Tags</h3>
-                    <button class="btn btn-primary small-button">Tag</button>
-                    <button class="btn btn-primary small-button">Tag</button>
-                    <button class="btn btn-primary small-button">Tag</button>
-                    <button class="btn btn-primary small-button">Tag</button>
+                    @foreach ($tags as $tag) 
+                    <button class="btn btn-primary t-button">{{$tag->tag_name}}</button>
+                    @endforeach
                 </div>
             </div>
             <div class="row">
                 <div class="side-block">
                     <h3>Categories</h3>
-                    <button class="btn btn-primary big-button">Category</button>
-                    <button class="btn btn-primary big-button">Category</button>
-                    <button class="btn btn-primary big-button">Category</button>
+                    @foreach ($categories as $category)
+                    <button class="btn btn-primary t-button">{{$category->title}}</button>
+                    @endforeach
                 </div>
             </div>
         </div>

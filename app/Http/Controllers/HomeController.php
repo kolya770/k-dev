@@ -8,6 +8,8 @@ use App\Models\Form;
 use App\Models\Field;
 use App\Models\Review;
 use App\Models\Project;
+use App\Models\Tag;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -49,7 +51,11 @@ class HomeController extends Controller
 
     public function blog() {
         $posts = Post::all();
-
-        return view('blog')->with('posts', $posts);
+        $tags = Tag::all();
+        $categories = Category::all();
+        return view('blog')->with(array(
+                    'posts' => $posts,
+                    'tags' => $tags,
+                    'categories' => $categories));
     }
 }
