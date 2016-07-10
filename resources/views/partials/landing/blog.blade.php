@@ -9,23 +9,17 @@
             <div class="col-sm-6 col-sm-offset-0 col-xs-offset-1 col-xs-10">
                 <div class="row">
                     <div class="blog-text">
-                        <h3>Education</h3>
+                        <h3>{{$post->title}}</h3>
                         <p>
-                            <span>Lorem ipsum</span>
-                            <br/>
-                            Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <p>
-                            <span>Ut enim ad minim veniam</span>
-                            <br/>
-                            Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            {{$post->content}}
                         </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-ms-12 col-xs-12">
+                        <a href="{{action('HomeController@show',['id'=>$post->id])}}">
                         <button class="btn border-btn">READ MORE</button>
+                        </a>
                     </div>
                 </div>
             </div>

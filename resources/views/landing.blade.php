@@ -43,6 +43,6 @@
 
 {!! HTML::script('js/landing/js/backgroundVideo.min.js') !!}
 {!! HTML::script('js/landing/js/main.js') !!}
-{!! HTML::script('js/landing/js/slider.js') !!}
+
 </body>
 </html>

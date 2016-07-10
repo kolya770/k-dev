@@ -71,7 +71,7 @@
                         @if (count($post->comments)>0)
                         @foreach($post->comments as $comment)
                         <div class="row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-2 avatar">
                                 <img src="/img/avatar.png">
                             </div>
                             <div class="col-sm-8">

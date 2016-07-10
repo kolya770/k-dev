@@ -21,6 +21,7 @@ Route::get('/categories/{id}', 'CategoriesController@find');
 Route::resource('comments', 'CommentController');
 Route::resource('FormAnswers','FormAnswerController');
 Route::resource('portfolio','PortfolioController');
+Route::resource('messages','MessageController');
 Route::group(['prefix'=>'admin'], function()
 {
 	Route::get('/', function()

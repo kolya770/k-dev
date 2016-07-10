@@ -30,12 +30,14 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $post = Post::find(1);
         $reviews = Review::all();
         $projects = Project::all();
         return view('landing')->with(array(
             'reviews' => $reviews, 
-            'projects' => $projects
+            'projects' => $projects,
+            'post' => $post
         )); 
     }
 
