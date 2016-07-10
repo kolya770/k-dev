@@ -20,4 +20,15 @@ class CommentController extends Controller
 
     	return back()->withMessage('Comment added.');
     }
+
+    public function destroy($id) {
+        $comment = Comment::find($id);
+        $comment->delete();
+
+        return back()->withMessage('Comment deleted.'); 
+    }
+
+    public function show($id) {
+        return back();
+    }
 }

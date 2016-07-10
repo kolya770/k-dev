@@ -58,28 +58,6 @@
                         <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
                            Lorem ipsum dolar sit amet, conse ctetur aclipising elit
                            Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        </p><hr/>
-                    </div>
-                    <div class="photo-img">
-                        <img src="/img/post-photo.png" alt="">
-                    </div>
-                    <div class="show-more">
-                        <h4>September 7, 2015</h4>
-                        <h1>POST NAME</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
-                            Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                            Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        </p><hr/>
-                    </div>
-                    <div class="photo-img">
-                        <img src="/img/post-photo.png" alt="">
-                    </div>
-                    <div class="show-more">
-                        <h4>September 7, 2015</h4>
-                        <h1>POST NAME</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
-                            Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                            Lorem ipsum dolar sit amet, conse ctetur aclipising elit
                         </p>
                         <button class="btn center-button">SHOW MORE</button>
                         <hr/>
@@ -106,6 +84,13 @@
                             </div>
                             <div class="col-sm-2">
                                 <button class="btn btn-primary small-button">REPLY</button>
+                                @if (Auth::User()->is('root'))
+                                <form method="POST" action="{{action('CommentController@destroy', ['comments'=>$comment->id])}}">
+                                <input type="hidden" name="_method" value="delete"/>
+                                {{csrf_field()}}
+                                <input type="submit" class='btn btn-primary small-button' value="DELETE">
+                                </form>
+                                @endif
                             </div>
 
                         </div>
