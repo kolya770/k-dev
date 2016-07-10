@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Models\Category;
 use App\Http\Requests;
 
 class TagController extends Controller
@@ -27,5 +28,17 @@ class TagController extends Controller
     	$tag->delete();
 
     	return back()->withMessage('Tag deleted');
+    }
+
+    public function find($id) {
+    	$posts = Tag::find($id)->posts;
+        $tags = Tag::all();
+        $categories = Category::all();
+
+    	return view('blog')->with(array(
+            'posts' => $posts, 
+            'tags'  => $tags,
+            'categories' => $categories
+        ));
     }
 }

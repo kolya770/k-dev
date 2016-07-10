@@ -39,6 +39,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
+
+
 {!! HTML::script('js/landing/js/backgroundVideo.min.js') !!}
 {!! HTML::script('js/landing/js/main.js') !!}
 {!! HTML::script('js/landing/js/slider.js') !!}

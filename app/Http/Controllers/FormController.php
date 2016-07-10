@@ -48,7 +48,7 @@ class FormController extends Controller
 
     	return view('admin.forms.index')->with('forms', $forms);
     }
-
+    
     public function destroy($id) {
     	$form = Form::find($id);
     	$form->delete();

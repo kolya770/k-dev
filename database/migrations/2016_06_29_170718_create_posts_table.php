@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->foreign('author_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
-            $table->integer('category_id');
+            
         });
     }
 

@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index');
 Route::get('/show/{id}','HomeController@show');
 Route::get('/forms/', 'HomeController@forms');
 Route::get('/blog/', 'HomeController@blog');
+Route::get('/tags/{id}', 'TagController@find');
+Route::get('/categories/{id}', 'CategoriesController@find');
 Route::resource('comments', 'CommentController');
 Route::resource('FormAnswers','FormAnswerController');
 Route::resource('portfolio','PortfolioController');

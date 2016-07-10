@@ -39,4 +39,9 @@ class Category extends Model
     {
         return $this->errors;
     }
+
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
 }

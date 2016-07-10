@@ -14,6 +14,7 @@ class comments_table_seeder extends Seeder
         $faker = Faker::create();
         foreach (range(1, 10) as $index) {
 	        DB::table('comments')->insert([
+	        	'created_at' => $faker->time,
 	            'name' => $faker->name,
 	            'email' => $faker->email,
 	            'comment' => $faker->paragraph,

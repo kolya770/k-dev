@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(projects_table_seeder::class);
         $this->call(tag_table_seeder::class);
         $this->call(post_tag_table_seeder::class);
+        $this->call(comments_table_seeder::class);
     }
 }
