@@ -3,7 +3,7 @@
 <section class="blog wrap">
     <div class="container">
         <div class="row">
-        <div class = "col-xs-8 col xs-offset-1">
+        <div class = "col-xs-8 col-xs-offset-1">
          @foreach($posts as $post)
         <div class="row block-center">
 

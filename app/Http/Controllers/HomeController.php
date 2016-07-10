@@ -43,10 +43,14 @@ class HomeController extends Controller
     public function show($id) {
         $posts = Post::where('id', '!=', $id);
         $post = Post::find($id);
-        
+        $tags = Tag::all();
+        $categories = Category::all();
+
         return view('show')->with(array(
             'post'  => $post,
-            'posts' => $posts
+            'posts' => $posts,
+            'tags'  => $tags,
+            'categories' => $categories
         ));
     }
 

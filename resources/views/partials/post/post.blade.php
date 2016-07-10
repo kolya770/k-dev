@@ -3,7 +3,8 @@
 <section class="post wrap">
     <div class="container">
         <div class="row block-center">
-            <div class="col-xs-10 col-xs-offset-1 position-content">
+            <div class="col-xs-8 col-xs-offset-1 position-content">
+                
                 <div class="top-block">
                     <img src="{{'/'.$post->preview}}">
                 </div>
@@ -37,7 +38,9 @@
                                 </div>
                                  <div class="right-btn">
                                     @foreach ($post->tags as $tag)
+                                    <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
                                     <button class="btn btn-primary small-button">{{$tag->tag_name}}</button>
+                                    </a>
                                     @endforeach
                                 </div>
                             </div>
@@ -139,7 +142,30 @@
 
                     </div>
                 </div>
+                
             </div>
+            <div class="col-xs-3 position-block">
+            <div class="row">
+                <div class="side-block">
+                    <h3>Tags</h3>
+                    @foreach ($tags as $tag) 
+                    <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
+                    <button class="btn btn-primary t-button">{{$tag->tag_name}}</button>
+                    </a>
+                    @endforeach
+                </div>
+            </div>
+            <div class="row">
+                <div class="side-block">
+                    <h3>Categories</h3>
+                    @foreach ($categories as $category)
+                    <a href="{{action('CategoriesController@find', ['categories' => $category->id])}}">
+                    <button class="btn btn-primary t-button">{{$category->title}}</button>
+                    </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </section>
