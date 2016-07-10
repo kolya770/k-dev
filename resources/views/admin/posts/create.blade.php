@@ -4,7 +4,7 @@
     
     {!! Html::style('admin/css/plugins/summernote/summernote.css') !!}
     {!! Html::style('admin/css/plugins/summernote/summernote-bs3.css') !!}
-
+    {!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
 @endsection
 
 @section('content')
@@ -72,6 +72,14 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group"><label class="col-sm-2 control-label">Tags</label>
+                        @foreach ($tags as $tag)
+                            <div class="col-sm-10"><label class="checkbox-inline i-checks"> 
+                            <input type="checkbox" value="tag + {{$tag->id}}">{{$tag->tag_name}} </label>                                        
+                            </div>
+                        @endforeach
+                        </div>
+                        
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
                                 {!! Form::submit('Create post', ['class' => 'btn btn-sm']) !!}
@@ -93,15 +101,21 @@
 @section('js')
     <script type="text/javascript">
             $(document).ready(function() {
-                $('#summernote').summernote({
-                  height:300,
-                });
+                $('#summernote').summernote();
             });
     </script>
-
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
     <!-- SUMMERNOTE -->
     {!! HTML::script('admin/js/plugins/summernote/summernote.min.js') !!}
     {!! HTML::script('admin/js/admin.js') !!}
+    {!! HTML::script('admin/js/plugins/iCheck/icheck.min.js') !!}
     {!! HTML::script('admin/js/plugins/slick/slick.min.js') !!}
 <!--<script>
     $.ajaxSetup({

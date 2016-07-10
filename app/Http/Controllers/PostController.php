@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use \DomDocument;
+use \DB;
 use App\Http\Requests;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -19,8 +21,11 @@ class PostController extends Controller
 
     public function create() {
     	$categories = Category::all();
-    	
-    	return view('admin.posts.create')->withCategories($categories);
+    	$tags = Tag::all();
+    	return view('admin.posts.create')->with(array(
+            'categories' => $categories,
+            'tags' => $tags
+        ));
     }
 
     public function index() {
@@ -72,6 +77,10 @@ class PostController extends Controller
             $post->content = $dom->saveHTML();
             $post->category_id = $request->category;
             $post->save();
+            DB::table('post_tag')->insert([
+                'post_id' => $post->id,
+                'tag_id' => $request->tag,
+            ]);
         }
         else {
             // validation failure, get errors
