@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row">
         <div class = "col-xs-8 col-xs-offset-1">
-         @foreach($posts as $post)
+        @if(count($posts) > 0)
+        @foreach($posts as $post)
         <div class="row block-center">
 
             <div class="position-content">
@@ -32,6 +33,15 @@
             </div>
         </div>
             @endforeach
+            @else
+            <div class="block-center">
+            <div class="position-content">
+            <div class="no-posts">
+            <h3>Unfortunately, no posts yet!</h3>
+            </div>
+            </div>
+            </div>
+            @endif
         </div>
 
         <div class="col-xs-3 position-block">
@@ -49,7 +59,7 @@
                 <div class="side-block">
                     <h3>Categories</h3>
                     @foreach ($categories as $category)
-                    <a href="{{action('CategoriesController@find', ['categories' => $category->id])}}">
+                    <a href="{{action('CatPageController@find', ['categories' => $category->id])}}">
                     <button class="btn btn-primary t-button">{{$category->title}}</button>
                     </a>
                     @endforeach

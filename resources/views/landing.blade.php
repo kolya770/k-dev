@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-    {!! Html::style('css/landing/app.css') !!}
+    {!! Html::style('css/landing/main.css') !!}
 	{!! Html::style('css/landing/some-stuff.css') !!}
 	{!! Html::style('css/landing/preloader.css') !!}
 

@@ -87,12 +87,14 @@
                             </div>
                             <div class="col-sm-2">
                                 <button class="btn btn-primary small-button">REPLY</button>
+                                @if (Auth::check())
                                 @if (Auth::User()->is('root'))
                                 <form method="POST" action="{{action('CommentController@destroy', ['comments'=>$comment->id])}}">
                                 <input type="hidden" name="_method" value="delete"/>
                                 {{csrf_field()}}
                                 <input type="submit" class='btn btn-primary small-button' value="DELETE">
                                 </form>
+                                @endif
                                 @endif
                             </div>
 
@@ -159,7 +161,7 @@
                 <div class="side-block">
                     <h3>Categories</h3>
                     @foreach ($categories as $category)
-                    <a href="{{action('CategoriesController@find', ['categories' => $category->id])}}">
+                    <a href="{{action('CatPageController@find', ['categories' => $category->id])}}">
                     <button class="btn btn-primary t-button">{{$category->title}}</button>
                     </a>
                     @endforeach
