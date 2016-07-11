@@ -71,31 +71,21 @@
         <div class="col-lg-6 col-lg-offset-3 col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11 search">
             <div class="btn-toolbar" role="toolbar" aria-label="...">
                 <div class="btn-group ps-search" role="group" aria-label="">
+                    <a href="{{action('PageController@show', ['pages' => $pageBefore->id])}}">
                     <button type="button" class="btn btn-default search-btn"><</button>
+                    </a>
                 </div>
+                @foreach ($pages as $page)
                 <div class="btn-group ps-search" role="group" aria-label="">
-                    <button type="button" class="btn btn-default search-btn middle-left">1</button>
+                    <a href="{{action('PageController@show', ['pages' => $page->id])}}">
+                        <button type="button" class="btn btn-default search-btn middle-left">{{$page->number}}</button>
+                    </a>
                 </div>
+                @endforeach
                 <div class="btn-group ps-search" role="group" aria-label="">
-                    <button type="button" class="btn btn-default search-btn middle">2</button>
-                </div>
-                <div class="btn-group ps-search" role="group" aria-label="">
-                    <button type="button" class="btn btn-default search-btn middle">3</button>
-                </div>
-                <div class="btn-group ps-search" role="group" aria-label="">
-                    <button type="button" class="btn btn-default search-btn middle">4</button>
-                </div>
-                <div class="btn-group ps-search" role="group" aria-label="">
-                    <button type="button" class="btn btn-default search-btn middle">5</button>
-                </div>
-                <div class="btn-group ps-search" role="group" aria-label="">
-                    <button type="button" class="btn btn-default search-btn middle">...</button>
-                </div>
-                <div class="btn-group ps-search" role="group" aria-label="">
-                    <button type="button" class="btn btn-default search-btn middle-right">23</button>
-                </div>
-                <div class="btn-group ps-search" role="group" aria-label="">
+                <a href="{{action('PageController@show', ['pages' => $pageAfter->id])}}">
                     <button type="button" class="btn btn-default search-btn">></button>
+                </a>
                 </div>
             </div>
         </div>

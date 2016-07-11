@@ -10,6 +10,7 @@ use App\Models\Review;
 use App\Models\Project;
 use App\Models\Tag;
 use App\Models\Category;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -63,13 +64,21 @@ class HomeController extends Controller
     }
 
     public function blog() {
-        $posts = Post::all();
+        $page = Page::find(1);
+        $posts = $page->posts;
         $tags = Tag::all();
+        $pages = Page::all();
+        $pageAfter = Page::where('id', '>', '1')->first();
+        $pageBefore = $page;
         $categories = Category::all();
         return view('blog')->with(array(
                     'posts' => $posts,
+                    'page' => $page,
+                    'pages' => $pages,
                     'tags'  => $tags,
-                    'categories' => $categories
+                    'categories' => $categories,
+                    'pageAfter' => $pageAfter,
+                    'pageBefore' => $pageBefore
         ));
     }
 }
