@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $fillable = ['title', 'brief', 'description'];
+
+    public function images() {
+    	return $this->hasMany('App\Models\Image');
+    }
 }

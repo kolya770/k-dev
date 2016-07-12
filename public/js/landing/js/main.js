@@ -41,5 +41,14 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+          $('.images').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            dots: true
+            });
+        });
+
 
 

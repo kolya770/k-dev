@@ -53,7 +53,16 @@ body{
 
 .block-center {
   padding: 5% 6% 0 6%;
-
+  .gallery-block {
+    padding-top: 40px;
+    margin-top: 30px;
+    .images {
+      position: auto;
+      img {
+        margin:auto;
+      }
+    }
+  }
   .position-portfolio {
     margin-bottom: 4%;
     a:hover {
@@ -64,14 +73,14 @@ body{
     .top-block {
 
       img {
-        width: 100%
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
     }
     .bot-block {
       padding-bottom: 20px;
       background-color: #ffffff;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
       h1 {
         font-family: RobotoCondensed;
         color: #22282b;

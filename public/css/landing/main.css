@@ -132,9 +132,6 @@
 .navbarCustom li a:hover {
   color: white !important;
 }
-.navbar-inverse .navbar-nav>.active>a {
-  background-color: #75A9BA;
-}
 .popup .close {
   position: absolute;
   top: 3%;

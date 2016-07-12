@@ -29,7 +29,8 @@
                         {!! Form::open(array(
                             'action' => 'ProjectController@store',
                             'class' => 'form-horizontal',
-                            'enctype' => 'multipart/form-data'
+                            'enctype' => 'multipart/form-data',
+                            'files' => true
 
                         )) !!}
                         <div class="form-group">
@@ -53,7 +54,7 @@
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
 		                        <label class="btn btn-default btn-file">
-		    						Browse image <input type="file" name="image" style="display: none;">
+		    						Browse images <input type="file" name="image[]" style="display: none;" multiple="multiple">
 								</label>
 							</div>
 						</div>

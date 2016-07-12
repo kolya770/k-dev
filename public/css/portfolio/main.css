@@ -93,6 +93,16 @@ body {
 .block-center {
   padding: 5% 6% 0 6%;
 }
+.block-center .gallery-block {
+  padding-top: 40px;
+  margin-top: 30px;
+}
+.block-center .gallery-block .images {
+  position: auto;
+}
+.block-center .gallery-block .images img {
+  margin: auto;
+}
 .block-center .position-portfolio {
   margin-bottom: 4%;
 }
@@ -102,12 +112,12 @@ body {
 }
 .block-center .position-portfolio .top-block img {
   width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .block-center .position-portfolio .bot-block {
   padding-bottom: 20px;
   background-color: #ffffff;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 .block-center .position-portfolio .bot-block h1 {
   font-family: RobotoCondensed;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Image;
 use App\Http\Requests;
 
 class ProjectController extends Controller
@@ -30,16 +31,28 @@ class ProjectController extends Controller
     	$project->title = $request->get('title');
     	$project->brief = $request->get('brief');
     	$project->description = $request->get('description');
-
+        $project->save();
     	if ($request->file('image')) {
             $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
-            $f_name = $request->file('image')->getClientOriginalName();
-            $request->file('image')->move($root, $f_name);
-            $project->image = "/img/" . $f_name;
-         }   
-    	$project->save();
-
-    	return back()->with('message', 'Project saved');
+            $files = $request->file('image');
+            $fileCount = count($files);
+            $uploadCount = 0;
+            foreach($files as $file) {
+                $f_name = $file->getClientOriginalName();
+                $file->move($root, $f_name);
+                $image = new Image();
+                $image->path = '/img/' . $f_name;
+                $image->project_id = $project->id;
+                $image->save();
+                $uploadCount++;
+            }  
+        } 
+    	
+        if ($uploadCount == $fileCount) {
+    	   return back()->with('message', 'Project saved');
+        }
+        else {
+            return back()->withMessage('something happened');
+        }
     }
-
 }
