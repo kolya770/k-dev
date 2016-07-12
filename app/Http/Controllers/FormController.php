@@ -62,6 +62,8 @@ class FormController extends Controller
     	return view('admin.forms.edit')->with('form', $form);
     }
 
+    
+
     public function update(Request $request, $id) {
     	$form = Form::find($id);
 

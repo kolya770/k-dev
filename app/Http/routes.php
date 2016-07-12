@@ -32,9 +32,9 @@ Route::group(['prefix'=>'admin'], function()
 	Route::get('/users/', 'UserController@index');
 	Route::get('/forms/answers', 'FormController@index');
 	Route::get('/forms/', 'FormController@indexAdmin');
-	
+	Route::get('/settings/', 'BlogController@settings');
 	//Route::get('categories/')
-	
+	Route::resource('settings', 'BlogController');
 	Route::resource('posts','PostController');
 	Route::resource('forms','FormController');
 	Route::resource('reviews', 'ReviewController');

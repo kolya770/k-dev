@@ -11,7 +11,7 @@ class pages_table_seeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1, 5) as $index) {
+        foreach (range(1, 4) as $index) {
 	        DB::table('pages')->insert([
 	            'number' => $index          
 	        ]);

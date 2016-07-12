@@ -16,14 +16,19 @@ class PageController extends Controller
 
     	$page = Page::find($id);
     	$lastpage = Page::all()->last();
-    	if ($page->id == $lastpage->id) {
-    		$pageAfter = $lastpage;
-    		$pagesBefore = Page::where('id', '<', $id)->get();
-    		$pageBefore = $pagesBefore->last();
-    	} else {
-	    	$pageAfter = Page::where('id', '>', $id)->first();
-	    	$pagesBefore = Page::where('id', '<', $id)->get();
-	    	$pageBefore = $pagesBefore->last();
+    	if ($page->number == 1) {
+    		$pageAfter = Page::where('id', '>', $id)->first();
+    		$pageBefore = $page;
+    	} else { 
+    		if ($page->id == $lastpage->id) {
+	    		$pageAfter = $lastpage;
+	    		$pagesBefore = Page::where('id', '<', $id)->get();
+	    		$pageBefore = $pagesBefore->last();
+    		} else {
+		    	$pageAfter = Page::where('id', '>', $id)->first();
+		    	$pagesBefore = Page::where('id', '<', $id)->get();
+		    	$pageBefore = $pagesBefore->last();
+	    	}
 	    }
     	$posts = $page->posts;
     	$tags = Tag::all();

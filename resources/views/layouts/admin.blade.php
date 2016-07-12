@@ -62,6 +62,9 @@
                 <li>
                     <a href="/admin/projects/create"><span class="nav-label">Add project</span> </a>
                 </li>
+                <li>
+                    <a href="/admin/settings"><span class="nav-label">Settings</span> </a>
+                </li>
             </ul>
         </div>
     </nav>

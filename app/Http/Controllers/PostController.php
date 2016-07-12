@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Page;
 use \DomDocument;
 use \DB;
 use App\Http\Requests;
@@ -36,6 +37,19 @@ class PostController extends Controller
 
     public function store(Request $request) {
     	$post = new Post();
+        $postCount = count(Post::all());
+        $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
+        
+        $postsPerPage = $postsPerPageArray[0];
+        
+        if ($postCount % $postsPerPage == 0) {
+            $lastPageNumber = Page::all()->last()->number;
+            Page::create(['number' => ($lastPageNumber + 1)]);
+            $post->page_id = Page::all()->last()->id;
+        } else {
+            $post->page_id = Page::all()->last()->id;
+        }
+
         if ($post->validate($request->all())) {
             $post->title = $request->get('title');
         	$dom = new DomDocument();
@@ -76,10 +90,11 @@ class PostController extends Controller
         	
             $post->content = $dom->saveHTML();
             $post->category_id = $request->category;
+
             $post->save();
             DB::table('post_tag')->insert([
                 'post_id' => $post->id,
-                'tag_id' => $request->tag,
+                'tag_id' => '1',
             ]);
         }
         else {
