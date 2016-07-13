@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-5 col-md-offset-1 col-md-push-5 col-xs-10 col-xs-offset-1">
                 <div class="img-wrapper">
-                    <img src="{{$projects->get(2)->image}}" alt="browser"/>
+                    <img src="{{$projects->get(2)->images[0]->path}}" alt="browser"/>
                    
                 </div>
             </div>

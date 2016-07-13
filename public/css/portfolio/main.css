@@ -68,6 +68,55 @@ body {
 .navbar-inverse.navbarCustom li a:hover {
   color: white;
 }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
 .portfolio {
   background-image: url('/img/hiw-bg.png');
   height: 100%;
@@ -94,14 +143,19 @@ body {
   padding: 5% 6% 0 6%;
 }
 .block-center .gallery-block {
-  padding-top: 40px;
-  margin-top: 30px;
-}
-.block-center .gallery-block .images {
-  position: auto;
+  padding-top: 6%;
+  margin-top: 6%;
+  margin-bottom: 4%;
 }
 .block-center .gallery-block .images img {
+  width: 70%;
   margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 3px;
+}
+.block-center .gallery-block .images img:hover {
+  opacity: 0.7;
 }
 .block-center .position-portfolio {
   margin-bottom: 4%;
@@ -117,6 +171,8 @@ body {
 }
 .block-center .position-portfolio .bot-block {
   padding-bottom: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: #ffffff;
 }
 .block-center .position-portfolio .bot-block h1 {

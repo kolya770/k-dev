@@ -17,7 +17,6 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->string('brief');
             $table->string('description');
-            $table->string('image');
             $table->timestamps();
         });
     }

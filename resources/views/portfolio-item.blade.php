@@ -29,9 +29,12 @@
           $('.images').slick({
             infinite: true,
             slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToScroll: 2,
+            dots:true
             });
         });
 </script>
+
+{!! HTML::script('js/landing/js/main.js') !!}
 </body>
 </html>

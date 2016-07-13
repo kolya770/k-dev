@@ -13,12 +13,11 @@ class projects_table_seeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        foreach (range(1, 4) as $index) {
+        foreach (range(1, 8) as $index) {
 	        DB::table('projects')->insert([
 	            'title' => $faker->word,
-	            'brief' => $faker->sentence,
-	            'description' => $faker->paragraph,
-	            'image' => '/img/portfolio-item.png',
+	            'brief' => $faker->paragraph,
+	            'description' => $faker->paragraph
 	        ]);
         }
     }
