@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'PT Sans';
-  src: url("/landing/fonts/Pt%20sans%20reg.ttf");
+  src: url("/fonts/Pt%20sans%20reg.ttf");
 }
 @font-face {
   font-family: 'RobotoCondensed';
-  src: url("/landing/fonts/RobotoCondensedRegular.ttf");
+  src: url("/fonts/RobotoCondensedRegular.ttf");
 }
 @font-face {
   font-family: 'PTSans';
-  src: url("/landing/fonts/pt-sans.bold.ttf");
+  src: url("/fonts/pt-sans.bold.ttf");
 }
 body {
   font-size: 16px;

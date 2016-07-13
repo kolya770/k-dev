@@ -1,8 +1,8 @@
 <div class="popup">
     <div class="popup-wrapper">
-        <form action="post">
+        
             <button type="button" class="close" id="close-popup" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <form action="MessageController@store" method="POST">
+            <form action="{{action('MessageController@store')}}" method="POST">
             <div class="row">
                 <div class="col-md-6">
                     <label for="name">NAME</label>
@@ -21,6 +21,7 @@
                     </div>
                 </div>
             </div>
+            {{csrf_field()}}
             <div class="row">
                 <div class="col-md-12">
                     <input type="submit" class="send-message-popup" value="SEND MESSAGE">
