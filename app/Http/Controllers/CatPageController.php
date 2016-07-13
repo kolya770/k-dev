@@ -15,7 +15,7 @@ class CatPageController extends Controller
 		$tags = Tag::all();
 		$categories = Category::all();
 
-		return view('blog')->with(array(
+		return view('tags')->with(array(
             'posts' => $posts, 
             'tags'  => $tags,
             'categories' => $categories

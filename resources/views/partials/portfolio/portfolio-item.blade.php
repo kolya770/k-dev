@@ -36,7 +36,7 @@
                         
                             
                             <div class="image">
-                                <img class="image-item img-responsive" src="{{$image->path}}">
+                                <img class="image-item img-responsive" src="{{$image->path}}" alt="{{$image->description}}">
                             </div>
                             
                         

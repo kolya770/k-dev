@@ -9,6 +9,11 @@ use App\Http\Requests;
 
 class ProjectController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+        $this->middleware('role');
+    }
+
     public function create() {
     	return view('admin.projects.create');
     }
@@ -24,6 +29,23 @@ class ProjectController extends Controller
     	$project->delete();
 
     	return back()->with('message', 'Project deleted');
+    }
+
+    public function imageStore(Request $request)
+    {
+        $imageDescs = $request->get('desc');
+        $imageIds = $request->get('id');
+        $i = 0;
+        foreach ($imageIds as $id) {
+            $image = Image::find($id);
+            $image->description = $imageDescs[$i];
+            $image->save();
+            $i++;
+        }
+
+        $projects = Project::all();
+
+        return view('admin.projects.index')->with('projects', $projects);
     }
 
     public function store(Request $request) {
@@ -49,7 +71,9 @@ class ProjectController extends Controller
         } 
     	
         if ($uploadCount == $fileCount) {
-    	   return back()->with('message', 'Project saved');
+            $imagesAdded = Image::where('project_id', $project->id)->get();
+
+    	    return view('admin.projects.images')->with('images', $imagesAdded);
         }
         else {
             return back()->withMessage('something happened');

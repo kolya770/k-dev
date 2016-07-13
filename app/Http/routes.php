@@ -20,6 +20,7 @@ Route::get('/tags/{id}', 'TagController@find');
 Route::get('/pages/{id}', 'PageController@show');
 Route::get('/categories/{id}', 'CatPageController@find');
 Route::post('/messages/', 'MessageController@store');
+Route::post('/projects/', 'ProjectController@imageStore');
 Route::resource('comments', 'CommentController');
 Route::resource('FormAnswers','FormAnswerController');
 Route::resource('portfolio','PortfolioController');
