@@ -92,10 +92,14 @@ class PostController extends Controller
             $post->category_id = $request->category;
 
             $post->save();
-            DB::table('post_tag')->insert([
-                'post_id' => $post->id,
-                'tag_id' => '1',
-            ]);
+            if ($request->tags) {
+                foreach ($request->get('tags') as $tagid) {
+                    DB::table('post_tag')->insert([
+                        'post_id' => $post->id,
+                        'tag_id' => $tagid,
+                    ]);
+                }
+            }
         }
         else {
             // validation failure, get errors

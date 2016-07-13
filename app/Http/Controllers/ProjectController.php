@@ -40,6 +40,7 @@ class ProjectController extends Controller
         $imageDescs = $request->get('desc');
         $imageIds = $request->get('id');
         $i = 0;
+        
         foreach ($imageIds as $id) {
             $image = Image::find($id);
             $image->description = $imageDescs[$i];
@@ -58,6 +59,7 @@ class ProjectController extends Controller
     	$project->brief = $request->get('brief');
     	$project->description = $request->get('description');
         $project->save();
+
     	if ($request->file('image')) {
             $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
             $files = $request->file('image');

@@ -73,11 +73,13 @@
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Tags</label>
+                        
                         @foreach ($tags as $tag)
                             <div class="col-sm-10"><label class="checkbox-inline i-checks"> 
-                            <input type="checkbox" value="tag + {{$tag->id}}">{{$tag->tag_name}} </label>                                        
+                            <input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag_name}} </label>                                        
                             </div>
                         @endforeach
+                        
                         </div>
                         
                         <div class="form-group">
