@@ -8,6 +8,7 @@
                             'files' => true
 
                         )) !!}
+{!! Form::text('project_id', $project_id, ['class' => 'hidden']) !!}
 @foreach ($images as $image)
 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -46,6 +47,14 @@
                             <div class="row">
                                 {!! Form::text('desc[]', null, ['class' => 'form-control']) !!}
                                 {!! Form::text('id[]', $image->id, ['class' => 'hidden']) !!}
+                            </div>
+                            <div class="row">
+                                <div class="radio">
+                                    <label> 
+                                        <input type="radio" name="mainImage" value="{{$image->id}}">Select as main image
+                                    </label>
+                                </div>
+                                
                             </div>
                             </div>
                        </div> 

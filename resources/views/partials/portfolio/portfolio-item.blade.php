@@ -22,7 +22,7 @@
         <div class="row block-center">
             <div class="col-xs-12 position-portfolio">
                 <div class="top-block">
-                    <img src="{{ $project->images[0]->path }}">
+                    <img src="{{ $mainImage->path }}">
                 </div>
                 <div class="bot-block">
                     <h2>{{ $project->title }}</h2>

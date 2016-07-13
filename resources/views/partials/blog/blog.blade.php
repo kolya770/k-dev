@@ -82,6 +82,7 @@
                     </a>
                 </div>
                 @endforeach
+                
                 <div class="btn-group ps-search" role="group" aria-label="">
                 <a href="{{action('PageController@show', ['pages' => $pageAfter->id])}}">
                     <button type="button" class="btn btn-default search-btn">></button>

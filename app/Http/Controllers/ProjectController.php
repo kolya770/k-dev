@@ -33,6 +33,10 @@ class ProjectController extends Controller
 
     public function imageStore(Request $request)
     {
+        $projectId = $request->get('project_id');
+        $project = Project::find($projectId);
+        $project->main_image_id = $request->get('mainImage');
+        $project->save();
         $imageDescs = $request->get('desc');
         $imageIds = $request->get('id');
         $i = 0;
@@ -73,7 +77,7 @@ class ProjectController extends Controller
         if ($uploadCount == $fileCount) {
             $imagesAdded = Image::where('project_id', $project->id)->get();
 
-    	    return view('admin.projects.images')->with('images', $imagesAdded);
+    	    return view('admin.projects.images')->with(array('images' => $imagesAdded, 'project_id' => $project->id));
         }
         else {
             return back()->withMessage('something happened');

@@ -4,19 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Image;
 use App\Http\Requests;
 
 class PortfolioController extends Controller
 {
     public function index() {
     	$projects = Project::all();
-    	
-    	return view('portfolio')->with('projects', $projects);
+    	$mainImages = array();
+    	foreach ($projects as $project) {
+    		$mainImages[$project->id] = Image::find($project->main_image_id)->path;
+    	}
+    	return view('portfolio')->with(array(
+    		'projects' => $projects,
+    		'mainImages' => $mainImages
+    		));
     }
 
     public function show($id) {
     	$project = Project::find($id);
-
-    	return view('portfolio-item')->with('project', $project);
+    	$mainImage = Image::find($project->main_image_id);
+    	return view('portfolio-item')->with(array(
+    		'project' => $project,
+    		'mainImage' => $mainImage
+    		));
     }
 }

@@ -69,17 +69,5 @@ class CategoriesController extends Controller
 		return view('admin.categories.show', ['category' => $category]);
 	}
 
-	public function find($id)		
-	{
-		$posts = Category::find($id)->posts;
-		$tags = Tag::all();
-		$categories = Category::all();
-
-		return view('blog')->with(array(
-            'posts' => $posts, 
-            'tags'  => $tags,
-            'categories' => $categories
-        ));
-
-	}
+	
 }
