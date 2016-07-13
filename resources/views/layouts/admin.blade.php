@@ -23,6 +23,10 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
+                    <a href="/admin/messages/"> <span class="nav-label">Messages</span> </a>
+                    
+                </li>
+                <li>
                     <a href="/admin/users/"> <span class="nav-label">Users</span> </a>
                     
                 </li>

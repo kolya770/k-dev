@@ -30,6 +30,12 @@ Route::group(['prefix'=>'admin'], function()
 	{
     	return view('admin.index');
 	});
+
+	Route::get('/messages', function () {
+		$messages = App\Models\Message::all();
+
+		return view('admin.messages')->withMessages($messages);
+	});
 	Route::get('/users/', 'UserController@index');
 	Route::get('/forms/answers', 'FormController@index');
 	Route::get('/forms/', 'FormController@indexAdmin');
