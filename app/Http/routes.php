@@ -12,7 +12,7 @@
 |
 */
 
-Route::group(['middleware' => 'web'], function() {
+
 	Route::get('/', 'HomeController@index');
 	Route::get('/show/{id}','HomeController@show');
 	Route::get('/forms/', 'HomeController@forms');
@@ -54,4 +54,4 @@ Route::group(['middleware' => 'web'], function() {
 	});
 
 	Route::auth();
-});
+

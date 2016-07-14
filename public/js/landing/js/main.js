@@ -16,11 +16,15 @@ window.onload = function() {
         $(".popup").fadeOut("fast");
       });
     });
+  var popup_success = document.getElementById('popup-success');
+  var span_success = document.getElementsByClassName("closesuccess")[0];
 
-    // Get the <span> element that closes the modal
+  span_success.onclick = function() { 
+      popup_success.style.display = "none";
+  }
+
+   
   var span = document.getElementsByClassName("closepopup")[0];
-  
-  // When the user clicks on <span> (x), close the modal
   span.onclick = function() { 
       popup.style.display = "none";
   }
@@ -87,7 +91,7 @@ var modal = document.getElementById('myModal');
     }
   }
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+  var span = document.getElementsByClassName("closemodal")[0];
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() { 

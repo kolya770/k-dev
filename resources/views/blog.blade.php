@@ -14,6 +14,7 @@
     <![endif]-->
 </head>
 <body>
+@include('partials.landing.success')
 @include('partials.landing.preloader')
 @include('partials.landing.popup')
 @include('partials.navbar')
@@ -23,7 +24,6 @@
 
 {!! HTML::script('admin/js/jquery-2.1.1.js') !!}
 {!! HTML::script('admin/js/bootstrap.min.js') !!}
-{!! HTML::script('js/blog/popup.js') !!}
-
+{!! HTML::script('js/landing/js/main.js') !!}
 </body>
 </html>
