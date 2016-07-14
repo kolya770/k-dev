@@ -15,7 +15,8 @@ class settings_table_seeder extends Seeder
 	            'postsPerPage' => 5,
                 'project_1_id' => 1,
                 'project_2_id' => 2,
-                'project_3_id' => 3
+                'project_3_id' => 3,
+                'post_id' => 1
 	    ]);
     }
 }

@@ -11,6 +11,7 @@ use App\Models\Project;
 use App\Models\Tag;
 use App\Models\Category;
 use App\Models\Page;
+use \DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,10 +32,18 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $post = Post::find(1);
+    {        
         $reviews = Review::all();
-        $projects = Project::all();
+        //now we need to determine which projects are to show. 
+        $projects = array();
+        for ($i = 1; $i < 4; $i++) {
+            $prarray = DB::table('settings')->where('id', '1')->lists('project_' . $i . '_id');
+            $projects[] = Project::find($prarray[0]); 
+        }
+        //and what post
+        $post_array = DB::table('settings')->where('id', '1')->lists('post_id');
+        $post = Post::find($post_array[0]);
+        
         return view('landing')->with(array(
             'reviews' => $reviews, 
             'projects' => $projects,

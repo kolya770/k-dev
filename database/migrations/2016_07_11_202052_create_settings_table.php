@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration
             $table->integer('project_1_id')-> unsigned() -> nullable();
             $table->integer('project_2_id')-> unsigned() -> nullable();
             $table->integer('project_3_id')-> unsigned() -> nullable();
+            $table->integer('post_id')-> unsigned() -> nullable();
         });
     }
 

@@ -38,7 +38,7 @@ class PostController extends Controller
     public function store(Request $request) {
     	$post = new Post();
         $postCount = count(Post::all());
-        $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
+        $postsPerPageArray = DB::table('settings')->where('id', '1')->lists('postsPerPage');
         
         $postsPerPage = $postsPerPageArray[0];
         

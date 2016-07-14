@@ -9,15 +9,7 @@
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                         <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                        
 
                        
                         <h5>Settings</h5>
@@ -49,19 +41,26 @@
                         <div class="form-group">
                             {!! Form::label('posts_per_page', 'Posts per page:', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                <input name="posts_per_page" class="form-control" required>
+                                <input name="posts_per_page" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            {!! Form::label('projects', 'Project for main page:', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">
-                           
-                        @foreach ($projects as $project)
-                            <label class="checkbox-inline i-checks"> 
-                            <input type="checkbox" name="projects[]" value="{{$project->id}}">{{$project->title}} </label>                                        
-                            
-                        @endforeach
-                        
+                            {!! Form::label('blog', 'Blog for main page:', ['class' => 'col-lg-3 control-label']) !!}
+                            <div class="col-lg-9">                          
+                                <select name="blog_id">
+                                     @foreach ($posts as $post)
+                                        <option value="{{$post->id}}">{{$post->title}}</option>
+                                     @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('projects', 'Projects for main page: (3)', ['class' => 'col-lg-3 control-label']) !!}
+                            <div class="col-lg-9">                          
+                                @foreach ($projects as $project)
+                                    <label class="checkbox-inline i-checks"> 
+                                    <input type="checkbox" name="projects[]" value="{{$project->id}}">{{$project->title}} </label>               
+                                @endforeach
                             </div>
                         </div>
                         
@@ -77,7 +76,20 @@
                                {{Session::get('message')}}
                             </div>
                         @endif
-                       
+                        @if (Session::has('alert_message')) 
+                            <div class="alert alert-danger">
+                               {{Session::get('alert_message')}}
+                            </div>
+                        @endif
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                         <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
                 </div>
                 
