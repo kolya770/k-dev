@@ -1,12 +1,29 @@
 window.onload = function() {
-    //popup
+    
+    var popup = document.getElementById('popup');
     $("#send-message").on("click", function() {
-      $(".popup").fadeIn("fast");
+      popup.style.display = "block";
 
       $("#close-popup").on("click", function(){
         $(".popup").fadeOut("fast");
       });
     });
+
+    $("#hire-me").on("click", function() {
+      popup.style.display = "block";
+
+      $("#close-popup").on("click", function(){
+        $(".popup").fadeOut("fast");
+      });
+    });
+
+    // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("closepopup")[0];
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+      popup.style.display = "none";
+  }
 
 	  //changing color of label in popup form
 		$(".popup input, .popup textarea").on("focus", function() {

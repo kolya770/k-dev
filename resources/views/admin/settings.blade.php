@@ -50,6 +50,23 @@
                                 {!! Form::text('posts_per_page', null, ['class' => 'form-control']) !!}
                             </div>
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('project', 'Project for main page:', ['class' => 'col-lg-3 control-label']) !!}
+                            <div class="col-lg-9">
+                                <select name="project_id" class="form-control m-b">
+                                    @foreach ($projects as $project)
+                                    <option value="{{$project->id}}">
+                                        {{$project->title}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('posts_per_page', 'Posts per page:', ['class' => 'col-lg-3 control-label']) !!}
+                            <div class="col-lg-9">
+                                {!! Form::text('posts_per_page', null, ['class' => 'form-control']) !!}
+                            </div>
+                        </div>
                         
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">

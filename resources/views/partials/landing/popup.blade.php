@@ -1,8 +1,9 @@
-<div class="popup">
+<div class="popup" id="popup">
     <div class="popup-wrapper">
         
-            <button type="button" class="close" id="close-popup" data-dismiss="modal" aria-hidden="true">&times;</button>
+            
             <form action="{{action('MessageController@store')}}" method="POST">
+            <span class="closepopup" onclick="document.getElementById('popup').style.display='none'">&times;</span>
             <div class="row">
                 <div class="col-md-6">
                     <label for="name">NAME</label>

@@ -104,6 +104,7 @@ class PostController extends Controller
         else {
             // validation failure, get errors
             $errors = $post->errors();
+            return back()->with('errors', $errors);
         }
         
         return back()->with('message', 'Post added!');

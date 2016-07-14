@@ -32,7 +32,7 @@
             </div>
             <div class="row">
                 <div class="col-ms-12 col-xs-12">
-                    <button class="btn contact-me">HIRE ME</button>
+                    <button class="btn contact-me" id='hire-me'>HIRE ME</button>
                 </div>
             </div>
         </div>

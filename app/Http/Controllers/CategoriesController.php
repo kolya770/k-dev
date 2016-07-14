@@ -29,7 +29,7 @@ class CategoriesController extends Controller
         } else {
         	$errors = $category->errors();
 
-        	return back();
+        	return back()->with ('errors', $errors);
         }     
     }
 

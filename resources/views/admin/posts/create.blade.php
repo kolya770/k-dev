@@ -8,15 +8,7 @@
 @endsection
 
 @section('content')
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    
 
      
   
@@ -73,13 +65,13 @@
                             </div>
                         </div>
                         <div class="form-group"><label class="col-sm-2 control-label">Tags</label>
-                        
+                        <div class="col-sm-10">
                         @foreach ($tags as $tag)
-                            <div class="col-sm-10"><label class="checkbox-inline i-checks"> 
+                            <label class="checkbox-inline i-checks"> 
                             <input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag_name}} </label>                                        
-                            </div>
+                            
                         @endforeach
-                        
+                        </div>
                         </div>
                         
                         <div class="form-group">
@@ -90,6 +82,15 @@
                         {!! Form::close() !!}
                     </div>                   
                 </div>
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 @if (Session::has('message')) 
                         <div class="alert alert-success">
                            {{Session::get('message')}}

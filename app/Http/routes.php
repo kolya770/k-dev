@@ -12,44 +12,46 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/show/{id}','HomeController@show');
-Route::get('/forms/', 'HomeController@forms');
-Route::get('/blog/', 'HomeController@blog');
-Route::get('/tags/{id}', 'TagController@find');
-Route::get('/pages/{id}', 'PageController@show');
-Route::get('/categories/{id}', 'CatPageController@find');
-Route::post('/messages/', 'MessageController@store');
-Route::post('/projects/', 'ProjectController@imageStore');
-Route::resource('comments', 'CommentController');
-Route::resource('FormAnswers','FormAnswerController');
-Route::resource('portfolio','PortfolioController');
-Route::resource('messages','MessageController');
-Route::group(['prefix'=>'admin'], function()
-{
-	Route::get('/', function()
+Route::group(['middleware' => 'web'], function() {
+	Route::get('/', 'HomeController@index');
+	Route::get('/show/{id}','HomeController@show');
+	Route::get('/forms/', 'HomeController@forms');
+	Route::get('/blog/', 'HomeController@blog');
+	Route::get('/tags/{id}', 'TagController@find');
+	Route::get('/pages/{id}', 'PageController@show');
+	Route::get('/categories/{id}', 'CatPageController@find');
+	Route::post('/messages/', 'MessageController@store');
+	Route::post('/projects/', 'ProjectController@imageStore');
+	Route::resource('comments', 'CommentController');
+	Route::resource('FormAnswers','FormAnswerController');
+	Route::resource('portfolio','PortfolioController');
+	Route::resource('messages','MessageController');
+	Route::group(['prefix'=>'admin'], function()
 	{
-    	return view('admin.index');
+		Route::get('/', function()
+		{
+	    	return view('admin.index');
+		});
+
+		Route::get('/messages', function () {
+			$messages = App\Models\Message::all();
+
+			return view('admin.messages')->withMessages($messages);
+		});
+		Route::get('/users/', 'UserController@index');
+		Route::get('/forms/answers', 'FormController@index');
+		Route::get('/forms/', 'FormController@indexAdmin');
+		Route::get('/settings/', 'BlogController@settings');
+		//Route::get('categories/')
+		Route::resource('settings', 'BlogController');
+		Route::resource('posts','PostController');
+		Route::resource('forms','FormController');
+		Route::resource('reviews', 'ReviewController');
+		Route::resource('projects', 'ProjectController');
+		Route::resource('categories','CategoriesController');
+		Route::resource('tags','TagController');
+
 	});
 
-	Route::get('/messages', function () {
-		$messages = App\Models\Message::all();
-
-		return view('admin.messages')->withMessages($messages);
-	});
-	Route::get('/users/', 'UserController@index');
-	Route::get('/forms/answers', 'FormController@index');
-	Route::get('/forms/', 'FormController@indexAdmin');
-	Route::get('/settings/', 'BlogController@settings');
-	//Route::get('categories/')
-	Route::resource('settings', 'BlogController');
-	Route::resource('posts','PostController');
-	Route::resource('forms','FormController');
-	Route::resource('reviews', 'ReviewController');
-	Route::resource('projects', 'ProjectController');
-	Route::resource('categories','CategoriesController');
-	Route::resource('tags','TagController');
-
+	Route::auth();
 });
-
-Route::auth();

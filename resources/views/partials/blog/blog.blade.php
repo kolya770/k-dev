@@ -3,7 +3,7 @@
 <section class="blog wrap">
     <div class="container">
         <div class="row">
-        <div class = "col-xs-8 col-xs-offset-1">
+        <div class = "col-sm-8 col-sm-offset-1">
         @if(count($posts) > 0)
         @foreach($posts as $post)
         <div class="row block-center">
@@ -44,7 +44,7 @@
             @endif
         </div>
 
-        <div class="col-xs-3 position-block">
+        <div class="col-sm-3 position-block">
             <div class="row">
                 <div class="side-block">
                     <h3>Tags</h3>
