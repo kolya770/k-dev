@@ -227,15 +227,17 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 .intro .container .contact-me {
-  background-color: white;
+  background-color: transparent;
   color: #3c3c3c;
 }
 .intro .container .contact-me:hover {
+  z-index: 28;
   background-color: #61aed1;
   color: white;
   border-color: #61aed1;
 }
 .intro .container .contact-me:active {
+  z-index: 28;
   background-color: #7cc5e6;
   color: white;
   border-color: #7cc5e6;
@@ -321,11 +323,13 @@
   outline: none;
 }
 .text-wrapper .border-btn:hover {
+  z-index: 28;
   background-color: #61aed1;
   color: white;
   border-color: #61aed1;
 }
 .text-wrapper .border-btn:active {
+  z-index: 28;
   background-color: #7cc5e6;
   color: white;
   border-color: #7cc5e6;
@@ -360,11 +364,13 @@
   background-color: #454f55;
 }
 .project-1 .text-wrapper .border-btn span:hover {
+  z-index: 28;
   background-color: #61aed1;
   color: white;
   border-color: #61aed1;
 }
 .project-1 .text-wrapper .border-btn span:active {
+  z-index: 28;
   background-color: #7cc5e6;
   color: white;
   border-color: #7cc5e6;
@@ -611,6 +617,7 @@
   background: #d0edf2;
 }
 .write-to-me .send-message:active {
+  z-index: 28;
   background-color: #7cc5e6;
   color: white;
   border-color: #7cc5e6;
@@ -650,11 +657,13 @@ footer p span {
   color: #ffffff;
 }
 .button-hover {
+  z-index: 28;
   background-color: #61aed1;
   color: white;
   border-color: #61aed1;
 }
 .button-active {
+  z-index: 28;
   background-color: #7cc5e6;
   color: white;
   border-color: #7cc5e6;
