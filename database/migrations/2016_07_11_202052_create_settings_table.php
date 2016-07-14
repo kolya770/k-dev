@@ -15,10 +15,9 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('postsPerPage');
-            $table->integer('project_id')-> unsigned() -> nullable();
-            $table->foreign('project_id')
-                ->references('id')->on('projects')
-                ->onDelete('cascade');
+            $table->integer('project_1_id')-> unsigned() -> nullable();
+            $table->integer('project_2_id')-> unsigned() -> nullable();
+            $table->integer('project_3_id')-> unsigned() -> nullable();
         });
     }
 

@@ -13,7 +13,9 @@ class settings_table_seeder extends Seeder
     {
         DB::table('settings')->insert([
 	            'postsPerPage' => 5,
-                'project_id' => 1
+                'project_1_id' => 1,
+                'project_2_id' => 2,
+                'project_3_id' => 3
 	    ]);
     }
 }
