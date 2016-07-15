@@ -16,7 +16,7 @@ class projects_table_seeder extends Seeder
         foreach (range(1, 4) as $index) {
 	        DB::table('projects')->insert([
 	            'title' => $faker->word,
-	            'brief' => $faker->paragraph,
+	            'brief' => $faker->sentence,
 	            'description' => $faker->paragraph,
                 'main_image_id' => $faker->numberBetween(1, 4)
 	        ]);

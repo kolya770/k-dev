@@ -49,23 +49,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h1>MORE POSTS</h1>
-                    </div>
-                    <div class="photo-img">
-                        <img src="/img/post-photo.png" alt="">
-                    </div>
-                    <div class="show-more">
-                        <h4>September 7, 2015</h4>
-                        <h1>POST NAME</h1>
-                        <p>Lorem ipsum dolar sit amet, conse ctetur aclipising elit.
-                           Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                           Lorem ipsum dolar sit amet, conse ctetur aclipising elit
-                        </p>
-                        <button class="btn center-button">SHOW MORE</button>
-                        <hr/>
-                    </div>
-                    <div class="comments">
+                    
+                    <div class="comments" id="comments">
                         <h1>COMMENTS</h1>
                         <hr/>
                         @if (count($post->comments)>0)
@@ -86,7 +71,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-2">
+                                <a href="#leave-comment">
                                 <button class="btn btn-primary small-button">REPLY</button>
+                                </a>
                                 @if (Auth::check())
                                 @if (Auth::User()->is('root'))
                                 <form method="POST" action="{{action('CommentController@destroy', ['comments'=>$comment->id])}}">
@@ -108,7 +95,7 @@
                         @endif
                     </div>
                     <hr/>
-                    <div class="leave-comment">
+                    <div class="leave-comment" id="leave-comment">
                         <h1>LEAVE A COMMENT</h1>
                         {!! Form::open(array(
                             'action' => 'CommentController@store',
@@ -119,13 +106,13 @@
                         <div class="form-group">
                             {!! Form::label('name', 'Your name', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                                <input name="name" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
                             {!! Form::label('email', 'Email', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                                <input name="email" type="email" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">

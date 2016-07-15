@@ -158,6 +158,7 @@ body {
   opacity: 0.7;
 }
 .block-center .position-portfolio {
+  margin-top: 3%;
   margin-bottom: 4%;
 }
 .block-center .position-portfolio a:hover {
@@ -170,6 +171,7 @@ body {
   border-top-right-radius: 5px;
 }
 .block-center .position-portfolio .bot-block {
+  height: 30%;
   padding-bottom: 20px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

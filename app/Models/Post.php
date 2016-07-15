@@ -49,4 +49,8 @@ class Post extends Model
     public function comments() {
         return $this->hasMany('App\Models\Comment');
     }
+
+    public function page() {
+        return $this->belongsTo('App\Models\Page');
+    }
 }

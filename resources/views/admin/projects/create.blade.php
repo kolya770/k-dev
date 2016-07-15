@@ -42,7 +42,7 @@
                         <div class="form-group">
                             {!! Form::label('brief', 'Brief', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::textarea('brief', null, ['class' => 'form-control']) !!}
+                                <input class='form-control' name='brief' max="130">
                             </div>
                         </div>
                         <div class="form-group">

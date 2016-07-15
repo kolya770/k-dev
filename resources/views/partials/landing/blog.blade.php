@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="blog-image col-sm-6 col-sm-offset-0 col-xs-offset-1 col-xs-10">
+            <div class="blog-image col-sm-5 col-sm-offset-1 col-xs-offset-1 col-xs-10">
                 <img class="img-responsive img-wrap" src="/img/blog.png" alt="Blog">
             </div>
         </div>  

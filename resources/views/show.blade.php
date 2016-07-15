@@ -12,6 +12,7 @@
     <![endif]-->
 </head>
 <body>
+@include ('partials.landing.success')
 @include('partials.landing.popup')
 @include('partials.navbar')
 @include('partials.post.post')

@@ -3,8 +3,8 @@
     <div class="popup-wrapper">
         
             <div class="text-box">
-            <span class="close closesuccess" onclick="document.getElementById('popup-success').style.display='none'">&times;</span>
-           {{ session('flash_message') }}
+            <span class="close closesuccess">&times;</span>
+           <h3>{{ session('flash_message') }}</h3>
            </div>
     </div>
 </div>

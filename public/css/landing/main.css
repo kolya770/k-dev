@@ -129,6 +129,10 @@
   border: none;
   box-shadow: none;
 }
+.navbar-inverse .navbar-nav > .active > a {
+  color: #fff;
+  background-color: #4cb5cd;
+}
 .navbarCustom {
   position: absolute;
   left: 0;
@@ -545,6 +549,9 @@
   font-size: 24px;
   font-family: 'UniSansHeavy';
 }
+.blog .blog-heading {
+  margin-bottom: 3%;
+}
 .blog .blog-heading h1 {
   text-align: center;
   color: #fff;
@@ -552,13 +559,10 @@
   font-size: 48px;
 }
 .blog .img-responsive {
-  max-width: 100%;
+  max-width: 90%;
   border: 3px solid #2cbfc6;
   border-radius: 4px;
   padding: 7px;
-}
-.blog .blog-image {
-  padding-top: 3%;
 }
 .blog .border-btn {
   width: 150px;
