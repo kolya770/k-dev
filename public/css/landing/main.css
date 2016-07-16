@@ -533,6 +533,22 @@
 .what-people-say .ivan-ivanov span {
   font-weight: bold;
 }
+.reviews-arrow {
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  color: transparent;
+  dusplay: block;
+  cursor: pointer;
+}
+.reviews-arrow:hover {
+  color: #61aed1;
+}
+.reviews-arrow img {
+  width: 20px;
+  height: 20px;
+}
 .blog {
   background-color: #454f55;
   color: white;

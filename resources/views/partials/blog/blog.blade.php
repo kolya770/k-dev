@@ -68,27 +68,10 @@
         </div>
         </div>
         
+         
+
         <div class="col-lg-6 col-lg-offset-3 col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11 search">
-            <div class="btn-toolbar" role="toolbar" aria-label="...">
-                <div class="btn-group ps-search" role="group" aria-label="">
-                    <a href="{{action('PageController@show', ['pages' => $pageBefore->id])}}">
-                    <button type="button" class="btn btn-default search-btn"><</button>
-                    </a>
-                </div>
-                @foreach ($pages as $page)
-                <div class="btn-group ps-search" role="group" aria-label="">
-                    <a href="{{action('PageController@show', ['pages' => $page->id])}}">
-                        <button type="button" class="btn btn-default search-btn middle-left">{{$page->number}}</button>
-                    </a>
-                </div>
-                @endforeach
-                
-                <div class="btn-group ps-search" role="group" aria-label="">
-                <a href="{{action('PageController@show', ['pages' => $pageAfter->id])}}">
-                    <button type="button" class="btn btn-default search-btn">></button>
-                </a>
-                </div>
-            </div>
+            {!! with(new App\Models\Pagination($posts))->render() !!} 
         </div>
     </div>
 </section>

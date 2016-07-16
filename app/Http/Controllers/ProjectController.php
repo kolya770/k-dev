@@ -74,6 +74,8 @@ class ProjectController extends Controller
                 $image->save();
                 $uploadCount++;
             }  
+        } else {
+            return back()->with('message', 'Please add some images!');
         } 
     	
         if ($uploadCount == $fileCount) {

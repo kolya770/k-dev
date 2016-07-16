@@ -73,21 +73,18 @@ class HomeController extends Controller
     }
 
     public function blog() {
-        $page = Page::find(1);
-        $posts = $page->posts;
+        $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
+        $postsPerPage = $postsPerPageArray[0];
+        
+        $posts = Post::paginate($postsPerPage);
         $tags = Tag::all();
-        $pages = Page::all();
-        $pageAfter = Page::where('id', '>', '1')->first();
-        $pageBefore = $page;
+        
         $categories = Category::all();
         return view('blog')->with(array(
                     'posts' => $posts,
-                    'page' => $page,
-                    'pages' => $pages,
+                    
                     'tags'  => $tags,
-                    'categories' => $categories,
-                    'pageAfter' => $pageAfter,
-                    'pageBefore' => $pageBefore
+                    'categories' => $categories
         ));
     }
 }

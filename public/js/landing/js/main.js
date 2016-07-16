@@ -58,7 +58,8 @@ $(document).ready(function(){
       infinite:true,
       autoplay: true,
       autoplaySpeed: 2000,
-      speed: 2000
+      speed: 2000,
+      prevArrow: '<button class="reviews-arrow"><img src="/img/left.png"></button>'
     });
 });
 

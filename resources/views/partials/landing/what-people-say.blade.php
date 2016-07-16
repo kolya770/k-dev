@@ -7,7 +7,7 @@
         </div>
         <div class="row slider reviews">
             @foreach($reviews as $review)
-                <div class="col-md-12">
+                <div class="col-md-9 сol-md-offset-1">
                     <div class="row">
                         <p>
                            &ldquo;   {!! $review->review !!} &rdquo;    
