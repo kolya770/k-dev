@@ -3,7 +3,7 @@
 <section class="post wrap">
     <div class="container">
         <div class="row block-center">
-            <div class="col-xs-8 col-xs-offset-1 position-content">
+            <div class="col-sm-8 col-sm-offset-1 position-content">
                 
                 <div class="top-block">
                     <img src="{{'/'.$post->preview}}">
@@ -52,9 +52,10 @@
                     
                     <div class="comments" id="comments">
                         <h1>COMMENTS</h1>
-                        <hr/>
+                        
                         @if (count($post->comments)>0)
                         @foreach($post->comments as $comment)
+                        <hr/>
                         <div class="row">
                             <div class="col-sm-2 avatar">
                                 <img src="/img/avatar.png">
@@ -86,7 +87,7 @@
                             </div>
 
                         </div>
-                        <hr/>
+                        
                         @endforeach
                         @else
                         <div class="row no-comments">
@@ -133,9 +134,9 @@
                 </div>
                 
             </div>
-            <div class="col-xs-3 position-block">
+            <div class="col-sm-3 position-block">
             <div class="row">
-                <div class="side-block">
+                <div class="col-xs-10 col-xs-offset-1 side-block">
                     <h3>Tags</h3>
                     @foreach ($tags as $tag) 
                     <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
@@ -145,7 +146,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="side-block">
+                <div class="col-xs-10 col-xs-offset-1 side-block">
                     <h3>Categories</h3>
                     @foreach ($categories as $category)
                     <a href="{{action('CatPageController@find', ['categories' => $category->id])}}">
@@ -154,6 +155,7 @@
                     @endforeach
                 </div>
             </div>
+        </div>
         </div>
         </div>
     </div>

@@ -31,11 +31,13 @@ class TagController extends Controller
     }
 
     public function find($id) {
-    	$posts = Tag::find($id)->posts;
+        $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
+        $postsPerPage = $postsPerPageArray[0];
+    	$posts = Tag::find($id)->posts()->paginate($postsPerPage);
         $tags = Tag::all();
         $categories = Category::all();
 
-    	return view('tags')->with(array(
+    	return view('blog')->with(array(
             'posts' => $posts, 
             'tags'  => $tags,
             'categories' => $categories

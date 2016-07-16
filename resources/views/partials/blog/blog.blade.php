@@ -6,16 +6,21 @@
         <div class = "col-sm-8 col-sm-offset-1">
         @if(count($posts) > 0)
         @foreach($posts as $post)
-        <div class="row block-center">
+        <div class="block-center">
 
             <div class="position-content">
-                <div class="top-block">
+                <div class="row top-block">
                     <img src="{{'/'.$post->preview}}" class="img-responsive">
                 </div>
-                <div class="bot-block">
+                <div class="row bot-block">
+                
+
                     <h1>{{$post->title}}</h1>
                     <h4>{{$post->created_at}}</h4>
                     <p>{!!$post->content!!}</p>
+             
+                <div class="row">
+                    <div class="col-sm-6">   
                     <div class="share">
                         <h3>SHARE:</h3>
                     </div>
@@ -24,11 +29,15 @@
                         <button class="btn btn-default share-btn"><img src="/img/tw.png"></button>
                         <button class="btn btn-default share-btn"><img src="/img/vk.png"></button>
                     </div>
+                    </div>
+                    <div class="col-sm-6 ">
                     <div class="right-btn">
                         <form action="{{action('HomeController@show', ['id' => $post->id])}}">
                             <button class="btn btn-primary read-more">READ MORE</button>
                         </form>
                     </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -46,7 +55,7 @@
 
         <div class="col-sm-3 position-block">
             <div class="row">
-                <div class="side-block">
+                <div class="col-xs-10 col-xs-offset-1 side-block">
                     <h3>Tags</h3>
                     @foreach ($tags as $tag) 
                     <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
@@ -56,7 +65,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="side-block">
+                <div class="col-xs-10 col-xs-offset-1 side-block">
                     <h3>Categories</h3>
                     @foreach ($categories as $category)
                     <a href="{{action('CatPageController@find', ['categories' => $category->id])}}">

@@ -14,6 +14,27 @@
   font-family: 'RobotoCondensedBold';
   src: url("/fonts/RobotoCondensedBold.ttf");
 }
+@font-face {
+  font-family: 'UniSansHeavy';
+  src: url("/fonts/UniSansHeavyCAPS.eot");
+  src: url("/fonts/UniSansHeavyCAPS.eot?#iefix") format("embedded-opentype"), url("/fonts/Uni%20Sans%20Heavy.otf") format("opentype"), url("/fonts/UniSansHeavyCAPS.woff") format("woff"), url("/fonts/UniSansHeavyCAPS.ttf") format("truetype"), url("/fonts/UniSansHeavyCAPS.svg#UniSansHeavy") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansThin';
+  src: url("/fonts/UniSansThinCAPS.eot");
+  src: url("/fonts/UniSansThinCAPS.eot?#iefix") format("embedded-opentype"), url("/fonts/Uni%20Sans%20Thin.otf") format("opentype"), url("/fonts/UniSansThinCAPS.woff") format("woff"), url("/fonts/UniSansThinCAPS.ttf") format("truetype"), url("/fonts/UniSansThinCAPS.svg#UniSansThin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansThinItalic';
+  src: url('/fonts/Uni%20Sans%20Thin%20Italic.otf');
+  src: url("/fonts/UniSansThinItalicCAPS.eot?#iefix") format("embedded-opentype"), url("/fonts/Uni%20Sans%20Thin%20Italic.otf") format("opentype"), url("/fonts/UniSansThinItalicCAPS.woff") format("woff"), url("/fonts/UniSansThinItalicCAPS.ttf") format("truetype"), url("/fonts/UniSansThinItalicCAPS.svg#UniSansThin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 .navbar-inverse .navbar-toggle {
   border-color: #0e5656;
   background-color: #126c6c;
@@ -74,10 +95,15 @@
   height: 100%;
 }
 .position-block {
-  margin-top: 103px;
-  height: 100%;
+  margin-top: 45px;
+}
+@media all and (min-width: 320px) and (max-width: 780px) {
+  .position-block {
+    margin-top: 0px;
+  }
 }
 .position-block .side-block {
+  margin-top: 60px;
   padding-top: 5px;
   padding-right: 20px;
   padding-bottom: 20px;
@@ -87,6 +113,11 @@
   background-color: #ffffff;
   border-radius: 5px;
   font-family: 'RobotoCondensed';
+}
+@media all and (min-width: 320px) and (max-width: 780px) {
+  .position-block .side-block {
+    margin-top: 0px;
+  }
 }
 .position-block .side-block h3 {
   margin-bottom: 30px;
@@ -199,7 +230,14 @@
   display: inline-block;
   float: right;
 }
+@media all and (min-width: 320px) and (max-width: 780px) {
+  .block-center .position-content .bot-block .right-btn {
+    float: left;
+    margin-left: 3%;
+  }
+}
 .block-center .position-content .bot-block .right-btn .read-more {
+  margin-top: 5%;
   border-radius: 5px;
   border: 2px solid #20c3c4;
   background-color: rgba(255, 255, 255, 0);
@@ -250,6 +288,8 @@
   /* Standard syntax */
 }
 .write-to-me .write-heading {
+  position: relative;
+  left: -27%;
   margin-bottom: 3%;
   color: #fff;
   font-family: 'UniSansHeavy';
@@ -321,6 +361,13 @@ footer p span {
   z-index: 10;
   border-radius: 5px;
   background-color: #95a3aa;
+}
+@media all and (min-width: 320px) and (max-width: 780px) {
+  .popup .popup-wrapper form {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
 }
 .popup .popup-wrapper form label {
   font-family: 'PT Sans';

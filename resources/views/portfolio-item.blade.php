@@ -30,7 +30,34 @@
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 2,
-            dots:true
+            dots:true,
+            responsive: [
+
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                  arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+
+        ]
             });
         });
 </script>

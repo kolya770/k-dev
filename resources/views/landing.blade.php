@@ -19,7 +19,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body  data-spy="scroll" data-target=".navbar" data-offset="50">
+
 
     
     @include ('partials.landing.success')

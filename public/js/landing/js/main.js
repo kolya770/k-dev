@@ -5,7 +5,7 @@ window.onload = function() {
       popup.style.display = "block";
 
       $("#close-popup").on("click", function(){
-        $(".popup").fadeOut("fast");
+        popup.style.display = "none";
       });
     });
 
@@ -13,7 +13,7 @@ window.onload = function() {
       popup.style.display = "block";
 
       $("#close-popup").on("click", function(){
-        $(".popup").fadeOut("fast");
+        popup.style.display = "none";
       });
     });
   var popup_success = document.getElementById('popup-success');
@@ -59,7 +59,32 @@ $(document).ready(function(){
       autoplay: true,
       autoplaySpeed: 2000,
       speed: 2000,
-      prevArrow: '<button class="reviews-arrow"><img src="/img/left.png"></button>'
+      responsive: [
+
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+
+        ]
     });
 });
 
@@ -68,7 +93,34 @@ $(document).ready(function(){
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 2,
-            dots: true
+            dots: true,
+            responsive: [
+
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                  arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+
+        ]
             });
         });
 

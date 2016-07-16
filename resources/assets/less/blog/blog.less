@@ -16,9 +16,17 @@
 }
 
  .position-block { 
-    margin-top: 103px;
-    height: 100%;
+    margin-top: 45px;
+    
+    @media all and (min-width: 320px) and (max-width: 780px) {
+          margin-top: 0px;
+        }
     .side-block {
+
+      margin-top: 60px;
+    @media all and (min-width: 320px) and (max-width: 780px) {
+          margin-top: 0px;
+        }
       padding-top: 5px;
       padding-right: 20px;
       padding-bottom: 20px;
@@ -146,8 +154,13 @@
       }
       .right-btn {
         display: inline-block;
+        @media all and (min-width: 320px) and (max-width: 780px) {
+          float: left;
+          margin-left: 3%;
+        }
         float: right;
         .read-more {
+          margin-top: 5%;
           border-radius: 5px;
           border:2px solid @aquamarine;
           background-color:

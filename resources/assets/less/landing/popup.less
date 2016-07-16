@@ -1,7 +1,6 @@
 .popup {
   display:none;
   z-index:28;
-
   .popup-wrapper{
     position: fixed;
     width: 100%;
@@ -10,6 +9,11 @@
     z-index: 28;
     box-sizing: border-box;
     form {
+    @media all and (min-width: 320px) and (max-width: 780px) {
+        width:100%;
+        height: 100%;
+        position: fixed;
+      }
       position: relative;
       width: 55%;
       top: 50%;

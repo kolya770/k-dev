@@ -1,3 +1,4 @@
+
 <section class="what-people-say wrap">
     <div class="container">
         <div class="row">
@@ -5,9 +6,9 @@
                 <h1>What people say</h1>
             </div>
         </div>
-        <div class="row slider reviews">
+        <div class="slider reviews">
             @foreach($reviews as $review)
-                <div class="col-md-9 сol-md-offset-1">
+                <div class="col-md-12">
                     <div class="row">
                         <p>
                            &ldquo;   {!! $review->review !!} &rdquo;    
@@ -23,6 +24,6 @@
                 </div>
             @endforeach
         </div>
-             
+        
     </div>
 </section>

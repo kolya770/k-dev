@@ -1,5 +1,5 @@
 
-<nav role="navigation" class="navbar navbar-inverse navbarCustom" data-spy="affix" data-offset-top="900">
+<nav role="navigation" class="navbar navbar-inverse navbarCustom" data-offset-top="900">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">

@@ -3,11 +3,16 @@
         
             
             <form action="{{action('MessageController@store')}}" method="POST">
-            <span class="close close-popup" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+            
+            <div class="row">
+            <span class="close close-popup" onclick="document.getElementById('popup').style.display='none'" style="margin-right:15px;">&times;</span>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <label for="name">NAME</label>
                     <input type="text" class="form-control" name="name"  required>
+                </div>
+                <div class="col-md-1">
                 </div>
                 <div class="col-md-6">
                     <label for="email">EMAIL</label>
