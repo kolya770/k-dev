@@ -11,8 +11,12 @@
   background-color:darken(@aquamarine, 15%);
 }
 .navbar-inverse .navbar-collapse {
-  border: none;
-  box-shadow: none;
+    border: none;
+    box-shadow: none;
+    @media all and (min-width: 320px) and (max-width: 780px) {
+          background-color: #4b98ae;
+    }
+    
 }
 
 .navbar-inverse .navbar-nav>.active>a {

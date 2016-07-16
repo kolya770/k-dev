@@ -136,6 +136,11 @@
   border: none;
   box-shadow: none;
 }
+@media all and (min-width: 320px) and (max-width: 780px) {
+  .navbar-inverse .navbar-collapse {
+    background-color: #4b98ae;
+  }
+}
 .navbar-inverse .navbar-nav > .active > a {
   color: #fff;
   background-color: #4cb5cd;

@@ -14,8 +14,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PostController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
     	$this->middleware('auth');
         $this->middleware('role');
     }
@@ -23,6 +22,7 @@ class PostController extends Controller
     public function create() {
     	$categories = Category::all();
     	$tags = Tag::all();
+
     	return view('admin.posts.create')->with(array(
             'categories' => $categories,
             'tags' => $tags
@@ -38,7 +38,6 @@ class PostController extends Controller
     public function store(Request $request) {
     	$post = new Post();
         
-
         if ($post->validate($request->all())) {
             $post->title = $request->get('title');
         	$dom = new DomDocument();
@@ -62,7 +61,7 @@ class PostController extends Controller
     				$filename = str_random(10);
                     $rootpath = config('uploads.local.directory');
     				$filepath = $rootpath ."/". $filename .".". $mimetype;
-    				$post->preview = $filepath;
+    				
     				// @see http://image.intervention.io/api/
     				$image = Image::make($src)
     				  // resize if required
@@ -79,7 +78,14 @@ class PostController extends Controller
         	
             $post->content = $dom->saveHTML();
             $post->category_id = $request->category;
-
+            if ($request->file('main_image')) {
+                $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
+                $file = $request->file('main_image');
+                $f_name = $file->getClientOriginalName();
+                $file->move($root, $f_name);
+                $post->preview = 'img/' . $f_name;
+            } else 
+                return back()->withMessage('Please, choose main image');
             $post->save();
             if ($request->tags) {
                 foreach ($request->get('tags') as $tagid) {
@@ -104,8 +110,6 @@ class PostController extends Controller
     	$categories = Category::all();
 
     	return view('admin.posts.edit')->withPost($post)->withCategories($categories);
-
-
     }
 
     public function update(Request $request, $id) {
@@ -122,8 +126,6 @@ class PostController extends Controller
     	
     	return back()->with('message', 'Post deleted!');
     }
-
-   
 
     public function show($id) {
     	$post = Post::find($id);

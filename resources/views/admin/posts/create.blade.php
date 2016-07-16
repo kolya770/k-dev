@@ -64,16 +64,23 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group"><label class="col-sm-2 control-label">Tags</label>
-                        <div class="col-sm-10">
-                        @foreach ($tags as $tag)
-                            <label class="checkbox-inline i-checks"> 
-                            <input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag_name}} </label>                                        
-                            
-                        @endforeach
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Tags</label>
+                            <div class="col-sm-10">
+                            @foreach ($tags as $tag)
+                                <label class="checkbox-inline i-checks"> 
+                                <input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag_name}} </label>                                        
+                                
+                            @endforeach
+                            </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-3 col-lg-9">
+                                <label class="btn btn-default btn-file">
+                                    Browse main image <input type="file" name="main_image" style="display: none;" >
+                                </label>
+                            </div>
                         </div>
-                        
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
                                 {!! Form::submit('Create post', ['class' => 'btn btn-sm']) !!}
@@ -104,7 +111,7 @@
 @section('js')
     <script type="text/javascript">
             $(document).ready(function() {
-                $('#summernote').summernote();
+                $('#summernote').summernote({ height: 220 });
             });
     </script>
     <script>
