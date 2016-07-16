@@ -8,15 +8,17 @@
         <div class="row">
             <div class="col-sm-6 col-sm-offset-0 col-xs-offset-1 col-xs-10">
                 <div class="row">
+                <div class="col-sm-12 col-xs-12">
                     <div class="blog-text">
                         <h3>{{$post->title}}</h3>
                         <p>
-                            {{$post->content}}
+                            {!!$post->content!!}
                         </p>
                     </div>
                 </div>
+                </div>
                 <div class="row">
-                    <div class="col-ms-12 col-xs-12">
+                    <div class="col-sm-12 col-xs-12">
                         <a href="{{action('HomeController@show',['id'=>$post->id])}}">
                         <button class="btn border-btn">READ MORE</button>
                         </a>
@@ -25,7 +27,7 @@
             </div>
 
             <div class="blog-image col-sm-5 col-sm-offset-1 col-xs-offset-1 col-xs-10">
-                <img class="img-responsive img-wrap" src="/img/blog.png" alt="Blog">
+                <img class="img-responsive img-wrap" src="{{'/'.$post->preview}}" alt="Blog">
             </div>
         </div>  
     </div>
