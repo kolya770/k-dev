@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    17 July 2016 (Sunday) 11:45
+ * Description: Post model
+ */
 
 namespace App\Models;
 
@@ -20,14 +25,12 @@ class Post extends Model
 
     private $errors;
 
-    public function validate($data)
-    {
+    public function validate($data) {
         // make a new validator object
         $v = Validator::make($data, $this->rules);
 
         // check for failure
-        if ($v->fails())
-        {
+        if ($v->fails()) {
             // set errors and return false
             $this->errors = $v->errors();
             return false;
@@ -37,8 +40,7 @@ class Post extends Model
         return true;
     }
 
-    public function errors()
-    {
+    public function errors() {
         return $this->errors;
     }
 

@@ -119,7 +119,8 @@
                         <div class="form-group">
                             {!! Form::label('comment', 'Comment', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::textarea('comment', null, ['class' => 'form-control']) !!}
+                                <textarea name="comment"  class="form-control" required>
+                                </textarea>
                             </div>
                         </div>
                         <div class="form-group">

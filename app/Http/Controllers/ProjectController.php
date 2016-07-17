@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    17 July 2016 (Sunday) 12:16
+ * Description: Controller for administrating projects.
+ */
 
 namespace App\Http\Controllers;
 
@@ -29,6 +34,55 @@ class ProjectController extends Controller
     	$project->delete();
 
     	return back()->with('message', 'Project deleted');
+    }
+
+    public function edit($id) {
+        $project = Project::find($id);
+        $images = Image::where('project_id', $id)->get();
+
+        return view('admin.projects.edit')->with(array(
+            'project' => $project,
+            'images' => $images
+        ));
+    }
+
+    public function update(Request $request, $id) {
+        $project = Project::find($id);
+        $project->update($request->all());
+        $project->save();
+        if ($request->file('image')) {
+            Image::where('project_id', $id)->delete();
+            $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
+            $files = $request->file('image');
+            $fileCount = count($files);
+            $uploadCount = 0;
+            foreach($files as $file) {
+                $f_name = $file->getClientOriginalName();
+                $file->move($root, $f_name);
+                $image = new Image();
+                $image->path = '/img/' . $f_name;
+                $image->project_id = $project->id;
+                $image->save();
+                $uploadCount++;
+            } 
+            if ($uploadCount == $fileCount) {
+                $imagesAdded = Image::where('project_id', $project->id)->get();
+
+                return view('admin.projects.images')->with(array(
+                    'images' => $imagesAdded, 
+                    'project_id' => $project->id
+                ));
+            } 
+        } else if (count(Image::where('project_id', '2')->get()) != 0) {
+                $imagesAdded = Image::where('project_id', $project->id)->get();
+
+                return view('admin.projects.images')->with(array(
+                    'images' => $imagesAdded, 
+                    'project_id' => $project->id
+                ));
+            } else {
+                return back()->withMessage('Please, add some images!');
+        }
     }
 
     public function imageStore(Request $request)

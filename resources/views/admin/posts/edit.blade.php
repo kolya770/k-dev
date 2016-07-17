@@ -73,6 +73,13 @@
                         </div>
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
+                                <label class="btn btn-default btn-file">
+                                    Browse main image <input type="file" name="main_image" style="display: none;" >
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-3 col-lg-9">
                                 {!! Form::submit('Update post', ['class' => 'btn btn-sm']) !!}
                             </div>
                         </div>
