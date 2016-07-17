@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    17 July 2016 (Sunday) 22:57
+ * Description: Controller for reviews administation.
+ */
 
 namespace App\Http\Controllers;
 
@@ -8,6 +13,7 @@ use App\Http\Requests;
 
 class ReviewController extends Controller
 {
+
     public function create() {
     	return view('admin.reviews.create');
     }
@@ -55,8 +61,9 @@ class ReviewController extends Controller
             $f_name = $request->file('preview')->getClientOriginalName();
             $request->file('preview')->move($root, $f_name);
             $review->preview = "/img/" . $f_name;
-         }   
+        }   
    		$review->save();
+
    		return back()->with('message', 'Review updated!');
     }
 }

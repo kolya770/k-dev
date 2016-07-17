@@ -22,8 +22,7 @@ class Permission extends Model
 	 *
 	 * @return Model
 	 */
-	public function roles()
-	{
+	public function roles() {
 		return $this->belongsToMany('\Caffeinated\Shinobi\Models\Role')->withTimestamps();
 	}
 	
@@ -33,8 +32,7 @@ class Permission extends Model
 	 * @param  integer  $roleId
 	 * @return bool
 	 */
-	public function assignRole($roleId = null)
-	{
+	public function assignRole($roleId = null) {
 		$roles = $this->roles;
 		if (! $roles->contains($roleId)) {
 			return $this->roles()->attach($roleId);
@@ -49,8 +47,7 @@ class Permission extends Model
 	 * @param  integer  $roleId
 	 * @return bool
 	 */
-	public function revokeRole($roleId = '')
-	{
+	public function revokeRole($roleId = '') {
 		return $this->roles()->detach($roleId);
 	}
 	
@@ -60,8 +57,7 @@ class Permission extends Model
 	 * @param  array  $roleIds
 	 * @return bool
 	 */
-	public function syncRoles(array $roleIds = array())
-	{
+	public function syncRoles(array $roleIds = array()) {
 		return $this->roles()->sync($roleIds);
 	}
 	
@@ -70,8 +66,7 @@ class Permission extends Model
 	 *
 	 * @return bool
 	 */
-	public function revokeAllRoles()
-	{
+	public function revokeAllRoles() {
 		return $this->roles()->detach();
 	}
 }

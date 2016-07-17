@@ -28,7 +28,7 @@
                     <div class="ibox-content">
                         {!! Form::open(array(
                             'method' => 'PATCH',
-                            'action' => array('ProjectController@update', $post->id),
+                            'action' => array('ProjectController@update', $project->id),
                             'class' => 'form-horizontal',
                             'enctype' => 'multipart/form-data'
 

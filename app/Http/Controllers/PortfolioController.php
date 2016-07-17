@@ -1,4 +1,10 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    17 July 2016 (Sunday) 22:43
+ * Description: Controller for showing portfolio for 
+ * visitors.
+ */
 
 namespace App\Http\Controllers;
 

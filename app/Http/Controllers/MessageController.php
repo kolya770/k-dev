@@ -1,4 +1,10 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    17 July 2016 (Sunday) 22:42
+ * Description: Controller for storing messages upcoming 
+ * from user.
+ */
 
 namespace App\Http\Controllers;
 
@@ -16,7 +22,9 @@ class MessageController extends Controller
     	$message->message = $request->get('message');
 
     	$message->save();
+
     	session()->flash('flash_message', 'Your message was succesfully sent!');
+
     	return back();
     }
 }

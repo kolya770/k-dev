@@ -46,6 +46,79 @@ class ProjectController extends Controller
         ));
     }
 
+    /**
+     * Method for storing new projects. Firstly, we create 
+     * a project without main image id. Then, we pass all 
+     * our images, already created and saved paths to 
+     * a special view, where a user defines the main image
+     * and adds some description.
+     */
+    public function store(Request $request) {
+        $project = new Project();
+        $project->title = $request->get('title');
+        $project->brief = $request->get('brief');
+        $project->description = $request->get('description');
+        $project->save();
+
+        if ($request->file('image')) {
+            $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
+            $files = $request->file('image');
+            $fileCount = count($files);
+            $uploadCount = 0;
+            foreach($files as $file) {
+                $f_name = $file->getClientOriginalName();
+                $file->move($root, $f_name);
+                $image = new Image();
+                $image->path = '/img/' . $f_name;
+                $image->project_id = $project->id;
+                $image->save();
+                $uploadCount++;
+            }  
+        } else {
+            return back()->with('message', 'Please add some images!');
+        } 
+        
+        if ($uploadCount == $fileCount) {
+            $imagesAdded = Image::where('project_id', $project->id)->get();
+
+            return view('admin.projects.images')->with(array('images' => $imagesAdded, 'project_id' => $project->id));
+        }
+        else {
+            return back()->withMessage('something happened');
+        }
+    }
+
+    /**
+     * Method for storing project main image and image 
+     * descriptions got from special 'admin.project.images'
+     * view.
+     */
+
+    public function imageStore(Request $request) {
+        $projectId = $request->get('project_id');
+        $project = Project::find($projectId);
+        $project->main_image_id = $request->get('mainImage');
+        $project->save();
+        $imageDescs = $request->get('desc');
+        $imageIds = $request->get('id');
+        $i = 0;
+        
+        foreach ($imageIds as $id) {
+            $image = Image::find($id);
+            $image->description = $imageDescs[$i];
+            $image->save();
+            $i++;
+        }
+
+        $projects = Project::all();
+
+        return view('admin.projects.index')->with('projects', $projects);
+    }
+
+    /**
+     * Method for updating projects already posted.
+     * TODO: some images bugs
+     */
     public function update(Request $request, $id) {
         $project = Project::find($id);
         $project->update($request->all());
@@ -82,63 +155,6 @@ class ProjectController extends Controller
                 ));
             } else {
                 return back()->withMessage('Please, add some images!');
-        }
-    }
-
-    public function imageStore(Request $request)
-    {
-        $projectId = $request->get('project_id');
-        $project = Project::find($projectId);
-        $project->main_image_id = $request->get('mainImage');
-        $project->save();
-        $imageDescs = $request->get('desc');
-        $imageIds = $request->get('id');
-        $i = 0;
-        
-        foreach ($imageIds as $id) {
-            $image = Image::find($id);
-            $image->description = $imageDescs[$i];
-            $image->save();
-            $i++;
-        }
-
-        $projects = Project::all();
-
-        return view('admin.projects.index')->with('projects', $projects);
-    }
-
-    public function store(Request $request) {
-    	$project = new Project();
-    	$project->title = $request->get('title');
-    	$project->brief = $request->get('brief');
-    	$project->description = $request->get('description');
-        $project->save();
-
-    	if ($request->file('image')) {
-            $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
-            $files = $request->file('image');
-            $fileCount = count($files);
-            $uploadCount = 0;
-            foreach($files as $file) {
-                $f_name = $file->getClientOriginalName();
-                $file->move($root, $f_name);
-                $image = new Image();
-                $image->path = '/img/' . $f_name;
-                $image->project_id = $project->id;
-                $image->save();
-                $uploadCount++;
-            }  
-        } else {
-            return back()->with('message', 'Please add some images!');
-        } 
-    	
-        if ($uploadCount == $fileCount) {
-            $imagesAdded = Image::where('project_id', $project->id)->get();
-
-    	    return view('admin.projects.images')->with(array('images' => $imagesAdded, 'project_id' => $project->id));
-        }
-        else {
-            return back()->withMessage('something happened');
         }
     }
 }

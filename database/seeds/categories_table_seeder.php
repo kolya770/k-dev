@@ -9,7 +9,7 @@ class categories_table_seeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run() 
     {
     	$faker = Faker::create();
         foreach (range(1, 3) as $index) {

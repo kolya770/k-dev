@@ -10,14 +10,12 @@ use App\Models\Post;
 
 class BlogController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
     	$this->middleware('auth');
         $this->middleware('role');
     }
 
-    public function index()
-    {
+    public function index() {
         $projects = Project::all();
         $posts = Post::all();
     	return view('admin.settings')->with(array(
@@ -26,8 +24,7 @@ class BlogController extends Controller
             ));
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         if ($request->get('posts_per_page')) {
         	DB::table('settings')
                 ->where('id', 1)

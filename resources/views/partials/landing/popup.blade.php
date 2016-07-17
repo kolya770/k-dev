@@ -5,7 +5,7 @@
             <form action="{{action('MessageController@store')}}" method="POST">
             
             <div class="row">
-            <span class="close close-popup" onclick="document.getElementById('popup').style.display='none'" style="margin-right:15px;">&times;</span>
+            <span class="close close-popup" onclick="document.getElementById('popup').style.display='none'" style="margin-right:15px; font-size: 36px;">&times;</span>
             </div>
             <div class="row">
                 <div class="col-md-6">

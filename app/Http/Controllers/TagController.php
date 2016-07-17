@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    22:47 17 July 2016 (Sunday)
+ * Description: Controller for tags administration.
+ */
 
 namespace App\Http\Controllers;
 

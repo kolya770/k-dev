@@ -13,6 +13,7 @@ class UserController extends Controller
 		$this->middleware('auth');
 		$this->middleware('role');
 	}
+    
     public function index() {
     	$users = User::all();
     	

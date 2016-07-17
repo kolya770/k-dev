@@ -18,14 +18,12 @@ class Category extends Model
 
     private $errors;
 
-    public function validate($data)
-    {
+    public function validate($data) {
         // make a new validator object
         $v = Validator::make($data, $this->rules);
 
         // check for failure
-        if ($v->fails())
-        {
+        if ($v->fails()) {
             // set errors and return false
             $this->errors = $v->errors();
             return false;
@@ -35,13 +33,11 @@ class Category extends Model
         return true;
     }
 
-    public function errors()
-    {
+    public function errors() {
         return $this->errors;
     }
 
-    public function posts()
-    {
+    public function posts() {
         return $this->hasMany('App\Models\Post');
     }
 }

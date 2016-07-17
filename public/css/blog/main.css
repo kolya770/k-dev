@@ -367,6 +367,9 @@ footer p span {
   border-radius: 5px;
   background-color: #95a3aa;
 }
+.popup .popup-wrapper form .close {
+  font-size: 48px;
+}
 @media all and (min-width: 320px) and (max-width: 780px) {
   .popup .popup-wrapper form {
     width: 100%;

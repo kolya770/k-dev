@@ -23,8 +23,7 @@ class Role extends Model
 	 *
 	 * @return Model
 	 */
-	public function users()
-	{
+	public function users() {
 		return $this->belongsToMany(config('auth.model') ?: config('auth.providers.users.model'))->withTimestamps();
 	}
 	
@@ -33,8 +32,7 @@ class Role extends Model
 	 *
 	 * @return Model
 	 */
-	public function permissions()
-	{
+	public function permissions() {
 		return $this->belongsToMany('\Caffeinated\Shinobi\Models\Permission')->withTimestamps();
 	}
 	
@@ -43,8 +41,7 @@ class Role extends Model
 	 *
 	 * @return array
 	 */
-	public function getPermissions()
-	{
+	public function getPermissions() {
 		return $this->permissions->lists('slug')->all();
 	}
 	
@@ -54,8 +51,7 @@ class Role extends Model
 	 * @param  string $permission
 	 * @return bool
 	 */
-	public function can($permission)
-	{
+	public function can($permission) {
 		if ($this->special === 'no-access') {
 			return false;
 		}
@@ -78,8 +74,7 @@ class Role extends Model
 	 * @param  array $permission
 	 * @return bool
 	 */
-	public function canAtLeast(array $permission = array())
-	{
+	public function canAtLeast(array $permission = array()) {
 		if ($this->special === 'no-access') {
 			return false;
 		}
@@ -98,8 +93,7 @@ class Role extends Model
 	 * @param  int $permissionId
 	 * @return bool
 	 */
-	public function assignPermission($permissionId = null)
-	{
+	public function assignPermission($permissionId = null) {
 		$permissions = $this->permissions;
 		if (! $permissions->contains($permissionId)) {
 			return $this->permissions()->attach($permissionId);
@@ -113,8 +107,7 @@ class Role extends Model
 	 * @param  int $permissionId
 	 * @return bool
 	 */
-	public function revokePermission($permissionId = '')
-	{
+	public function revokePermission($permissionId = '') {
 		return $this->permissions()->detach($permissionId);
 	}
 	
@@ -124,8 +117,7 @@ class Role extends Model
 	 * @param  array $permissionIds
 	 * @return bool
 	 */
-	public function syncPermissions(array $permissionIds = array())
-	{
+	public function syncPermissions(array $permissionIds = array()) {
 		return $this->permissions()->sync($permissionIds);
 	}
 	
@@ -134,8 +126,7 @@ class Role extends Model
 	 *
 	 * @return bool
 	 */
-	public function revokeAllPermissions()
-	{
+	public function revokeAllPermissions() {
 		return $this->permissions()->detach();
 	}
 }

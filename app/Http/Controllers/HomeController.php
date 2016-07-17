@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    17 July 2016 (Sunday) 22:46
+ * Description: Main controller for landing and blog pages.
+ */
 
 namespace App\Http\Controllers;
 
@@ -16,23 +21,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //$this->middleware('auth');
-    }
-
+    
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {        
+    public function index() {        
         $reviews = Review::all();
         //now we need to determine which projects are to show. 
         $projects = array();
@@ -74,15 +69,13 @@ class HomeController extends Controller
 
     public function blog() {
         $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
-        $postsPerPage = $postsPerPageArray[0];
-        
+        $postsPerPage = $postsPerPageArray[0];      
         $posts = Post::paginate($postsPerPage);
-        $tags = Tag::all();
-        
+        $tags = Tag::all();    
         $categories = Category::all();
+
         return view('blog')->with(array(
-                    'posts' => $posts,
-                    
+                    'posts' => $posts,            
                     'tags'  => $tags,
                     'categories' => $categories
         ));

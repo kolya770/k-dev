@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    17 July 2016 (Sunday) 22:08
+ * Description: Controller for administrating posts.
+ */
 
 namespace App\Http\Controllers;
 
