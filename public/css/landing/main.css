@@ -253,11 +253,21 @@
   outline: none;
 }
 .howiworks {
-  background: url('/img/bg.png');
-  height: 70vh;
+  background: url('/img/hiw-bg.png');
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-right: 20px;
+}
+.howiworks .tabs {
+  margin-left: 12%;
+}
+@media all and (min-width: 320px) and (max-width: 780px) {
+  .howiworks .tabs {
+    margin-left: 2%;
+  }
 }
 .nav-tabs {
-  margin-top: 4%;
+  margin-left: 6%;
   border-bottom: 1px solid #999999;
 }
 .nav-tabs > li > a {
@@ -304,6 +314,11 @@
   bottom: 0;
   display: block;
 }
+@media all and (min-width: 320px) and (max-width: 780px) {
+  .nav-tabs > li.active > a > .blocks-how > .img-active {
+    display: none;
+  }
+}
 .nav-tabs > li > a > .blocks-how {
   text-align: center;
   height: 130px;
@@ -333,18 +348,8 @@
   width: 100%;
   left: 0;
 }
-.nav-tabs > li::after {
-  content: " ";
-  background: url(img/str.png) no-repeat;
-  width: 53px;
-  height: 46px;
-  display: inline-block;
-  position: absolute;
-  top: 60px;
-  right: -50px;
-}
-.nav-tabs > li:last-child:after {
-  display: none;
+.tab-content .tab-pane {
+  margin-left: 6%;
 }
 .tab-content .tab-pane p {
   font-family: 'PT Sans';

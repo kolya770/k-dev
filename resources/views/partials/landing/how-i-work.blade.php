@@ -1,7 +1,7 @@
-<div class="howiworks">
+<section class="howiworks wrap">
     <div class="container">
         <div class="row">
-            <div class="col-sm-9 col-sm-offset-1" style="margin-left: 12%;">
+            <div class="col-sm-9 col-sm-offset-1 tabs">
                 <ul id="myTab" class="nav nav-tabs">
                     <li class="active">
                         <a href="#panel1">
@@ -121,5 +121,5 @@
             </div>
         </div>
     </div>
-</div>
+</section>
        

@@ -20,14 +20,20 @@
             background: url(img/str.png) no-repeat;
             width: 53px;
             height: 46px;
+            @media screen and (max-width: 780px) {
+                display: none;
+            }   
             display: inline-block;
             position: absolute;
             top: 60px;
-            right: -50px;
+            right: -50px;   
         }
         .nav-tabs>li:last-child:after {
            display: none;
+
         }
+         
+    
     </style>
 	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
