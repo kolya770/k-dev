@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Models\Project;
 use App\Models\Post;
 
-class BlogController extends Controller
+class SettingsController extends Controller
 {
     public function __construct() {
     	$this->middleware('auth');
@@ -38,10 +38,10 @@ class BlogController extends Controller
                 ->where('id', 1)
                 ->update(['project_1_id' => $projectIds[0]]);
             DB::table('settings')
-                ->where('id', 1)
+                ->where('id', 2)
                 ->update(['project_2_id' => $projectIds[1]]);
             DB::table('settings')
-                ->where('id', 1)
+                ->where('id', 3)
                 ->update(['project_3_id' => $projectIds[2]]);
         }
 

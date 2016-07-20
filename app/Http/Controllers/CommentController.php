@@ -13,7 +13,7 @@ use App\Http\Requests;
 
 class CommentController extends Controller
 {
-    public function store(Request $request) {   	
+    public function store(Request $request) { //Comment comment   	
         $comment = new Comment();
 
     	if ($comment->validate($request->all())) {

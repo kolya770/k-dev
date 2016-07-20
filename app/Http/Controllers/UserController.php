@@ -33,10 +33,10 @@ class UserController extends Controller
     	return back();
     }
 
-    public function makeAdmin($id) {
+    public function assignRole($id, $role) {
         $user = User::find($id);
-        $user->assignRole(Role::where('name','admin')->get()[0]->id);
-
+        $user->assignRole($role);
+        
         return back()->withMessage('Role assigned!');
     }
 }

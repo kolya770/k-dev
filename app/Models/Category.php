@@ -7,7 +7,7 @@ use Validator;
 
 class Category extends Model
 {
-    protected $fillable = ['title'];
+    protected $fillable = ['title']; //сделать типа такого для реквайрд
 
     /**
      * Validation rules. Used to vaidate information from user.

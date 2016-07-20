@@ -12,22 +12,22 @@ use Illuminate\Http\Request;
 use App\Models\Category as Category;
 use App\Models\Tag;
 use App\Http\Requests;
-
+use \DB;
 class CatPageController extends Controller
 {
     public function find($id) {
-		$postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
+        $postsPerPageArray = DB::table('settings')->where('id', '1')->lists('postsPerPage');
         $postsPerPage = $postsPerPageArray[0];
-    	$posts = Category::find($id)->posts()->paginate($postsPerPage);
-		
-		$tags = Tag::all();
-		$categories = Category::all();
+        $posts = Category::find($id)->posts()->paginate($postsPerPage);
+        
+        $tags = Tag::all();
+        $categories = Category::all();
 
-		return view('blog')->with(array(
+        return view('blog')->with(array(
             'posts' => $posts, 
             'tags'  => $tags,
             'categories' => $categories
         ));
 
-	}
+    }
 }

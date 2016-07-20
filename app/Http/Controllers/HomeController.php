@@ -39,7 +39,7 @@ class HomeController extends Controller
         $post_array = DB::table('settings')->where('id', '1')->lists('post_id');
         $post = Post::find($post_array[0]);
         
-        return view('landing')->with(array(
+        return view('landing')->with(array( //TODO: redo
             'reviews' => $reviews, 
             'projects' => $projects,
             'post' => $post

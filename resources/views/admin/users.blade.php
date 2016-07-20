@@ -32,8 +32,17 @@
 					<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 					<input type="submit" class="btn mini blue-stripe" value="Delete"/>
 				</form></td>
-         <td><a class="btn btn-link" href="{{action('UserController@makeAdmin', ['users'=>$user->id])}}">
-         Make admin</a>
+         <td><div class="btn-group">
+               <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">Assign role<span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                     @if (Auth::User()->is('root'))
+                     <li><a href="{{action('UserController@assignRole', ['id' => $user->id, 'role' => 2])}}">Admin</a></li>
+                     <li><a href="{{action('UserController@assignRole', ['id' => $user->id, 'role' => 1])}}">Root</a></li>
+                     @endif
+                     <li><a href="{{action('UserController@assignRole', ['id' => $user->id, 'role' => 3])}}">User</a></li> 
+                  </ul>
+            </div>
+
          </td>
       </tr>
       @endforeach   
