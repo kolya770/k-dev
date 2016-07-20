@@ -84,7 +84,12 @@
                             </div>
                         </div>
                         {!! Form::close() !!}
+                        <h3>Main image now:</h3>
+                    <img src="{{'/'.$post->preview}}" height="150">
                     </div>
+                    
+                    
+                 
                 </div>
             </div>
         </div>
@@ -95,7 +100,7 @@
     <script type="text/javascript">
             $(document).ready(function() {
                 $('#summernote').summernote({
-                  height:300,
+                  height:220,
                 });
             });
     </script>

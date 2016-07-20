@@ -65,12 +65,14 @@
                         </div>
                         
                         {!! Form::close() !!}
+                        <h3>Review image now: </h3>
+                        <img src="{{$review->preview}}" height="150">
                         @if (Session::has('message')) 
                             <div class="alert alert-success">
                                {{Session::get('message')}}
                             </div>
                         @endif
-                      
+                        
                     </div>
                 </div>
                 
