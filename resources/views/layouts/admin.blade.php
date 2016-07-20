@@ -3,7 +3,7 @@
 <html>
 
 <head>
-
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
