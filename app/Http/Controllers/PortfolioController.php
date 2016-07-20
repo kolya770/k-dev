@@ -21,6 +21,7 @@ class PortfolioController extends Controller
     	foreach ($projects as $project) {
     		$mainImages[$project->id] = Image::find($project->main_image_id)->path;
     	}
+
     	return view('portfolio')->with(array(
     		'projects' => $projects,
     		'mainImages' => $mainImages
@@ -30,6 +31,7 @@ class PortfolioController extends Controller
     public function show($id) {
     	$project = Project::find($id);
     	$mainImage = Image::find($project->main_image_id);
+        
     	return view('portfolio-item')->with(array(
     		'project' => $project,
     		'mainImage' => $mainImage

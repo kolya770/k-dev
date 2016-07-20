@@ -43,7 +43,9 @@
 		Route::get('/forms/answers', 'FormController@index');
 		Route::get('/forms/', 'FormController@indexAdmin');
 		Route::get('/settings/', 'BlogController@settings');
+		Route::get('/users/{id}', 'UserController@makeAdmin');
 		//Route::get('categories/')
+		Route::resource('users', 'UserController');
 		Route::resource('settings', 'BlogController');
 		Route::resource('posts','PostController');
 		Route::resource('forms','FormController');
