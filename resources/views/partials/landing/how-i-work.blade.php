@@ -1,5 +1,8 @@
-<section class="howiworks wrap">
+<section class="howiworks wrap" id="howiwork">
     <div class="container">
+        <div class="row">
+            <h2 class="title">HOW I WORK</h2>
+        </div>
         <div class="row">
             <div class="col-sm-9 col-sm-offset-1 tabs">
                 <ul id="myTab" class="nav nav-tabs">
