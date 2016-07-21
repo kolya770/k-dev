@@ -107,6 +107,6 @@
                 radioClass: 'iradio_square-green',
             });
         });
-    </script>
+</script>
 {!! HTML::script('admin/js/plugins/iCheck/icheck.min.js') !!}
 @endsection

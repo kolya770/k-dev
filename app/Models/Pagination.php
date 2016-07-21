@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    21 July 2016 (Thursday) 18:42
+ * Description: Class made for customising laravel bootstrap pagination.
+ */
 
 namespace App\Models;
 
@@ -7,7 +12,7 @@ use Illuminate\Pagination\BootstrapThreePresenter;
 class Pagination extends BootstrapThreePresenter
 {
     /**
-     * Convert the URL window into Materialize HTML.
+     * Convert the URL to custom pagination style.
      *
      * @return string
      */

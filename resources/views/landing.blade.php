@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Svyatoslav Svitlychnyi</title>
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
-    
+@extends('layouts.app')
+@section ('css')
     {!! Html::style('css/slick.css') !!}
     {!! Html::style('css/slick-theme.css') !!}
-    {!! Html::style('css/bootstrap.min.css') !!}
     {!! Html::style('css/landing/main.css') !!}
     
 	{!! Html::style('css/landing/some-stuff.css') !!}
@@ -31,18 +23,15 @@
         }
         .nav-tabs>li:last-child:after {
            display: none;
-
         }
-         
-    
     </style>
 	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+@endsection
 
-
+@section ('content')
     @inject ('reviews', 'App\Models\Review')
     @include ('partials.landing.success') 
     @include('partials.landing.preloader')
@@ -59,9 +48,8 @@
     @include('partials.landing.blog')
     @include('partials.write-to-me')
     @include('partials.footer')
-
-{!! HTML::script('js/jquery.min.js') !!}
-{!! HTML::script('js/bootstrap.min.js') !!}
+@endsection
+@section ('js')
 {!! HTML::script('js/slick.min.js') !!}
 <script type="text/javascript">
     $(document).ready(function(){
@@ -71,10 +59,6 @@
         });
     });
 </script>
-
-
 {!! HTML::script('js/landing/js/backgroundVideo.min.js') !!}
 {!! HTML::script('js/landing/js/main.js') !!}
-
-</body>
-</html>
+@endsection
