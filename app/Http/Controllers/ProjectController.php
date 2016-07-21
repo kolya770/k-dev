@@ -39,10 +39,12 @@ class ProjectController extends Controller
     public function edit($id) {
         $project = Project::find($id);
         $images = Image::where('project_id', $id)->get();
+        $main_image = $project->images()->where('id', $project->main_image_id)->get()[0];
 
         return view('admin.projects.edit')->with(array(
             'project' => $project,
-            'images' => $images
+            'images' => $images,
+            'main_image' => $main_image
         ));
     }
 

@@ -661,11 +661,11 @@
   width: 150px;
   height: 44px;
   margin: 15px 0;
-  background: transparent;
-  border-width: 1px;
-  border: none;
+  background: #f5f5f5;
+  padding: 0px;
+  border-width: 2px;
+  border-color: #61aed1;
   border-radius: 4px;
-  background: url('/img/button-border.png') center center no-repeat transparent;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   outline: none;
 }

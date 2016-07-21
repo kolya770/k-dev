@@ -65,6 +65,13 @@
                         </div>
                         
                         {!! Form::close() !!}
+
+                        <h3>Main image:</h3>
+                        <img src="{{$main_image->path}}" height="150">
+                        <h3>All images:</h3>
+                        @foreach ($project->images as $image) 
+                        <img src="{{$image->path}}" height="150">
+                        @endforeach
                         @if (Session::has('message')) 
                             <div class="alert alert-success">
                                {{Session::get('message')}}

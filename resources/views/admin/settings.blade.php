@@ -33,7 +33,7 @@
                     </div>
                     <div class="ibox-content">
                         {!! Form::open(array(
-                            'action' => 'BlogController@store',
+                            'action' => 'SettingsController@store',
                             'class' => 'form-horizontal',
                             'enctype' => 'multipart/form-data'
 

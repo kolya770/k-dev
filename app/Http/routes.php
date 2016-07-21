@@ -42,11 +42,11 @@
 		Route::get('/users/', 'UserController@index');
 		Route::get('/forms/answers', 'FormController@index');
 		Route::get('/forms/', 'FormController@indexAdmin');
-		Route::get('/settings/', 'BlogController@settings');
+		Route::get('/settings/', 'SettingsController@settings');
 		Route::get('/users/{id}_{role}', 'UserController@assignRole');
 		//Route::get('categories/')
 		Route::resource('users', 'UserController');
-		Route::resource('settings', 'BlogController');
+		Route::resource('settings', 'SettingsController');
 		Route::resource('posts','PostController');
 		Route::resource('forms','FormController');
 		Route::resource('reviews', 'ReviewController');

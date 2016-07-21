@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Svyatoslav Svitlychnyi</title>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    
+    {!! Html::style('css/bootstrap.min.css') !!}
     {!! Html::style('css/blog/main.css') !!}
     {!! Html::style('css/landing/preloader.css') !!}
 	<!--[if lt IE 9]>
@@ -23,8 +24,8 @@
 @include('partials.write-to-me')
 @include('partials.footer')
 
-{!! HTML::script('admin/js/jquery-2.1.1.js') !!}
-{!! HTML::script('admin/js/bootstrap.min.js') !!}
+{!! HTML::script('js/jquery.min.js') !!}
+{!! HTML::script('js/bootstrap.min.js') !!}
 {!! HTML::script('js/landing/js/main.js') !!}
 </body>
 </html>

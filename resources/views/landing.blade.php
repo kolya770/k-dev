@@ -6,10 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Svyatoslav Svitlychnyi</title>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    
+    {!! Html::style('css/slick.css') !!}
+    {!! Html::style('css/slick-theme.css') !!}
+    {!! Html::style('css/bootstrap.min.css') !!}
     {!! Html::style('css/landing/main.css') !!}
     
 	{!! Html::style('css/landing/some-stuff.css') !!}
@@ -60,9 +60,9 @@
     @include('partials.write-to-me')
     @include('partials.footer')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+{!! HTML::script('js/jquery.min.js') !!}
+{!! HTML::script('js/bootstrap.min.js') !!}
+{!! HTML::script('js/slick.min.js') !!}
 <script type="text/javascript">
     $(document).ready(function(){
         $("#myTab a").click(function(e){
