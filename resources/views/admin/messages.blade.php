@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-
-@foreach ($messages as $message)
+@inject ('messages', 'App\Models\Message')
+@foreach ($messages->all() as $message)
 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Name: {!! $message->name !!} 

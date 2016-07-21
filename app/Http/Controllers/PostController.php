@@ -25,19 +25,12 @@ class PostController extends Controller
     }
 
     public function create() {
-    	$categories = Category::all();
-    	$tags = Tag::all();
-
-    	return view('admin.posts.create')->with(array(
-            'categories' => $categories,
-            'tags' => $tags
-        ));
+    	return view('admin.posts.create');
     }
 
     public function index() {
-    	$posts = Post::all();
     	
-    	return view('admin.posts.index')->withPosts($posts); 
+    	return view('admin.posts.index'); 
     }
 
     public function store(Request $request) {

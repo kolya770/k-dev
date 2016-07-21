@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="block-center">
-            @foreach (array_chunk($projects->all(), 3) as $row)
+            @foreach (array_chunk($projects->get()->all(), 3) as $row)
                 <div class="row">
                     @foreach ($row as $project)
                     <div class="col-sm-4 position-portfolio">

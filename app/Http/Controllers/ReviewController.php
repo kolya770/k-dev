@@ -19,9 +19,7 @@ class ReviewController extends Controller
     }
 
     public function index() {
-    	$reviews = Review::all();
-    	
-    	return view('admin.reviews.index')->with('reviews', $reviews);
+    	return view('admin.reviews.index');
     }
 
     public function store(Request $request) {

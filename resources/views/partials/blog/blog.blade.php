@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 side-block">
                     <h3>Tags</h3>
-                    @foreach ($tags as $tag) 
+                    @foreach ($tags->all() as $tag) 
                     <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
                     <button class="btn btn-primary t-button">{{$tag->tag_name}}</button>
                     </a>
@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 side-block">
                     <h3>Categories</h3>
-                    @foreach ($categories as $category)
+                    @foreach ($categories->all() as $category)
                     <a href="{{action('CatPageController@find', ['categories' => $category->id])}}">
                     <button class="btn btn-primary t-button">{{$category->title}}</button>
                     </a>

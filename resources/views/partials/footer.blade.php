@@ -6,7 +6,7 @@
                 <p class="ft-email">EMAIL: <span>talk@kievdev.com</span></p>
             </div>
             <div class="col-xs-12 col-md-5 ">
-                <p class="ft-phone">PHONE: <span>+38 (091) 964 58 55</span></p>
+                <p class="ft-phone">PHONE: <span class="phone">+38 (091) 964 58 55</span></p>
             </div>
         </div>
     </div>

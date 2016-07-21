@@ -22,22 +22,18 @@
 	Route::get('/categories/{id}', 'CatPageController@find');
 	Route::post('/messages/', 'MessageController@store');
 	Route::post('/projects/', 'ProjectController@imageStore');
-	Route::get('/adm/', function()
-		{
+	Route::get('/adm/', function() {
 	    	return view('admin.index');
-		});
+	});
 
 	Route::resource('comments', 'CommentController');
 	Route::resource('FormAnswers','FormAnswerController');
 	Route::resource('portfolio','PortfolioController');
 	Route::resource('messages','MessageController');
-	Route::group(['prefix'=>'adm'], function()
-	{
+	Route::group(['prefix'=>'adm'], function() {
 		
 		Route::get('/messages', function () {
-			$messages = App\Models\Message::all();
-
-			return view('admin.messages')->withMessages($messages);
+			return view('admin.messages');
 		});
 		Route::get('/users/', 'UserController@index');
 		Route::get('/forms/answers', 'FormController@index');

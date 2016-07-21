@@ -14,7 +14,7 @@
     <![endif]-->
 </head>
 <body>
-
+@inject ('projects', 'App\Models\Project')
 @include('partials.navbar')
 @include('partials.portfolio.portfolio')
 

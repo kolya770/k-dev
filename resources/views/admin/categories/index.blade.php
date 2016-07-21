@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+@inject ('categories', 'App\Models\Category')
 <table class = "table table-bordered">
    <caption>All categories</caption>   
    <thead>
@@ -13,7 +13,7 @@
       </tr>
    </thead>   
    <tbody>
-      @foreach ($categories as $category)
+      @foreach ($categories->all() as $category)
       <tr>
          <td>{{$category->id}}</td>
          <td>{{$category->title}}</td>

@@ -10,7 +10,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category as Category;
-use App\Models\Tag;
 use App\Http\Requests;
 use \DB;
 class CatPageController extends Controller
@@ -20,13 +19,8 @@ class CatPageController extends Controller
         $postsPerPage = $postsPerPageArray[0];
         $posts = Category::find($id)->posts()->paginate($postsPerPage);
         
-        $tags = Tag::all();
-        $categories = Category::all();
-
         return view('blog')->with(array(
-            'posts' => $posts, 
-            'tags'  => $tags,
-            'categories' => $categories
+            'posts' => $posts
         ));
 
     }

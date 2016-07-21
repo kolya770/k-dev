@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+@inject ('reviews', 'App\Models\Review')
 <table class = "table table-bordered">
    <caption>All reviews</caption>   
    <thead>
@@ -15,7 +15,7 @@
       </tr>
    </thead>   
    <tbody>
-      @foreach ($reviews as $review)
+      @foreach ($reviews->all() as $review)
       <tr>
          <td>{{$review->id}}</td>
          <td>{{$review->author_name}}</td>

@@ -742,6 +742,10 @@ footer p {
   font-family: 'UniSansHeavy';
   font-size: 24px;
 }
+footer p .phone {
+  color: #00ff5e;
+  font-size: smaller;
+}
 footer p span {
   color: #54b2ce;
   font-family: 'PT Sans';

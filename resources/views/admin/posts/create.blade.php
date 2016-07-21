@@ -8,9 +8,8 @@
 @endsection
 
 @section('content')
-    
-
-     
+@inject ('categories', 'App\Models\Category')
+@inject ('tags', 'App\Models\Tag')
   
   <div class="wrapper wrapper-content">
         <div class="row">
@@ -58,7 +57,7 @@
                          <div class="form-group"><label class="col-sm-2 control-label">Category</label>
                             <div class="col-sm-10">
                                 <select class="form-control m-b" name="category">
-                                        @foreach ($categories as $category)
+                                        @foreach ($categories->all() as $category)
                                         <option value="{{$category->id}}">{{$category->title}}</option>
                                         @endforeach
                                 </select>
@@ -67,7 +66,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Tags</label>
                             <div class="col-sm-10">
-                            @foreach ($tags as $tag)
+                            @foreach ($tags->all() as $tag)
                                 <label class="checkbox-inline i-checks"> 
                                 <input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag_name}} </label>                                        
                                 

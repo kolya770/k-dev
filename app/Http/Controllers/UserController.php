@@ -1,4 +1,10 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    21 July 2016 (Thursday) 17:48
+ * Description: User controller for administrating users; assigning 
+ * roles to them.
+ */
 
 namespace App\Http\Controllers;
 
@@ -16,9 +22,8 @@ class UserController extends Controller
 	}
     
     public function index() {
-    	$users = User::all();
-    	
-    	return view('admin.users')->withUsers($users);
+
+    	return view('admin.users');
     }
 
     public function edit($id) {

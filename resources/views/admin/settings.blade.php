@@ -3,7 +3,8 @@
 {!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
 @endsection
 @section('content')
-
+@inject ('posts', 'App\Models\Post')
+@inject ('projects', 'App\Models\Project')
 <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
@@ -48,7 +49,7 @@
                             {!! Form::label('blog', 'Blog for main page:', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">                          
                                 <select name="blog_id">
-                                     @foreach ($posts as $post)
+                                     @foreach ($posts->all() as $post)
                                         <option value="{{$post->id}}">{{$post->title}}</option>
                                      @endforeach
                                 </select>
@@ -57,7 +58,7 @@
                         <div class="form-group">
                             {!! Form::label('projects', 'Projects for main page: (3)', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">                          
-                                @foreach ($projects as $project)
+                                @foreach ($projects->all() as $project)
                                     <label class="checkbox-inline i-checks"> 
                                     <input type="checkbox" name="projects[]" value="{{$project->id}}">{{$project->title}} </label>               
                                 @endforeach

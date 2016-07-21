@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+@inject ('users', 'App\Models\User')
 <table class = "table table-bordered">
    <caption>All users</caption>   
    <thead>
@@ -15,7 +16,7 @@
       </tr>
    </thead>   
    <tbody>
-      @foreach ($users as $user)
+      @foreach ($users->all() as $user)
       <tr>
          <td>{{$user->id}}</td>
          <td>{{$user->name}}</td>

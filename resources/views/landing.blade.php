@@ -43,7 +43,7 @@
 </head>
 
 
-    
+    @inject ('reviews', 'App\Models\Review')
     @include ('partials.landing.success') 
     @include('partials.landing.preloader')
     @include('partials.landing.popup')

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+@inject ('projects', 'App\Models\Project')
 <table class = "table table-bordered">
    <caption>All projects</caption>   
    <thead>
@@ -15,7 +15,7 @@
       </tr>
    </thead>   
    <tbody>
-      @foreach ($projects as $project)
+      @foreach ($projects->all() as $project)
       <tr>
          <td>{{$project->id}}</td>
          <td>{{$project->title}}</td>

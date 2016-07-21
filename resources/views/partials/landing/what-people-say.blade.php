@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="slider reviews">
-            @foreach($reviews as $review)
+            @foreach($reviews->all() as $review)
                 <div class="col-md-12">
                     <div class="row">
                         <p>

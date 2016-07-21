@@ -23,7 +23,6 @@ class PortfolioController extends Controller
     	}
 
     	return view('portfolio')->with(array(
-    		'projects' => $projects,
     		'mainImages' => $mainImages
     		));
     }

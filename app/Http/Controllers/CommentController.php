@@ -13,15 +13,15 @@ use App\Http\Requests;
 
 class CommentController extends Controller
 {
-    public function store(Request $request) { //Comment comment   	
+    public function store(Request $request) { //Comment comment     
         $comment = new Comment();
 
-    	if ($comment->validate($request->all())) {
-        	$comment->name = $request->get('name');
-        	$comment->email = $request->get('email');
-        	$comment->comment = $request->get('comment');
-        	$comment->post_id = $request->get('post_id');
-        	$comment->save();
+        if ($comment->validate($request->all())) {
+            $comment->name = $request->get('name');
+            $comment->email = $request->get('email');
+            $comment->comment = $request->get('comment');
+            $comment->post_id = $request->get('post_id');
+            $comment->save();
         } else {
             // validation failure, get errors
             $errors = $comment->errors();

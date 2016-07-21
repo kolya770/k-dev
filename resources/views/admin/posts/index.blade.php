@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+@inject ('posts', 'App\Models\Post')
 <table class = "table table-bordered">
    <caption>All posts</caption>   
    <thead>
@@ -15,7 +15,7 @@
       </tr>
    </thead>   
    <tbody>
-      @foreach ($posts as $post)
+      @foreach ($posts->all() as $post)
       <tr>
          <td>{{$post->id}}</td>
          <td>{{$post->title}}</td>

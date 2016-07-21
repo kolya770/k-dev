@@ -15,6 +15,8 @@
     <![endif]-->
 </head>
 <body>
+@inject ('categories', 'App\Models\Category')
+@inject ('tags', 'App\Models\Tag')
 @include ('partials.landing.success')
 @include('partials.landing.popup')
 @include('partials.navbar')

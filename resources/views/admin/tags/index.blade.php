@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+@inject ('tags', 'App\Models\Tag')
 <div class="row">
    <div class="col-lg-12">
-   @foreach ($tags as $tag) 
+   @foreach ($tags->all() as $tag) 
    
    <div class="btn-group">
       <button data-toggle="dropdown" class="btn btn-primary btn-rounded btn-outline dropdown-toggle">{{$tag->tag_name}}<span class="caret"></span></button>

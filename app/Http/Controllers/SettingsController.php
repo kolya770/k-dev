@@ -16,12 +16,8 @@ class SettingsController extends Controller
     }
 
     public function index() {
-        $projects = Project::all();
-        $posts = Post::all();
-    	return view('admin.settings')->with(array(
-                'projects' => $projects,
-                'posts' => $posts
-            ));
+        
+    	return view('admin.settings');
     }
 
     public function store(Request $request) {

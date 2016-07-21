@@ -27,8 +27,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {        
-        $reviews = Review::all();
+    public function index() {      
         //now we need to determine which projects are to show. 
         $projects = array();
         for ($i = 1; $i < 4; $i++) {
@@ -40,7 +39,6 @@ class HomeController extends Controller
         $post = Post::find($post_array[0]);
         
         return view('landing')->with(array( //TODO: redo
-            'reviews' => $reviews, 
             'projects' => $projects,
             'post' => $post
         )); 
@@ -48,16 +46,10 @@ class HomeController extends Controller
 
 
     public function show($id) {
-        $posts = Post::where('id', '!=', $id);
+        $posts = Post::where('id', '!=', $id); //TODO: make other posts
         $post = Post::find($id);
-        $tags = Tag::all();
-        $categories = Category::all();
-
         return view('show')->with(array(
-            'post'  => $post,
-            'posts' => $posts,
-            'tags'  => $tags,
-            'categories' => $categories
+            'post'  => $post
         ));
     }
 
@@ -71,13 +63,9 @@ class HomeController extends Controller
         $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
         $postsPerPage = $postsPerPageArray[0];      
         $posts = Post::paginate($postsPerPage);
-        $tags = Tag::all();    
-        $categories = Category::all();
 
         return view('blog')->with(array(
-                    'posts' => $posts,            
-                    'tags'  => $tags,
-                    'categories' => $categories
+                    'posts' => $posts
         ));
     }
 }

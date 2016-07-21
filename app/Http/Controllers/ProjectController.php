@@ -24,9 +24,7 @@ class ProjectController extends Controller
     }
 
     public function index() {
-    	$projects = Project::all();
-
-    	return view('admin.projects.index')->with('projects', $projects);
+    	return view('admin.projects.index');
     }
 
     public function destroy($id) {
