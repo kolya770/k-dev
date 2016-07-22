@@ -21,11 +21,9 @@
                 <div id="lightgallery" class="row gallery-block">
                     
                     @foreach ($project->images as $image) 
-                        
-                        <a href="{{$image->path}}" class="col-xs-4">
+                        <a href="{{$image->path}}" class="col-xs-3">
                             <img class="image-item" src="{{$image->path}}" alt="{{$image->description}}">
                         </a>
-                    
                     @endforeach    
                     </div>
                 </div>
