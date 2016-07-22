@@ -22,9 +22,6 @@
 	Route::get('/categories/{id}', 'CatPageController@find');
 	Route::post('/messages/', 'MessageController@store');
 	Route::post('/projects/', 'ProjectController@imageStore');
-	Route::get('/adm/', function() {
-	    	return view('admin.index');
-	});
 
 	Route::resource('comments', 'CommentController');
 	Route::resource('FormAnswers','FormAnswerController');
@@ -32,6 +29,9 @@
 	Route::resource('messages','MessageController');
 	Route::group(['middleware' => ['auth', 'role']], function () {
 		Route::group(['prefix'=>'adm'], function() {
+			Route::get('/', function() {
+				return view('admin.index');
+			});
 			Route::get('/messages', function () {
 				return view('admin.messages');
 			});

@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Image;
 use App\Http\Requests;
-
+use Illuminate\Support\Facades\Input;
 class ProjectController extends Controller
 {
     public function __construct() {
@@ -29,7 +29,11 @@ class ProjectController extends Controller
 
     public function destroy($id) {
     	$project = Project::find($id);
-    	$project->delete();
+    	$images = Image::where('project_id', $id)->get();
+        foreach ($images as $image) {
+            $image->delete();
+        }  
+        $project->delete();
 
     	return back()->with('message', 'Project deleted');
     }
@@ -59,8 +63,7 @@ class ProjectController extends Controller
         $project->brief = $request->get('brief');
         $project->description = $request->get('description');
         $project->save();
-
-        if ($request->file('image')) {
+        if ($request->hasFile('image')) {
             $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
             $files = $request->file('image');
             $fileCount = count($files);
@@ -97,8 +100,16 @@ class ProjectController extends Controller
     public function imageStore(Request $request) {
         $projectId = $request->get('project_id');
         $project = Project::find($projectId);
-        $project->main_image_id = $request->get('mainImage');
-        $project->save();
+        if ($request->has('mainImage')) {
+            $project->main_image_id = $request->get('mainImage');
+            $project->save();
+        }
+        else {
+            $imagesAdded = Image::where('project_id', $project->id)->get();
+
+            return view('admin.projects.images')->with(array('images' => $imagesAdded, 'project_id' => $project->id, 'message' => 'Please, choose main image!'));
+            
+        }
         $imageDescs = $request->get('desc');
         $imageIds = $request->get('id');
         $i = 0;
@@ -123,7 +134,7 @@ class ProjectController extends Controller
         $project = Project::find($id);
         $project->update($request->all());
         $project->save();
-        if ($request->file('image')) {
+        if ($request->hasFile('image')) {
             Image::where('project_id', $id)->delete();
             $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
             $files = $request->file('image');
@@ -146,7 +157,7 @@ class ProjectController extends Controller
                     'project_id' => $project->id
                 ));
             } 
-        } else if (count(Image::where('project_id', '2')->get()) != 0) {
+        } else if (count(Image::where('project_id', $project->id)->get()) != 0) {
                 $imagesAdded = Image::where('project_id', $project->id)->get();
 
                 return view('admin.projects.images')->with(array(

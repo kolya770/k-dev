@@ -2,6 +2,7 @@
 
 @section('content')
 @inject ('projects', 'App\Models\Project')
+@inject ('images', 'App\Models\Image')
 <table class = "table table-bordered">
    <caption>All projects</caption>   
    <thead>
@@ -20,10 +21,10 @@
          <td>{{$project->id}}</td>
          <td>{{$project->title}}</td>
          <td>{{$project->brief}}</td>
-         <td>{{$project->image}}</td>
+         <td>{{$project->main_image_id}}</td>
          <td><a class="btn btn-link" href="{{action('ProjectController@edit', ['projects'=>$project->id])}}">Edit</a></td>
 
-         <td><form method="post" action="{{action('ProjectController@destroy', ['projects'=>$project->id])}}">
+         <td><form method="POST" action="{{action('ProjectController@destroy', ['projects'=>$project->id])}}">
                     <input type="hidden" name="_method" value="delete"/>
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <input type="submit" class="btn mini blue-stripe" value="Delete"/>

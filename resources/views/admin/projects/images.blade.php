@@ -6,7 +6,6 @@
                             'class' => 'form-horizontal',
                             'enctype' => 'multipart/form-data',
                             'files' => true
-
                         )) !!}
 {!! Form::text('project_id', $project_id, ['class' => 'hidden']) !!}
 @foreach ($images as $image)
@@ -57,11 +56,18 @@
                                 
                             </div>
                             </div>
+
                        </div> 
+
                     </div>
                 </div>
 @endforeach
 
 {!! Form::submit('Save images', ['class' => 'btn btn-sm']) !!}
 {!! Form::close() !!}
+                            @if (Session::has('message')) 
+                               <div class="alert alert-success">
+                                     {{Session::get('message')}}
+                               </div>
+                            @endif
 @endsection

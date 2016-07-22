@@ -34,10 +34,10 @@ class SettingsController extends Controller
                 ->where('id', 1)
                 ->update(['project_1_id' => $projectIds[0]]);
             DB::table('settings')
-                ->where('id', 2)
+                ->where('id', 1)
                 ->update(['project_2_id' => $projectIds[1]]);
             DB::table('settings')
-                ->where('id', 3)
+                ->where('id', 1)
                 ->update(['project_3_id' => $projectIds[2]]);
         }
 
