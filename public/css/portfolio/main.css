@@ -152,14 +152,15 @@ body {
   margin-top: 6%;
   margin-bottom: 4%;
 }
-.block-center .gallery-block .images img {
-  width: 70%;
+.block-center .gallery-block img {
+  padding-bottom: 4%;
+  width: 100%;
   margin: auto;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 3px;
 }
-.block-center .gallery-block .images img:hover {
+.block-center .gallery-block img:hover {
   opacity: 0.7;
 }
 .block-center .position-portfolio {

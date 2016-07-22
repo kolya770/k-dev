@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Blog</title>
+    <title>Kiev-dev admin</title>
     {!! Html::style('admin/css/bootstrap.css') !!}
     {!! Html::style('admin/font-awesome/css/font-awesome.css') !!}
       
