@@ -3,7 +3,7 @@
 <section class="portfolio wrap">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 title">
                 <h1>{{ $project->title }}</h1>
             </div>
         </div>
@@ -18,10 +18,10 @@
                         {{ $project->description }}
                     </p>
                 </div>
-                <div id="lightgallery" class="row gallery-block">
+                <div id="lightgallery" class="row">
                     
                     @foreach ($project->images as $image) 
-                        <a href="{{$image->path}}" class="col-xs-3">
+                        <a href="{{$image->path}}" class="col-sm-3 col-xs-12 gallery-block">
                             <img class="image-item" src="{{$image->path}}" alt="{{$image->description}}">
                         </a>
                     @endforeach    
