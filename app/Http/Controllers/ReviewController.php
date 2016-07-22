@@ -13,6 +13,10 @@ use App\Http\Requests;
 
 class ReviewController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+        $this->middleware('role');
+    }
 
     public function create() {
     	return view('admin.reviews.create');

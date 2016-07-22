@@ -30,31 +30,30 @@
 	Route::resource('FormAnswers','FormAnswerController');
 	Route::resource('portfolio','PortfolioController');
 	Route::resource('messages','MessageController');
-	Route::group(['prefix'=>'adm'], function() {
-		
-		Route::get('/messages', function () {
-			return view('admin.messages');
+	Route::group(['middleware' => ['auth', 'role']], function () {
+		Route::group(['prefix'=>'adm'], function() {
+			Route::get('/messages', function () {
+				return view('admin.messages');
+			});
+			Route::get('/users/', 'UserController@index');
+			Route::get('/forms/answers', 'FormController@index');
+			Route::get('/forms/', 'FormController@indexAdmin');
+			Route::get('/settings/', 'SettingsController@settings');
+			Route::get('/users/{id}_{role}', 'UserController@assignRole');
+			//Route::get('categories/')
+			Route::resource('users', 'UserController');
+			Route::resource('settings', 'SettingsController');
+			Route::resource('posts','PostController');
+			Route::resource('forms','FormController');
+			Route::resource('reviews', 'ReviewController');
+			Route::resource('projects', 'ProjectController');
+			Route::resource('categories','CategoriesController');
+			Route::resource('tags','TagController');
+			Route::get('/', function()
+			{
+		    	return view('admin.index');
+			});
 		});
-		Route::get('/users/', 'UserController@index');
-		Route::get('/forms/answers', 'FormController@index');
-		Route::get('/forms/', 'FormController@indexAdmin');
-		Route::get('/settings/', 'SettingsController@settings');
-		Route::get('/users/{id}_{role}', 'UserController@assignRole');
-		//Route::get('categories/')
-		Route::resource('users', 'UserController');
-		Route::resource('settings', 'SettingsController');
-		Route::resource('posts','PostController');
-		Route::resource('forms','FormController');
-		Route::resource('reviews', 'ReviewController');
-		Route::resource('projects', 'ProjectController');
-		Route::resource('categories','CategoriesController');
-		Route::resource('tags','TagController');
-		Route::get('/', function()
-		{
-	    	return view('admin.index');
-		});
-
-
 	});
 
 	Route::auth();
