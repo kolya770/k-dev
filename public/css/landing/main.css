@@ -319,22 +319,22 @@
     display: none;
   }
 }
-.nav-tabs > li > a > .blocks-how {
+.blocks-how {
   text-align: center;
   height: 130px;
   width: 100px;
 }
-.nav-tabs > li > a > .blocks-how:active .image-how {
+.blocks-how:active .image-how {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
-.nav-tabs > li > a > .blocks-how > .image-how {
+.blocks-how .image-how {
   position: absolute;
   bottom: 75px;
   left: 34px;
   -webkit-filter: grayscale(100%);
 }
-.nav-tabs > li > a > .blocks-how > p {
+.blocks-how p {
   /*font-family: RobotoCondensed;*/
   font-size: 14px;
   font-weight: 400;
@@ -344,6 +344,32 @@
   text-align: center;
   margin-top: 20px;
   position: absolute;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+}
+.button-container {
+  margin-left: 9%;
+  margin-top: 10%;
+}
+.blocks-how-mobile {
+  text-align: center;
+  height: 130px;
+  width: 100px;
+}
+.blocks-how-mobile:active .image-how {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.blocks-how-mobile p {
+  /*font-family: RobotoCondensed;*/
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
   bottom: 10px;
   width: 100%;
   left: 0;
@@ -362,6 +388,51 @@
   color: #fff;
   font-size: 24px;
   font-family: 'UniSansHeavy';
+}
+.modal-content {
+  background-color: #31383c;
+}
+.modal-content .modal-header h4 {
+  color: white;
+  font-size: 24px;
+  font-family: 'UniSansHeavy';
+  text-align: center;
+}
+.modal-content .modal-body p {
+  font-family: 'PT Sans';
+  font-size: 18px;
+  color: white;
+}
+.modal-content .modal-footer {
+  text-align: center;
+}
+.modal-content .modal-footer .border-modal-btn {
+  text-align: center;
+  width: 150px;
+  height: 44px;
+  font-family: 'PT Sans';
+  font-size: 18px;
+  color: white;
+  background: transparent;
+  border-width: 1px;
+  border: none;
+  border-radius: 4px;
+  background: url('/img/button-border.png') center center no-repeat transparent;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  outline: none;
+}
+.modal-content .modal-footer .border-modal-btn:hover {
+  z-index: 28;
+  background-color: #61aed1;
+  color: white;
+  border-color: #61aed1;
+}
+.modal-content .modal-footer .border-modal-btn:active {
+  z-index: 28;
+  background-color: #7cc5e6;
+  color: white;
+  border-color: #7cc5e6;
+  outline: none;
 }
 .my-works {
   padding: 3% 0 5% 0;
