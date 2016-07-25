@@ -73,10 +73,13 @@
           loop: true,
           // If we need pagination
         pagination: '.swiper-pagination',
-        
+        paginationClickable: true,
         // Navigation arrows
         nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev' 
+        prevButton: '.swiper-button-prev',
+        autoplay: 2500,
+        autoplayDisableOnInteraction: true,
+                spaceBetween: 30,
         })
     });        
   </script>

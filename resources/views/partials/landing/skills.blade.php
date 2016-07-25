@@ -7,9 +7,9 @@
             </div>
         </div>
         <div class="row charts">
-            <div class="col-md-offset-1 col-md-2">
+            <div class="col-sm-offset-1 col-sm-2">
                 <div class=row>
-                <div class="col-md-offset-7 col-md-1 percents">
+                <div class="col-xs-offset-7 col-xs-1 percents">
                 25%
                 </div>
                 </div>
@@ -31,9 +31,9 @@
                     <span>-</span>Laravel<br>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-2">
                 <div class=row>
-                    <div class="col-md-offset-7 col-md-1 percents">
+                    <div class="col-xs-offset-7 col-xs-1 percents">
                         75%
                     </div>
                 </div>
@@ -53,9 +53,9 @@
                     <span>-</span>Laravel<br>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-2">
                 <div class=row>
-                    <div class="col-md-offset-7 col-md-1 percents">
+                    <div class="col-xs-offset-7 col-xs-1 percents">
                     90%
                     </div>
                 </div>
@@ -75,9 +75,9 @@
                     <span>-</span>Laravel<br>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-2">
                 <div class=row>
-                    <div class="col-md-offset-7 col-md-1 percents">
+                    <div class="col-xs-offset-7 col-xs-1 percents">
                     100%
                     </div>
                 </div>
@@ -97,9 +97,9 @@
                     <span>-</span>Laravel<br>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-2">
                 <div class=row>
-                    <div class="col-md-offset-7 col-md-1 percents">
+                    <div class="col-xs-offset-7 col-xs-1 percents">
                     10%
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 .what-people-say {
+
   padding: 3% 0;
   color: #ffffff;
   background-image: url('/img/hiw-bg.png');
@@ -14,6 +15,7 @@
     font-size: 22px;
   }
   .ivan-ivanov {
+    padding-bottom: 40px;
     display: table;
     margin: 25px auto;
     img {  margin-right: 15px;  }
@@ -27,24 +29,28 @@
   }
 }
 
-.reviews-arrow {
-  background-color: transparent;
-  border:none;
-  width: 20px;
-  height: 20px;
-  color: transparent;
-  dusplay: block;
-  cursor: pointer;
-  &:hover {
-    color: #61aed1;
-  }
-  img {
-   width: 20px;
-  height: 20px;
-  }
-}
+
 
 .swiper-container {
-    width: 600px;
-    height: 300px;
-}      
+    width: 100%;
+    height: 100%;    
+} 
+.swiper-button-prev {
+  top: 25%;
+  background-image: url('/img/left.png');
+  @media (max-width: 750px) {
+    background-image: none;
+  }
+}    
+
+.swiper-button-next {
+  top: 25%;
+  background-image: url('/img/right.png');
+  @media (max-width: 750px) {
+    background-image: none;
+  }
+}  
+
+.swiper-pagination-bullet-active {
+  background: #000;
+}

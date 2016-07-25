@@ -1243,12 +1243,23 @@
 .charts {
   margin-top: 40px;
 }
+@media (max-width: 750px) {
+  .charts {
+    position: relative;
+    left: 33%;
+  }
+}
 .charts .percents {
   color: white;
   font-family: 'PT Sans';
   font-size: 18px;
   font-style: italic;
   line-height: 20px;
+}
+@media (max-width: 750px) {
+  .charts .percents {
+    margin-left: 30%;
+  }
 }
 .charts .list {
   margin-top: 20px;
@@ -1335,6 +1346,7 @@
   font-size: 22px;
 }
 .what-people-say .ivan-ivanov {
+  padding-bottom: 40px;
   display: table;
   margin: 25px auto;
 }
@@ -1350,25 +1362,30 @@
 .what-people-say .ivan-ivanov span {
   font-weight: bold;
 }
-.reviews-arrow {
-  background-color: transparent;
-  border: none;
-  width: 20px;
-  height: 20px;
-  color: transparent;
-  dusplay: block;
-  cursor: pointer;
-}
-.reviews-arrow:hover {
-  color: #61aed1;
-}
-.reviews-arrow img {
-  width: 20px;
-  height: 20px;
-}
 .swiper-container {
-  width: 600px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+}
+.swiper-button-prev {
+  top: 25%;
+  background-image: url('/img/left.png');
+}
+@media (max-width: 750px) {
+  .swiper-button-prev {
+    background-image: none;
+  }
+}
+.swiper-button-next {
+  top: 25%;
+  background-image: url('/img/right.png');
+}
+@media (max-width: 750px) {
+  .swiper-button-next {
+    background-image: none;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: #000;
 }
 .blog {
   background-color: #454f55;
