@@ -6,7 +6,122 @@
                 <h1 class="title">MY SKILLS</h1>
             </div>
         </div>
-        <div class="row skill-wrapper">
+        <div class="row charts">
+            <div class="col-md-offset-1 col-md-2">
+                <div class=row>
+                <div class="col-md-offset-7 col-md-1 percents">
+                25%
+                </div>
+                </div>
+                <div class="c100 p25">
+
+                    <span>Java</span>
+
+                        <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                        </div>
+                </div>
+                <div class="list">
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class=row>
+                    <div class="col-md-offset-7 col-md-1 percents">
+                        75%
+                    </div>
+                </div>
+                <div class="c100 p75">
+                    <span>Haskell</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                        </div>
+                </div>
+                <div class="list">
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class=row>
+                    <div class="col-md-offset-7 col-md-1 percents">
+                    90%
+                    </div>
+                </div>
+                <div class="c100 p90">
+                    <span>PHP</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                        </div>
+                </div>
+                <div class="list">
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class=row>
+                    <div class="col-md-offset-7 col-md-1 percents">
+                    100%
+                    </div>
+                </div>
+                <div class="c100 p100">
+                    <span>HTML</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                        </div>
+                </div>
+                <div class="list">
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class=row>
+                    <div class="col-md-offset-7 col-md-1 percents">
+                    10%
+                    </div>
+                </div>
+                <div class="c100 p10">
+                    <span>C++</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                        </div>
+                </div>
+                <div class="list">
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                    <span>-</span>jQuery<br>
+                    <span>-</span>AngularJS<br>
+                    <span>-</span>Laravel<br>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="row skill-wrapper">
             <div class="col-sm-3 col-sm-offset-3 col-xs-5 col-xs-offset-1 lang-name">
                 <p>HTML<span>/CSS</span></p>
             </div>
@@ -39,6 +154,7 @@
                 </div>
             </div>
         </div>
+        -->
     </div>
 </section>
 </div>
