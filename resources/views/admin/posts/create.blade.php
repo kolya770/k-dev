@@ -2,8 +2,9 @@
 
 @section ('css')
     
-    {!! Html::style('admin/css/plugins/summernote/summernote.css') !!}
-    {!! Html::style('admin/css/plugins/summernote/summernote-bs3.css') !!}
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+
+    
     {!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
 @endsection
 
@@ -48,6 +49,7 @@
                                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
                             </div>
                         </div>
+                        
                         <div class="form-group">
                             {!! Form::label('content', 'Post content', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
@@ -110,7 +112,12 @@
 @section('js')
     <script type="text/javascript">
             $(document).ready(function() {
-                $('#summernote').summernote({ height: 220 });
+                $('#summernote').summernote({
+                    height: 300,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: true                  // set focus to editable area after initializing summernote
+                });
             });
     </script>
     <script>
@@ -121,8 +128,8 @@
             });
         });
     </script>
-    <!-- SUMMERNOTE -->
-    {!! HTML::script('admin/js/plugins/summernote/summernote.min.js') !!}
+    <!-- SUMMERNOTE --> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
     {!! HTML::script('admin/js/admin.js') !!}
     {!! HTML::script('admin/js/plugins/iCheck/icheck.min.js') !!}
     {!! HTML::script('admin/js/plugins/slick/slick.min.js') !!}
