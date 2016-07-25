@@ -62,12 +62,7 @@
                         <li>
                            <a href="/adm/categories/"> <span class="nav-label">Categories</span> </a>
                         </li>
-                        <li>
-                           <a href="/adm/forms/"> <span class="nav-label">Forms</span> </a>
-                        </li>
-                         <li>
-                            <a href="/adm/forms/answers"><span class="nav-label">Form Answers</span> </a>
-                        </li>
+                        
                         <li>
                             <a href="/adm/tags"><span class="nav-label">Tags</span> </a>
                         </li>
@@ -77,9 +72,7 @@
                         <li>
                             <a href="/adm/categories/create"><span class="nav-label">Create Category</span> </a>
                         </li>
-                        <li>
-                            <a href="/adm/forms/create"><span class="nav-label">Create Form</span> </a>
-                        </li>
+                        
                     </ul>
                 </li>
                 <li>
@@ -90,6 +83,21 @@
                         </li>
                         <li>
                             <a href="/adm/projects/create"><span class="nav-label">Add project</span> </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"> <span class="nav-label">Brief</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li>
+                           <a href="/adm/forms/"> <span class="nav-label">Forms</span> </a>
+                        </li>
+                         <li>
+                            <a href="/adm/forms/answers"><span class="nav-label">Form Answers</span> </a>
+                        </li>
+                        <li>
+                            <a href="/adm/forms/create"><span class="nav-label">Create Form</span> </a>
                         </li>
                        
                     </ul>
