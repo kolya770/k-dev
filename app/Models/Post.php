@@ -55,4 +55,8 @@ class Post extends Model
     public function page() {
         return $this->belongsTo('App\Models\Page');
     }
+
+    public function category() {
+        return $this->belongsTo('App\Models\Category');
+    }
 }
