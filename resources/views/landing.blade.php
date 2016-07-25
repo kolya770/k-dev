@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section ('css')
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     {!! Html::style('css/slick.css') !!}
     {!! Html::style('css/slick-theme.css') !!}
     {!! Html::style('css/landing/main.css') !!}
@@ -59,7 +61,25 @@
         });
     });
 </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+  <script>   
+    $(document).ready(function () {
+        //initialize swiper when document ready  
+        var mySwiper = new Swiper ('.swiper-container', {
+          
+          loop: true,
+          // If we need pagination
+        pagination: '.swiper-pagination',
+        
+        // Navigation arrows
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev' 
+        })
+    });        
+  </script>
 {!! HTML::script('js/landing/js/backgroundVideo.min.js') !!}
 {!! HTML::script('js/landing/js/main.js') !!}
 @endsection

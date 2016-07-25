@@ -1366,6 +1366,10 @@
   width: 20px;
   height: 20px;
 }
+.swiper-container {
+  width: 600px;
+  height: 300px;
+}
 .blog {
   background-color: #454f55;
   color: white;
