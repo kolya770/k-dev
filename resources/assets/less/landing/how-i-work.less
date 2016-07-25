@@ -147,48 +147,60 @@
   }
 }
 
-.modal-content {
-  background-color: #31383c; 
-  .modal-header {
-    h4 {
-      color:white;
+
+.panel-group {
+  text-align: center;
+  margin-top: 3%;
+  .panel {
+    background-color: transparent;
+    border: none;
+  }
+
+  .panel-default {
+
+  }
+
+  .panel-title {
+    a {
+      text-decoration: none;
+      &:active {
+        text-decoration: none;
+      }
+    }
+    p {
+      margin-top: 10px;
+    }
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;       
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+  }
+  .panel-heading {
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+  }
+  .panel-body {
+    h3 {
+      margin-bottom: 3%;
+      color: #fff;
       font-size: 24px;
       font-family: 'UniSansHeavy';
-      text-align: center;
     }
-  }
-
-  .modal-body {
-    
-    p {
-      font-family: 'PT Sans';
-      font-size: 18px;
-      color: white;
-    }
-  }
-
-  .modal-footer {
-  text-align: center;
-    .border-modal-btn {
-      text-align: center;
-      width: 150px;
-      height: 44px;
-      font-family: 'PT Sans';
-      font-size: 18px;
-      color: white;
-      background: transparent;
-      border-width: 1px;
-      border: none;
-      border-radius: 4px;
-      background: url('/img/button-border.png') center center no-repeat transparent;
-      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-      outline: none;
-      &:hover {
-        .button-hover;
-      }
-      &:active {
-        .button-active;
-    }
-  }
+    text-align: center;
+    font-family: 'PT Sans';
+    margin-bottom: 3%;
+    font-size: 18px;
+    border: none !important;
+    color: #fff;
   }
 }
