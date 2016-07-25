@@ -12,7 +12,7 @@
             <li><center><form method="post" action="{{action('TagController@destroy', ['tags'=>$tag->id])}}">
                <input type="hidden" name="_method" value="delete"/>
                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-               <input type="submit" class='btn btn-w-m btn-link' value="Delete"/>
+               <input type="submit" class='btn btn-danger' value="Delete"/>
             </form></center></li>
             <li><a href="{{action('TagController@edit', ['tags'=>$tag->id])}}" class="font-bold">Edit</a></li>
             
