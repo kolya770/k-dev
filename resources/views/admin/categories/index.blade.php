@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+All categories
+@endsection
 @section('content')
 @inject ('categories', 'App\Models\Category')
 <table class = "table table-bordered">

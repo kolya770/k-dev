@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+Messages
+@endsection
 @section('content')
 @inject ('messages', 'App\Models\Message')
 @foreach ($messages->all() as $message)

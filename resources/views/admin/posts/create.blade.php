@@ -8,6 +8,10 @@
     {!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
 @endsection
 
+@section ('title')
+Create a post
+@endsection
+
 @section('content')
 @inject ('categories', 'App\Models\Category')
 @inject ('tags', 'App\Models\Tag')

@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+Create category
+@endsection
 @section('content')
 
   

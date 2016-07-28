@@ -6,7 +6,9 @@
     {!! Html::style('admin/css/plugins/summernote/summernote-bs3.css') !!}
 
 @endsection
-
+@section ('title')
+Edit a post
+@endsection
 @section('content')
     @if (count($errors) > 0)
         <div class="alert alert-danger">

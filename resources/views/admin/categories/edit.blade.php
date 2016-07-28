@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+Edit category
+@endsection
 @section('content')
 <div class="wrapper wrapper-content">
         <div class="row">

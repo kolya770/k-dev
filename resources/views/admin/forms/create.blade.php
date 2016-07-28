@@ -1,6 +1,8 @@
  
 @extends('layouts.admin')
-
+@section ('title')
+Create a form
+@endsection
 @section('content')
  <div class="wrapper wrapper-content">
         <div class="row">
@@ -10,7 +12,6 @@
                        
 
                         
-                        <h5>Make a new form</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>

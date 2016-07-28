@@ -16,112 +16,165 @@
 @yield ('css')
 
 </head>
-
-<body>
+    <body>
 
     <div id="wrapper">
+
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
-                <li>
-                    <a href="/adm/"><span class="nav-label">Dashboard</span> </a>
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" width="50px" class="img-circle" src="/img/user.png" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{Auth::user()->name}}</strong>
+                             </span> <span class="text-muted text-xs block">
+                             {{Auth::user()->email}}<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li class="divider"></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        KD
+                    </div>
                 </li>
                 <li>
-                    <a href="#"> <span class="nav-label">Admin</span> <span class="fa arrow"></span></a>
+                    <a href="/adm/"><i class="fa fa-th-large"></i><span class="nav-label">Dashboard</span> </a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fa fa-users"></i><span class="nav-label">Admin</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li>
-                            <a href="/adm/messages/"> <span class="nav-label">Messages</span> </a>
+                            <a href="/adm/messages/">Messages</a>
                         </li>
                         <li>
-                            <a href="/adm/users/"> <span class="nav-label">Users</span> </a> 
+                            <a href="/adm/users/">Users</a> 
                         </li>
                        
                     </ul>
                 </li>
                 <li>
-                    <a href="#"> <span class="nav-label">Landing</span> <span class="fa arrow"></span></a>
+                    <a href="#"> <i class="fa fa-desktop"></i><span class="nav-label">Landing</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li>
-                            <a href="/adm/reviews"><span class="nav-label">Reviews</span> </a>
+                            <a href="/adm/reviews">Reviews</a>
                         </li>
                         <li>
-                            <a href="/adm/reviews/create"><span class="nav-label">Create Review</span> </a>
+                            <a href="/adm/reviews/create">Create Review</a>
                         </li>
                         <li>
-                            <a href="/adm/settings"><span class="nav-label">Settings</span> </a>
+                            <a href="/adm/settings">Settings</a>
                         </li>
                        
                     </ul>
                 </li>
                 <li>
-                    <a href="#"> <span class="nav-label">Blog</span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
+                    <a href="#"> <i class="fa fa-pencil"></i><span class="nav-label">Blog</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse" aria-expanded="false">
                         <li>
-                            <a href="/adm/posts/"> <span class="nav-label">Posts</span> </a>
+                            <a href="/adm/posts/"> Posts</a>
                         </li>
                         <li>
-                           <a href="/adm/categories/"> <span class="nav-label">Categories</span> </a>
+                           <a href="/adm/categories/">Categories </a>
                         </li>
                         
                         <li>
-                            <a href="/adm/tags"><span class="nav-label">Tags</span> </a>
+                            <a href="/adm/tags">Tags</a>
                         </li>
                         <li>
-                            <a href="/adm/posts/create"> <span class="nav-label">Create Post</span> </a>
+                            <a href="/adm/posts/create"> Create Post</a>
                         </li>
                         <li>
-                            <a href="/adm/categories/create"><span class="nav-label">Create Category</span> </a>
+                            <a href="/adm/categories/create">Create Category </a>
                         </li>
                         
                     </ul>
                 </li>
                 <li>
-                    <a href="#"> <span class="nav-label">Portfolio</span> <span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Portfolio</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li>
-                            <a href="/adm/projects"><span class="nav-label">Projects</span> </a>
+                            <a href="/adm/projects">Projects </a>
                         </li>
                         <li>
-                            <a href="/adm/projects/create"><span class="nav-label">Add project</span> </a>
+                            <a href="/adm/projects/create">Add project </a>
                         </li>
                        
                     </ul>
                 </li>
                 <li>
-                    <a href="#"> <span class="nav-label">Brief</span> <span class="fa arrow"></span></a>
+                    <a href="#"> <i class="fa fa-question"></i><span class="nav-label">Brief</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li>
-                           <a href="/adm/forms/"> <span class="nav-label">Forms</span> </a>
+                           <a href="/adm/forms/"> Forms </a>
                         </li>
                          <li>
-                            <a href="/adm/forms/answers"><span class="nav-label">Form Answers</span> </a>
+                            <a href="/adm/forms/answers">Form Answers </a>
                         </li>
                         <li>
-                            <a href="/adm/forms/create"><span class="nav-label">Create Form</span> </a>
+                            <a href="/adm/forms/create">Create Form</a>
                         </li>
                        
                     </ul>
                 </li>
             </ul>
+
         </div>
     </nav>
+
         <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to administration theme.</span>
+                </li>
+
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
             <div class="row wrapper border-bottom white-bg page-heading">
-                <div class="col-sm-4">
-                    <h2>Admin zone</h2>                   
+                <div class="col-lg-10">
+                    <h2>
+                        @yield ('title')
+                    </h2>
+                    
                 </div>
-                
+                <div class="col-lg-2">
+
+                </div>
             </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="wrapper wrapper-content">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
                 @yield ('content')
-                   
-                </div>
+
             </div>
         </div>
+        <div class="footer">
+            <div>
+                <strong>Copyright</strong> Kievdev &copy; 2014-2015
+            </div>
         </div>
-    </div>
+
+        </div>
+        </div>
+
 
     <!-- Mainly scripts -->
 {!! HTML::script('admin/js/jquery-2.1.1.js') !!}

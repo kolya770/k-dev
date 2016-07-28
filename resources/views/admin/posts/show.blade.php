@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+Post &quot; {{ $post->title }}&quot;
+@endsection
 @section('content')
 <div class="row">
                 <div class="col-lg-6">

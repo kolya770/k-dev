@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+All posts
+@endsection
 @section('content')
 @inject ('posts', 'App\Models\Post')
 <table class = "table table-bordered">

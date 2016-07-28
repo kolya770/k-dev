@@ -3,6 +3,9 @@
   <!-- Toastr style -->
    {!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
 @endsection
+@section ('title')
+All forms
+@endsection
 @section('content')
 
 <table class = "table table-bordered">

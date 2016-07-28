@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+Form answers
+@endsection
 @section('content')
 
 @foreach ($formAnswers as $answer)
