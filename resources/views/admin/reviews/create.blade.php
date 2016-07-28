@@ -59,7 +59,7 @@
 						</div>
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
-                                {!! Form::submit('Create review', ['class' => 'btn btn-sm']) !!}
+                                {!! Form::submit('Create review', ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
                         

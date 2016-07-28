@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+Portfolio
+@endsection
 @section ('content')
 <div class="wrapper wrapper-content">
         <div class="row">
@@ -60,7 +62,7 @@
 						</div>
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
-                                {!! Form::submit('Add project', ['class' => 'btn btn-sm']) !!}
+                                {!! Form::submit('Add project', ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
                         

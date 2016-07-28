@@ -7,14 +7,27 @@
 All forms
 @endsection
 @section('content')
-
-<table class = "table table-bordered">
-   <caption>All forms</caption>   
+<div class="ibox float-e-margins">
+   <div class="ibox-title"> 
+      <h5>Forms</h5>
+      <div class="ibox-tools">
+         <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+         </a>
+         <a class="close-link">
+            <i class="fa fa-times"></i>
+         </a>
+      </div>
+   </div>
+   <div class="ibox-content">
+<table class = "table table-hover">
+   
    <thead>
       <tr>
-         <th>Id</th>
+         <th>#</th>
          <th>Form title</th>
          <th>Size</th>
+         <th>Answers number</th>
          <th></th>
          <th></th>
       </tr>
@@ -25,7 +38,8 @@ All forms
          <td>{{$form->id}}</td>
          <td>{{$form->title}}</td>
          <td>{{$form->size}}</td>
-         <td><a type="button" class="btn mini blue-stripe" href="{{action('FormController@edit', ['forms' => $form->id])}}">Edit</a></td>
+         <td>{{ count($form->answers) }}
+         <td><a href="{{action('FormController@edit', ['forms' => $form->id])}}"><button class="btn btn-primary">Edit</button></a></td>
 
          <td><form method="POST" action="{{action('FormController@destroy', ['forms' => $form->id])}}">
 					<input type="hidden" name="_method" value="delete"/>
@@ -36,7 +50,8 @@ All forms
       @endforeach   
    </tbody>	
 </table>
- 
+ </div>
+ </div>
 
 @if (Session::has('message')) 
 <div class="alert alert-success">

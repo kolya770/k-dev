@@ -14,4 +14,8 @@ class Form extends Model
     public function fields() {
     	return $this->hasMany('App\Models\Field');
     }
+
+   	public function answers() {
+   		return $this->hasMany('App\Models\FormAnswer');
+   	}
 }

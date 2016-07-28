@@ -36,13 +36,13 @@ class FormController extends Controller
  		return back()->with('message', 'Form added!');
     }
 
-    public function index() {
+    public function answers() {
     	$formAnswers = FormAnswer::all();
     	
     	return view('admin.forms.answers')->with('formAnswers', $formAnswers);
     }
 
-    public function indexAdmin() {
+    public function index() {
     	$forms = Form::all();
 
     	return view('admin.forms.index')->with('forms', $forms);

@@ -168,7 +168,7 @@
         </div>
         <div class="footer">
             <div>
-                <strong>Copyright</strong> Kievdev &copy; 2014-2015
+                <strong>Copyright</strong> Kievdev &copy; 2016
             </div>
         </div>
 

@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section ('title')
+Portfolio
+@endsection
 @section('content')
  {!! Form::open(array(
                             'action' => 'ProjectController@imageStore',
@@ -63,7 +65,7 @@
                 </div>
 @endforeach
 
-{!! Form::submit('Save images', ['class' => 'btn btn-sm']) !!}
+{!! Form::submit('Save images', ['class' => 'btn btn-primary']) !!}
 {!! Form::close() !!}
                             @if (Session::has('message')) 
                                <div class="alert alert-success">

@@ -44,4 +44,11 @@ class UserController extends Controller
         
         return back()->withMessage('Role assigned!');
     }
+
+    public function revokeRole($id, $role) {
+        $user = User::find($id);
+        $user->revokeRole($role);
+        
+        return back()->withMessage('Role revoked!');
+    }
 }

@@ -36,10 +36,10 @@
 				return view('admin.messages');
 			});
 			Route::get('/users/', 'UserController@index');
-			Route::get('/forms/answers', 'FormController@index');
-			Route::get('/forms/', 'FormController@indexAdmin');
+			Route::get('/forms/answers', 'FormController@answers');
 			Route::get('/settings/', 'SettingsController@settings');
 			Route::get('/users/{id}_{role}', 'UserController@assignRole');
+			Route::get('/users/{id}_{role}', 'UserController@revokeRole');
 			//Route::get('categories/')
 			Route::resource('users', 'UserController');
 			Route::resource('settings', 'SettingsController');

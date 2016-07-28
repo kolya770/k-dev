@@ -48,20 +48,20 @@ Create a post
 
                         )) !!}
                         <div class="form-group">
-                            {!! Form::label('title', 'Post name', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">
+                            {!! Form::label('title', 'Post name', ['class' => 'col-lg-2 control-label']) !!}
+                            <div class="col-lg-10">
                                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            {!! Form::label('content', 'Post content', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">
+                            {!! Form::label('content', 'Post content', ['class' => 'col-lg-2 control-label']) !!}
+                            <div class="col-lg-10">
                                 {!! Form::textarea('content', null, ['class' => 'form-control', 'id' => 'summernote']) !!}
                             </div>
                         </div>
-                         <div class="form-group"><label class="col-sm-2 control-label">Category</label>
-                            <div class="col-sm-10">
+                         <div class="form-group"><label class="col-lg-2 control-label">Category</label>
+                            <div class="col-lg-10">
                                 <select class="form-control m-b" name="category">
                                         @foreach ($categories->all() as $category)
                                         <option value="{{$category->id}}">{{$category->title}}</option>
@@ -70,8 +70,8 @@ Create a post
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Tags</label>
-                            <div class="col-sm-10">
+                            <label class="col-lg-2 control-label">Tags</label>
+                            <div class="col-lg-10">
                             @foreach ($tags->all() as $tag)
                                 <label class="checkbox-inline i-checks"> 
                                 <input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag_name}} </label>                                        
@@ -80,15 +80,15 @@ Create a post
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-lg-offset-3 col-lg-9">
+                            <div class="col-lg-offset-2 col-lg-10">
                                 <label class="btn btn-default btn-file">
                                     Browse main image <input type="file" name="main_image" style="display: none;" >
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-lg-offset-3 col-lg-9">
-                                {!! Form::submit('Create post', ['class' => 'btn btn-sm']) !!}
+                            <div class="col-lg-offset-2 col-lg-10">
+                                {!! Form::submit('Create post', ['class' => 'btn btn-w-m btn-primary btn-lg']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}

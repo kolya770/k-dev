@@ -56,7 +56,7 @@ Create category
                         
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
-                                {!! Form::submit('Create category', ['class' => 'btn btn-sm']) !!}
+                                {!! Form::submit('Create category', ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
