@@ -57,7 +57,7 @@ All reviews
                    <div class="modal-header">
                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                        <center>
-                       <img src="{{ $review->preview }}" class="img-circle">
+                       <img src="{{ $review->preview }}" class="img-circle" style="max-width: 150px;">
                        </center>
                        <h4 class="modal-title">{{ $review->author_name }}</h4>
                        <h5>
