@@ -26,17 +26,25 @@ class ReviewController extends Controller
     	return view('admin.reviews.index');
     }
 
+    /*
+     * @param request
+     * Method for storing a review, uploaded by admin. 
+     * All the reviews are displayed on the main page.
+     */
     public function store(Request $request) {
     	$review = new Review();
     	$review->review = $request->get('review');
     	$review->author_name = $request->get('author_name');
     	$review->author_job = $request->get('author_job');
-    	if ($request->file('preview')) {
+    	if ($request->hasFile('preview')) {
             $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
             $f_name = $request->file('preview')->getClientOriginalName();
             $request->file('preview')->move($root, $f_name);
             $review->preview = "/img/" . $f_name;
-         }   
+        } else {
+
+            return back()->withMessage('Please, add an image!');
+        }
     	$review->save();
 
     	return back()->with('message', 'Review uploaded!');
@@ -55,15 +63,25 @@ class ReviewController extends Controller
     	return view('admin.reviews.edit')->with('review', $review);
     }
 
+    /*
+     * @param request
+     * @param id of updated review
+     *
+     * Method for updating reviews.
+     */
     public function update(Request $request, $id) {
     	$review = Review::find($id);
     	$review->update($request->all());
-    	if ($request->file('preview')) {
+    	if ($request->hasFile('preview')) {
             $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
             $f_name = $request->file('preview')->getClientOriginalName();
             $request->file('preview')->move($root, $f_name);
             $review->preview = "/img/" . $f_name;
-        }   
+        } else {
+            if ($review->preview == null) {
+                return back()->withMessage('Please, add an image!'); //never gonna happen
+            } 
+        }
    		$review->save();
 
    		return back()->with('message', 'Review updated!');

@@ -62,8 +62,8 @@ class ProjectController extends Controller
         $project->title = $request->get('title');
         $project->brief = $request->get('brief');
         $project->description = $request->get('description');
-        $project->save();
         if ($request->hasFile('image')) {
+            $project->save();
             $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
             $files = $request->file('image');
             $fileCount = count($files);

@@ -33,7 +33,13 @@ class TagController extends Controller
     	return back()->withMessage('Tag deleted');
     }
 
+    /*
+     * @param tag id
+     * Method for finding posts by tag id.
+     *
+     */
     public function find($id) {
+        //paginating posts finded
         $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
         $postsPerPage = $postsPerPageArray[0];
     	$posts = Tag::find($id)->posts()->paginate($postsPerPage);

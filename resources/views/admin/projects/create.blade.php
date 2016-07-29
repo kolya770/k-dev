@@ -13,15 +13,7 @@ Portfolio
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
-                            </ul>
+                           
                             <a class="close-link">
                                 <i class="fa fa-times"></i>
                             </a>
@@ -38,19 +30,19 @@ Portfolio
                         <div class="form-group">
                             {!! Form::label('title', 'Title', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('title', null, ['class' => 'form-control', 'required' => '']) !!}
                             </div>
                         </div>
                         <div class="form-group">
                             {!! Form::label('brief', 'Brief', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                <input class='form-control' name='brief' max="130">
+                                <input class='form-control' required="" name='brief' max="130">
                             </div>
                         </div>
                         <div class="form-group">
                             {!! Form::label('description', 'Description', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+                                {!! Form::textarea('description', null, ['class' => 'form-control', 'required' => '']) !!}
                             </div>
                         </div>
                         <div class="form-group">

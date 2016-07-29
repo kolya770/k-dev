@@ -35,15 +35,15 @@ All forms
    <tbody>
       @foreach ($forms as $form)
       <tr>
-         <td>{{$form->id}}</td>
-         <td>{{$form->title}}</td>
-         <td>{{$form->size}}</td>
+         <td>{{ $form->id }}</td>
+         <td>{{ $form->title }}</td>
+         <td>{{ $form->size }}</td>
          <td>{{ count($form->answers) }}
-         <td><a href="{{action('FormController@edit', ['forms' => $form->id])}}"><button class="btn btn-primary">Edit</button></a></td>
+         <td><a href="{{ action('FormController@edit', ['forms' => $form->id]) }}"><button class="btn btn-primary">Edit</button></a></td>
 
-         <td><form method="POST" action="{{action('FormController@destroy', ['forms' => $form->id])}}">
+         <td><form method="POST" action="{{ action('FormController@destroy', ['forms' => $form->id]) }}">
 					<input type="hidden" name="_method" value="delete"/>
-					<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+					<input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 					<input type="submit" id = 'delete' class="btn btn-danger" value="Delete"/>
 				</form></td>
       </tr>
@@ -55,7 +55,7 @@ All forms
 
 @if (Session::has('message')) 
 <div class="alert alert-success">
-   {{Session::get('message')}}
+   {{ Session::get('message') }}
 </div>
 @endif
 @endsection

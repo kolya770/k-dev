@@ -62,13 +62,13 @@ Create category
                         {!! Form::close() !!}
                         @if (Session::has('message')) 
                             <div class="alert alert-success">
-                               {{Session::get('message')}}
+                               {{ Session::get('message') }}
                             </div>
                         @endif
                         
                             @foreach($errors as $error)
                                     <div class="alert alert-danger">
-                                       {{$error}}
+                                       {{ $error }}
                                     </div>
                             @endforeach
                         

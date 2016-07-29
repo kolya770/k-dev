@@ -32,7 +32,7 @@
                              </span> <span class="text-muted text-xs block">
                              {{Auth::user()->email}}<b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li class="divider"></li>
+                            
                             <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>

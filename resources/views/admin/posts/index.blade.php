@@ -34,7 +34,7 @@ All posts
          <tr>
             <td>{{ $post->id }}</td>
             <td>{{ $post->title }}</td>
-            <td>{{ $post->preview }}</td>
+            <td><img src="{{ '/'.$post->preview }}" width="100px"></td>
             <td>{{ $post->category->title }}</td>
             <td><a href="{{ action('PostController@show', ['posts'=>$post->id]) }}"><button class="btn btn-success">Show</button></a>
             <td><a href="{{ action('PostController@edit', ['posts'=>$post->id]) }}"><button class="btn btn-primary">Edit</button></a></td>

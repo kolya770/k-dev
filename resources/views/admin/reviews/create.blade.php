@@ -35,19 +35,19 @@
                         <div class="form-group">
                             {!! Form::label('author_name', 'Author name', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::text('author_name', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('author_name', old('author_name'), ['class' => 'form-control', 'required' => '']) !!}
                             </div>
                         </div>
                         <div class="form-group">
                             {!! Form::label('author_job', 'Author job', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::text('author_job', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('author_job', old('author_job'), ['class' => 'form-control', 'required' => '']) !!}
                             </div>
                         </div>
                         <div class="form-group">
                             {!! Form::label('review', 'Review', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::textarea('review', null, ['class' => 'form-control']) !!}
+                                {!! Form::textarea('review', old('review'), ['class' => 'form-control', 'required' => '']) !!}
                             </div>
                         </div>
                         <div class="form-group">

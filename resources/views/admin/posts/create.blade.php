@@ -3,8 +3,6 @@
 @section ('css')
     
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
-
-    
     {!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
 @endsection
 
@@ -26,15 +24,7 @@ Create a post
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
-                            </ul>
+                            
                             <a class="close-link">
                                 <i class="fa fa-times"></i>
                             </a>
@@ -64,7 +54,7 @@ Create a post
                             <div class="col-lg-10">
                                 <select class="form-control m-b" name="category">
                                         @foreach ($categories->all() as $category)
-                                        <option value="{{$category->id}}">{{$category->title}}</option>
+                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
                                         @endforeach
                                 </select>
                             </div>
@@ -74,7 +64,7 @@ Create a post
                             <div class="col-lg-10">
                             @foreach ($tags->all() as $tag)
                                 <label class="checkbox-inline i-checks"> 
-                                <input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag_name}} </label>                                        
+                                <input type="checkbox" name="tags[]" value="{{ $tag->id }}">{{ $tag->tag_name }} </label>                                        
                                 
                             @endforeach
                             </div>
@@ -105,7 +95,7 @@ Create a post
                 @endif
                 @if (Session::has('message')) 
                         <div class="alert alert-success">
-                           {{Session::get('message')}}
+                           {{ Session::get('message') }}
                         </div>
                 @endif
             </div>
@@ -134,44 +124,8 @@ Create a post
     </script>
     <!-- SUMMERNOTE --> 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
-    {!! HTML::script('admin/js/admin.js') !!}
-    {!! HTML::script('admin/js/plugins/iCheck/icheck.min.js') !!}
-    {!! HTML::script('admin/js/plugins/slick/slick.min.js') !!}
-<!--<script>
-    $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    jQuery(document).ready(function() {
-        jQuery('#summernote').summernote({
-            height: 250,
-            callbacks: {
-                onImageUpload: function(files, editor, $editable) {
-                    alert('evoked');
-                    sendFile(files[0],editor,$editable);
-                }
-            }
-        });
-        function sendFile(file,editor,welEditable) {
-            data = new FormData();
-            data.append("file", file);
-            jQuery.ajax({
-                url: "{{ URL::to('upload/image') }}",
-                data: data,
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: 'POST',
-                success: function(s){
-                    jQuery('#summernote').summernote("insertImage", s);
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus+" "+errorThrown);
-                }
-            });
-        }
-    });
-</script>-->
+    {!! Html::script('admin/js/admin.js') !!}
+    {!! Html::script('admin/js/plugins/iCheck/icheck.min.js') !!}
+    {!! Html::script('admin/js/plugins/slick/slick.min.js') !!}
 
 @endsection

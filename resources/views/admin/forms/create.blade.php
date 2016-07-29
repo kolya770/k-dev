@@ -39,24 +39,24 @@ Create a form
 
                         )) !!}
                         <div class="form-group">
-                            {!! Form::label('title', 'Form name', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">
-                                {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                            {!! Form::label('title', 'Form name', ['class' => 'col-lg-2 control-label']) !!}
+                            <div class="col-lg-10">
+                                {!! Form::text('title', null, ['class' => 'form-control', 'required' => '']) !!}
                             </div>
                         </div>
                         <div class="form-group">
-                        	<div class="col-lg-9">
+                        	<div class="col-lg-offset-2 col-lg-10">
                            		<button id='addField' type="button" class="btn btn-w-m btn-primary">Add a new question</button>
                            	</div>
                         </div>
                         <div class="form-group">
-                           <div class="col-lg-9" id="questions">
+                           <div class="col-lg-offset-2 col-lg-10" id="questions">
                            </div>
                         </div>
                         <input type="hidden" id="size" name="size">
                         <div class="form-group">
-                            <div class="col-lg-offset-3 col-lg-9">
-                                {!! Form::submit('Create form', ['class' => 'btn btn-md']) !!}
+                            <div class="col-lg-offset-2 col-lg-10">
+                                {!! Form::submit('Create form', ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
@@ -64,13 +64,13 @@ Create a form
                 </div>
                 @if (Session::has('message')) 
                         <div class="alert alert-success">
-                           {{Session::get('message')}}
+                           {{ Session::get('message') }}
                         </div>
                 @endif
                  @if (count($errors) > 0)
                  	@foreach($errors as $error)
                             <div class="alert alert-danger">
-                               {{$error}}
+                               {{ $error }}
                             </div>
                 	@endforeach
                 @endif

@@ -5,7 +5,7 @@
 @section('content')
 <div class="ibox float-e-margins">
 <div class="ibox-title"> 
-      <h5>Post content</h5><small>{{ $post->updated_at }}</small>
+      {{ $post->updated_at }}
       <div class="ibox-tools">
          <a class="collapse-link">
             <i class="fa fa-chevron-up"></i>
@@ -29,7 +29,9 @@
       </div>
 </div>
 <div class="ibox-content">
-{{ $post->content }}
+<img src="{{ '/'.$post->preview }}">
+<hr>
+{!! $post->content !!}
 <hr>
 <h5>Category: </h5>{{ $post->category->title }}
 <hr>

@@ -2,8 +2,7 @@
 
 @section ('css')
     
-    {!! Html::style('admin/css/plugins/summernote/summernote.css') !!}
-    {!! Html::style('admin/css/plugins/summernote/summernote-bs3.css') !!}
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
 
 @endsection
 @section ('title')
@@ -53,14 +52,14 @@ Edit a post
 
                         )) !!}
                         <div class="form-group">
-                            {!! Form::label('title', 'Post name', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">
+                            {!! Form::label('title', 'Post name', ['class' => 'col-lg-2 control-label']) !!}
+                            <div class="col-lg-10">
                                 {!! Form::text('title', $post->title, ['class' => 'form-control']) !!}
                             </div>
                         </div>
                         <div class="form-group">
-                            {!! Form::label('content', 'Post content', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">
+                            {!! Form::label('content', 'Post content', ['class' => 'col-lg-2 control-label']) !!}
+                            <div class="col-lg-10">
                                 {!! Form::textarea('content', $post->content, ['class' => 'form-control', 'id' => 'summernote']) !!}
                             </div>
                         </div>
@@ -74,20 +73,24 @@ Edit a post
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-lg-offset-3 col-lg-9">
+                            <div class="col-lg-offset-2 col-lg-10">
                                 <label class="btn btn-default btn-file">
                                     Browse main image <input type="file" name="main_image" style="display: none;" >
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-lg-offset-3 col-lg-9">
-                                {!! Form::submit('Update post', ['class' => 'btn btn-sm']) !!}
+                            <div class="col-lg-offset-2 col-lg-10">
+                                {!! Form::submit('Update post', ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
+                        <div class="row">
+                        <div class="col-lg-offset-2 col-lg-10">
                         <h3>Main image now:</h3>
                     <img src="{{'/'.$post->preview}}" height="150">
+                    </div>
+                    </div>
                     </div>
                     
                     
@@ -102,50 +105,25 @@ Edit a post
     <script type="text/javascript">
             $(document).ready(function() {
                 $('#summernote').summernote({
-                  height:220,
+                    height: 300,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: true                  // set focus to editable area after initializing summernote
                 });
             });
     </script>
-
-       <!-- SUMMERNOTE -->
-    {!! HTML::script('admin/js/plugins/summernote/summernote.min.js') !!}
-    {!! HTML::script('admin/js/admin.js') !!}
-    {!! HTML::script('admin/js/plugins/slick/slick.min.js') !!}
-<!--<script>
-    $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    jQuery(document).ready(function() {
-        jQuery('#summernote').summernote({
-            height: 250,
-            callbacks: {
-                onImageUpload: function(files, editor, $editable) {
-                    alert('evoked');
-                    sendFile(files[0],editor,$editable);
-                }
-            }
-        });
-        function sendFile(file,editor,welEditable) {
-            data = new FormData();
-            data.append("file", file);
-            jQuery.ajax({
-                url: "{{ URL::to('upload/image') }}",
-                data: data,
-                cache: false,
-                contentType: false,
-                processData: false,
-                type: 'POST',
-                success: function(s){
-                    jQuery('#summernote').summernote("insertImage", s);
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus+" "+errorThrown);
-                }
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
             });
-        }
-    });
-</script>-->
+        });
+    </script>
+    <!-- SUMMERNOTE --> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
+    {!! Html::script('admin/js/admin.js') !!}
+    {!! Html::script('admin/js/plugins/iCheck/icheck.min.js') !!}
+    {!! Html::script('admin/js/plugins/slick/slick.min.js') !!}
 
 @endsection

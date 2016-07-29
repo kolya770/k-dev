@@ -60,13 +60,17 @@
 						</div>
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
-                                {!! Form::submit('Create review', ['class' => 'btn btn-sm']) !!}
+                                {!! Form::submit('Update review', ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
                         
                         {!! Form::close() !!}
+                        <div class="row">
+                        <div class="col-lg-offset-3 col-lg-9">
                         <h3>Review image now: </h3>
                         <img src="{{$review->preview}}" height="150">
+                        </div>
+                        </div>
                         @if (Session::has('message')) 
                             <div class="alert alert-success">
                                {{Session::get('message')}}
