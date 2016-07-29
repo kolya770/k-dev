@@ -1245,8 +1245,7 @@
 }
 @media (max-width: 750px) {
   .charts {
-    position: relative;
-    left: 33%;
+    margin-left: 25%;
   }
 }
 .charts .percents {
@@ -1258,7 +1257,7 @@
 }
 @media (max-width: 750px) {
   .charts .percents {
-    margin-left: 30%;
+    margin-left: 40%;
   }
 }
 .charts .list {
