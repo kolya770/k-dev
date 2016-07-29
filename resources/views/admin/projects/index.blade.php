@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section ('css')
+  <!-- Toastr style -->
+{!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
+<!-- Lightgallery -->
 {!! Html::style('css/lightgallery.css') !!}
 @endsection
 @section ('title')
@@ -94,13 +97,41 @@ Portfolio
 </div>
 </div>
 @if (Session::has('message')) 
-   <div class="alert alert-success">
-         {{ Session::get('message') }}
-   </div>
-@endif
+   <input class="hidden" value="{{ Session::get('message') }}" id="message">
+   @endif
+   @if (Session::has('alert')) 
+   <input class="hidden" value="{{ Session::get('alert') }}" id="alert">
+   @endif
 @endsection
 
 @section ('js')
+ <!-- Toastr script -->
+{!! Html::script('admin/js/plugins/toastr/toastr.min.js') !!}
+<script type="text/javascript">
+ $(function () {
+      toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "onclick": null,
+          "showDuration": "400",
+          "hideDuration": "1000",
+          "timeOut": "7000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+    if (document.getElementById('message')) {
+        toastr["success"](document.getElementById('message').value, 'Message')
+    }
+    if (document.getElementById('alert')) {
+        toastr["error"](document.getElementById('alert').value, 'Error')
+    }
+});
+</script>
 {!! Html::script('js/lightgallery.js') !!}
 {!! Html::script('js/lg-thumbnail.js') !!}
 {!! Html::script('js/lg-fullscreen.js') !!}

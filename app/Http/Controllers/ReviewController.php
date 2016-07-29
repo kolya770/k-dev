@@ -43,7 +43,7 @@ class ReviewController extends Controller
             $review->preview = "/img/" . $f_name;
         } else {
 
-            return back()->withMessage('Please, add an image!');
+            return back()->with('alert', 'Please, add an image!');
         }
     	$review->save();
 

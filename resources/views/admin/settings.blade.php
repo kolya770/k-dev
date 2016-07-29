@@ -1,5 +1,10 @@
 @extends('layouts.admin')
+@section ('title')
+Settings
+@endsection
 @section ('css')
+  <!-- Toastr style -->
+{!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
 {!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
 @endsection
 @section('content')
@@ -73,15 +78,12 @@
                         </div>
                         {!! Form::close() !!}
                         @if (Session::has('message')) 
-                            <div class="alert alert-success">
-                               {{Session::get('message')}}
-                            </div>
-                        @endif
-                        @if (Session::has('alert_message')) 
-                            <div class="alert alert-danger">
-                               {{Session::get('alert_message')}}
-                            </div>
-                        @endif
+                           <input class="hidden" value="{{ Session::get('message') }}" id="message">
+                           @endif
+                        @if (Session::has('alert')) 
+                           <input class="hidden" value="{{ Session::get('alert') }}" id="alert">
+                           @endif
+
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
                                 <ul>
@@ -109,4 +111,46 @@
         });
 </script>
 {!! HTML::script('admin/js/plugins/iCheck/icheck.min.js') !!}
+ <!-- Toastr script -->
+{!! Html::script('admin/js/plugins/toastr/toastr.min.js') !!}
+<script type="text/javascript">
+ $(function () {
+    if (document.getElementById('message')) {
+        toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "onclick": null,
+          "showDuration": "10000",
+          "hideDuration": "1000",
+          "timeOut": "7000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+        toastr["success"]('Message', document.getElementById('message').value)
+    }
+    if (document.getElementById('alert')) {
+        toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "onclick": null,
+          "showDuration": "10000",
+          "hideDuration": "10000",
+          "timeOut": "70000",
+          "extendedTimeOut": "10000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+        toastr["error"]('Error', document.getElementById('alert').value)
+    }
+});
+</script>
 @endsection

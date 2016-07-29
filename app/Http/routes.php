@@ -21,7 +21,6 @@
 	Route::get('/pages/{id}', 'PageController@show');
 	Route::get('/categories/{id}', 'CatPageController@find');
 	Route::post('/messages/', 'MessageController@store');
-	Route::post('/projects/', 'ProjectController@imageStore');
 
 	Route::resource('comments', 'CommentController');
 	Route::resource('FormAnswers','FormAnswerController');
@@ -36,10 +35,11 @@
 				return view('admin.messages');
 			});
 			Route::get('/users/', 'UserController@index');
+			Route::post('/projects/images', 'ProjectController@imageStore');
 			Route::get('/forms/answers', 'FormController@answers');
 			Route::get('/settings/', 'SettingsController@settings');
-			Route::get('/users/{id}_{role}', 'UserController@assignRole');
-			Route::get('/users/{id}_{role}', 'UserController@revokeRole');
+			Route::get('/users/assign_{id}_{role}', 'UserController@assignRole');
+			Route::get('/users/revoke_{id}_{role}', 'UserController@revokeRole');
 			//Route::get('categories/')
 			Route::resource('users', 'UserController');
 			Route::resource('settings', 'SettingsController');

@@ -25,8 +25,8 @@
                             <img class="image-item" src="{{$image->path}}" alt="{{$image->description}}">
                         </a>
                     @endforeach    
-                    </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

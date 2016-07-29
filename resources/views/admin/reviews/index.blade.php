@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+@section ('css')
+  <!-- Toastr style -->
+{!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
+@endsection
 @section ('title')
 All reviews
 @endsection
@@ -48,31 +52,31 @@ All reviews
 				</form></td>
       </tr>
       <div class="modal inmodal" id="{{ 'modal' . $review->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <center>
-                                            <img src="{{ $review->preview }}" class="img-circle">
-                                            </center>
-                                            <h4 class="modal-title">{{ $review->author_name }}</h4>
-                                            <h5>
-                                               {{ $review->author_job }}
-                                            </h5>           
-                                        </div>
-                                        <div class="modal-body">
-                                          <center>
-                                            <p>
-                                            {{ $review->review }}
-                                            </p>
-                                            </center>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+           <div class="modal-dialog">
+           <div class="modal-content animated bounceInRight">
+                   <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                       <center>
+                       <img src="{{ $review->preview }}" class="img-circle">
+                       </center>
+                       <h4 class="modal-title">{{ $review->author_name }}</h4>
+                       <h5>
+                          {{ $review->author_job }}
+                       </h5>           
+                   </div>
+                   <div class="modal-body">
+                     <center>
+                       <p>
+                       {{ $review->review }}
+                       </p>
+                       </center>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                   </div>
+               </div>
+           </div>
+       </div>
       @endforeach   
    </tbody>	
 </table>
@@ -80,8 +84,55 @@ All reviews
 </div>
 </div>
 @if (Session::has('message')) 
-   <div class="alert alert-success">
-         {{ Session::get('message') }}
-   </div>
-@endif
+   <input class="hidden" value="{{ Session::get('message') }}" id="message">
+   @endif
+   @if (Session::has('alert')) 
+   <input class="hidden" value="{{ Session::get('alert') }}" id="alert">
+   @endif
+@endsection
+
+
+@section ('js')
+ <!-- Toastr script -->
+{!! Html::script('admin/js/plugins/toastr/toastr.min.js') !!}
+<script type="text/javascript">
+ $(function () {
+    if (document.getElementById('message')) {
+        toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "onclick": null,
+          "showDuration": "400",
+          "hideDuration": "1000",
+          "timeOut": "7000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+        toastr["success"]('Message', document.getElementById('message').value)
+    }
+    if (document.getElementById('alert')) {
+        toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "onclick": null,
+          "showDuration": "1000",
+          "hideDuration": "1000",
+          "timeOut": "7000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+        toastr["error"]('Error', document.getElementById('alert').value)
+    }
+});
+</script>
 @endsection

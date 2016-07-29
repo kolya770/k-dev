@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+@section ('css')
+  <!-- Toastr style -->
+   {!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
+@endsection
 @section ('title')
 Create category
 @endsection
@@ -10,17 +14,6 @@ Create category
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                         <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-
-                       
                         <h5>Make a new category</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
@@ -60,18 +53,17 @@ Create category
                             </div>
                         </div>
                         {!! Form::close() !!}
-                        @if (Session::has('message')) 
-                            <div class="alert alert-success">
-                               {{ Session::get('message') }}
-                            </div>
+                        @if (count($errors) > 0)
+                           @foreach ($errors->all() as $error)
+                               <input class="hidden alert" value="{{ $error }}">  
+                           @endforeach                  
                         @endif
-                        
-                            @foreach($errors as $error)
-                                    <div class="alert alert-danger">
-                                       {{ $error }}
-                                    </div>
-                            @endforeach
-                        
+                        @if (Session::has('message')) 
+                           <input class="hidden" value="{{ Session::get('message') }}" id="message">
+                        @endif
+                        @if (Session::has('alert')) 
+                           <input class="hidden" value="{{ Session::get('alert') }}" id="alert">
+                        @endif
                     </div>
                 </div>
                 
@@ -82,5 +74,39 @@ Create category
 @endsection
 
 @section('js')
- 	<script src="js/plugins/toastr/toastr.min.js"></script>
+ <!-- Toastr script -->
+{!! Html::script('admin/js/plugins/toastr/toastr.min.js') !!}
+<script type="text/javascript">
+ $(function () {
+    toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "onclick": null,
+          "showDuration": "10000",
+          "hideDuration": "10000",
+          "timeOut": "70000",
+          "extendedTimeOut": "10000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+    }
+    if (document.getElementById('message')) {  
+        toastr["success"](document.getElementById('message').value, 'Message')
+    }
+    if (document.getElementById('alert')) {
+        toastr["error"](document.getElementById('alert').value, 'Error')
+    }
+
+    if (document.getElementsByClassName('alert')) {
+        var x = document.getElementsByClassName('alert');
+        var i;
+        for (i = 0; i < x.length; i++) {
+            toastr["error"](x[i].value, 'Error');
+        }
+    }
+});
+</script>
  @endsection

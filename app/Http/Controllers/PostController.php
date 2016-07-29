@@ -83,7 +83,7 @@ class PostController extends Controller
                 $file->move($root, $f_name);
                 $post->preview = 'img/' . $f_name;
             } else 
-                return back()->withMessage('Please, choose main image');
+                return back()->withAlert('Please, choose main image');
             $post->save();
             if ($request->tags) {
                 foreach ($request->get('tags') as $tagid) {

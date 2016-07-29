@@ -29,7 +29,7 @@ class SettingsController extends Controller
         if ($request->get('projects')) {
         $projectIds = $request->get('projects');
             if (count($projectIds) != 3)
-                return back()->with('alert_message', 'Please, choose 3 projects to show');
+                return back()->with('alert', 'Please, choose 3 projects to show');
             DB::table('settings')
                 ->where('id', 1)
                 ->update(['project_1_id' => $projectIds[0]]);

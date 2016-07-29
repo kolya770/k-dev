@@ -78,7 +78,7 @@ class ProjectController extends Controller
                 $uploadCount++;
             }  
         } else {
-            return back()->with('message', 'Please add some images!');
+            return back()->with('alert', 'Please add some images!');
         } 
         
         if ($uploadCount == $fileCount) {
@@ -87,7 +87,7 @@ class ProjectController extends Controller
             return view('admin.projects.images')->with(array('images' => $imagesAdded, 'project_id' => $project->id));
         }
         else {
-            return back()->withMessage('something happened');
+            return back()->with('alert', 'Something happened');
         }
     }
 
@@ -107,7 +107,7 @@ class ProjectController extends Controller
         else {
             $imagesAdded = Image::where('project_id', $project->id)->get();
 
-            return view('admin.projects.images')->with(array('images' => $imagesAdded, 'project_id' => $project->id, 'message' => 'Please, choose main image!'));
+            return view('admin.projects.images')->with(array('images' => $imagesAdded, 'project_id' => $project->id, 'alert' => 'Please, choose main image!'));
             
         }
         $imageDescs = $request->get('desc');

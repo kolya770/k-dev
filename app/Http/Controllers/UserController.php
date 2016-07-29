@@ -35,7 +35,7 @@ class UserController extends Controller
     	$user = User::find($id);
     	$user->delete();
 
-    	return back();
+    	return back()->withMessage('User deleted!');
     }
 
     public function assignRole($id, $role) {
