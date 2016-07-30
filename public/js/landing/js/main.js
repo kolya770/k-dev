@@ -16,6 +16,14 @@ window.onload = function() {
         popup.style.display = "none";
       });
     });
+
+    $("#hire-me-desk").on("click", function() {
+      popup.style.display = "block";
+
+      $("#close-popup").on("click", function(){
+        popup.style.display = "none";
+      });
+    });
   var popup_success = document.getElementById('popup-success');
   var span_success = document.getElementsByClassName("closesuccess")[0];
 
