@@ -12,7 +12,7 @@
                 </form>
             </div>
             <div class="col-sm-5 col-xs-10 col-xs-offset-1">
-                    <img style="width:100%;" src="{{$projects[2]->images[0]->path}}" alt="browser"/>
+                    <img style="width:100%;" src="/img/browser_phone.png" alt="browser"/>
                    
                 
             </div>

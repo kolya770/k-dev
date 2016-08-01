@@ -4,19 +4,19 @@
         <div class="row">
             
                 
-                <div class="col-md-offset-1 col-md-2 col-xs-12">
-                <p class="ft-email">EMAIL:</p>
+                <div class="col-md-offset-1 col-md-1 col-xs-12">
+                <p class="ft-email">EMAIL</p>
                 </div>
                 <div class="col-md-2 email">
-                <span>talk@kievdev.com</span>
+                <span><a href="mailto:talk@kievdev.com" target="_top" style="text-decoration: none; color: #54b2ce;">talk@kievdev.com</a></span>
                 </div>
             
             
-                <div class="col-md-offset-1 col-md-2 col-xs-12">
+                <div class="col-md-offset-3 col-md-1 col-xs-12">
                 <p class="ft-phone">PHONE:</p>
                 </div>
                 <div class="col-md-3 phone">
-                <span>+38 (091) 964 58 55</span>
+                <span><a href="tel:+380919645855" style="text-decoration: none; color: #54b2ce;">+38 (091) 964 58 55</a></span>
                 </div>
                 
         </div>

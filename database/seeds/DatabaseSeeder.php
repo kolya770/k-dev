@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(comments_table_seeder::class);
         $this->call(settings_table_seeder::class);
         $this->call(image_table_seeder::class);
+        $this->call(utm_table_seeder::class);
     }
 }

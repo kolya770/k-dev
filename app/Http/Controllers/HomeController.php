@@ -9,15 +9,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\Post;
-use App\Models\Form;
-use App\Models\Field;
-use App\Models\Review;
+
 use App\Models\Project;
-use App\Models\Tag;
-use App\Models\Category;
-use App\Models\Page;
+use App\Models\UTMValue;
+use App\Models\UTMMark;
 use \DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
 {
@@ -27,7 +25,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {      
+    public function index() {
+        if (Input::has('utm_source')) {
+            $source = Input::get('utm_source');
+            $header_value = UTMValue::where('utm_value', $source)->first()->value;
+        } else {
+            $header_value = 'KIEV-DEV';
+        }
         //now we need to determine which projects are to show. 
         $projects = array();
         for ($i = 1; $i < 4; $i++) {
@@ -40,7 +44,8 @@ class HomeController extends Controller
         
         return view('landing')->with(array( //TODO: redo
             'projects' => $projects,
-            'post' => $post
+            'post' => $post,
+            'header' => $header_value,
         )); 
     }
 
@@ -51,12 +56,6 @@ class HomeController extends Controller
         return view('show')->with(array(
             'post'  => $post
         ));
-    }
-
-    public function forms() {
-        $forms = Form::all();
-
-        return view('forms')->with('forms', $forms); 
     }
 
     public function blog() {

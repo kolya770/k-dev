@@ -63,7 +63,7 @@
 
             }  
         }
-        .blocks-how {
+        .nav-tabs>li>a>.blocks-how {
             text-align: center;
             height: 130px;
             width: 100px;
@@ -73,28 +73,44 @@
                   filter: grayscale(0%);
                 }
               }
-            .image-how {   
-              position: absolute;
-              bottom: 75px;
-              left: 34px;
-              -webkit-filter: grayscale(100%);            
-            
-            }
-            p {
-              /*font-family: RobotoCondensed;*/
-              font-size: 14px;
-              font-weight: 400;
-              line-height: 20px;
-              text-transform: uppercase;
-              color: #ffffff;
-              text-align: center;
-              margin-top: 20px;
-              position: absolute;
-              bottom: 10px;
-              width: 100%;
-              left: 0;
-            }
         }
+        .nav-tabs>li>a>.blocks-how>.image-how {
+
+            position: absolute;
+            bottom: 75px;
+            left: 34px;
+            -webkit-filter: grayscale(100%);            
+            
+        }
+        .nav-tabs>li>a>.blocks-how>p {
+            /*font-family: RobotoCondensed;*/
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            left: 0;
+        }
+        .nav-tabs>li::after {
+            content:" ";
+            background: url(img/str.png) no-repeat;
+            width: 53px;
+            height: 46px;
+            display: inline-block;
+            position: absolute;
+            top: 60px;
+            right: -50px;
+        }
+        .nav-tabs>li:last-child:after {
+           display: none;
+        }
+
+        
         .button-container {
               margin-left: 9%;
               margin-top: 10%;
@@ -110,7 +126,7 @@
                 }
               }
             .image-how {   
-
+                -webkit-filter: grayscale(100%);
             }
             p {
               /*font-family: RobotoCondensed;*/
@@ -170,6 +186,19 @@
     p {
       margin-top: 10px;
     }
+
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      &:active {
+          -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+      }
+      &:hover {
+        -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+      }
+    }
     text-decoration: none;
     font-size: 14px;
     font-weight: 400;
@@ -188,6 +217,7 @@
     color: #fff;
     background-color: transparent;
     border: none;
+
   }
   .panel-body {
     h3 {

@@ -477,7 +477,6 @@ footer {
   background-color: #22282b;
 }
 footer .phone {
-  margin-bottom: 15px;
   color: #54b2ce;
   text-align: center;
   font-family: 'PT Sans';
@@ -485,7 +484,6 @@ footer .phone {
   font-size: 24px;
 }
 footer .email {
-  margin-bottom: 15px;
   text-align: center;
   font-size: 24px;
   color: #54b2ce;

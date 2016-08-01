@@ -3,8 +3,15 @@
 @section ('css')
      <!-- Toastr style -->
 {!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
-    {!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
+{{ Html::style('css/summernote.css') }}
+{!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
+<style type="text/css">
+    .btn-default {
+            color: #333 !important; 
+            background-color: #fff !important;
+            border-color: #ccc !important;
+    }
+</style>
 @endsection
 
 @section ('title')
@@ -138,6 +145,7 @@ Create a post
     }
 });
 </script>
+    {!! Html::script('js/summernote.min.js') !!}
     <script type="text/javascript">
             $(document).ready(function() {
                 $('#summernote').summernote({
@@ -157,7 +165,7 @@ Create a post
         });
     </script>
     <!-- SUMMERNOTE --> 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
+    
     {!! Html::script('admin/js/admin.js') !!}
     {!! Html::script('admin/js/plugins/iCheck/icheck.min.js') !!}
     {!! Html::script('admin/js/plugins/slick/slick.min.js') !!}

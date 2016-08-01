@@ -34,6 +34,8 @@
 			Route::get('/messages', function () {
 				return view('admin.messages');
 			});
+			Route::get('/first/', 'ScreenController@first');
+			Route::post('/first/addutm/', 'ScreenController@storeUTM');
 			Route::get('/users/', 'UserController@index');
 			Route::post('/projects/images', 'ProjectController@imageStore');
 			Route::get('/forms/answers', 'FormController@answers');
@@ -41,12 +43,15 @@
 			Route::get('/users/assign_{id}_{role}', 'UserController@assignRole');
 			Route::get('/users/revoke_{id}_{role}', 'UserController@revokeRole');
 			//Route::get('categories/')
+
 			Route::resource('users', 'UserController');
 			Route::resource('settings', 'SettingsController');
 			Route::resource('posts','PostController');
 			Route::resource('forms','FormController');
 			Route::resource('reviews', 'ReviewController');
 			Route::resource('projects', 'ProjectController');
+			Route::resource('first', 'ScreenController');
+			Route::resource('first/utm', 'UTMController');
 			Route::resource('categories','CategoriesController');
 			Route::resource('tags','TagController');
 			Route::get('/', function()

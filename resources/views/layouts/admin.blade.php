@@ -59,6 +59,9 @@
                     <a href="#"> <i class="fa fa-desktop"></i><span class="nav-label">Landing</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li>
+                            <a href="/adm/first">First screen</a>
+                        </li>
+                        <li>
                             <a href="/adm/reviews">Reviews</a>
                         </li>
                         <li>

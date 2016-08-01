@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-5 col-xs-10 col-xs-offset-1">
                 
-                    <img src="{{$projects[1]->images[0]->path}}" alt="phone"/>
+                    <img src="/img/browser_phone.png" alt="phone"/>
                     
                
             </div>

@@ -2,7 +2,17 @@
 <section class="my-works wrap">
     <div class="container">
         <div class="row">
-            <h1 class="title"><a href="/portfolio/">PORTFOLIO</a></h1>
+            <h5 class="title">MY WORKS</h1>
+        </div>
+        <div class="row see-more">
+            <h3>
+                <div class="col-sm-offset-3 col-sm-3" style="text-align: right;">
+                WANT TO SEE MORE?   
+                </div>
+                <div class="col-sm-3" style="text-align: left;">
+                    <a href="/portfolio/">VIEW ALL WORKS</a>
+                </div>
+            </h3>
         </div>
         <div class="row">
         <div class="col-sm-5 col-xs-10 col-xs-offset-1 text-wrapper">
@@ -16,7 +26,7 @@
             </div>
             <div class="col-sm-5 col-xs-10 col-xs-offset-1">
                 
-                    <img style="width:100%;" src="{{$projects[0]->images[0]->path}}" alt="preview"/>
+                    <img style="width:100%;" src="/img/browser_phone.png" alt="Project preview"/>
               
             </div>
             

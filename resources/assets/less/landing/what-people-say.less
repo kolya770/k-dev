@@ -37,17 +37,25 @@
 } 
 .swiper-button-prev {
   top: 25%;
-  background-image: url('/img/left.png');
+  background-image: url('/img/blue_left.png');
+  -webkit-filter: grayscale(100%);  
   @media (max-width: 750px) {
     background-image: none;
+  }
+  &:hover {
+    -webkit-filter: grayscale(0%);  
   }
 }    
 
 .swiper-button-next {
   top: 25%;
-  background-image: url('/img/right.png');
+  background-image: url('/img/blue_right.png');
+  -webkit-filter: grayscale(100%); 
   @media (max-width: 750px) {
     background-image: none;
+  }
+  &:hover {
+    -webkit-filter: grayscale(0%);  
   }
 }  
 

@@ -5,7 +5,6 @@
     {!! Html::style('css/slick.css') !!}
     {!! Html::style('css/slick-theme.css') !!}
     {!! Html::style('css/landing/main.css') !!}
-    
 	{!! Html::style('css/landing/some-stuff.css') !!}
 	{!! Html::style('css/landing/preloader.css') !!}
 
@@ -83,6 +82,8 @@
         })
     });        
   </script>
+{!! HTML::script('js/landing/jquery.easing.min.js') !!}
+{!! HTML::script('js/landing/scrolling-nav.js') !!}
 {!! HTML::script('js/landing/js/backgroundVideo.min.js') !!}
 {!! HTML::script('js/landing/js/main.js') !!}
 @endsection
