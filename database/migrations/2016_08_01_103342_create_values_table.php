@@ -16,6 +16,7 @@ class CreateValuesTable extends Migration
             $table->increments('id');
             $table->string('value');
             $table->string('utm_value');
+            $table->string('type');
             $table->integer('mark_id')->unsigned()->index();
             $table->foreign('mark_id')->references('id')->on('u_t_m_marks')->onDelete('cascade');
             $table->timestamps();
