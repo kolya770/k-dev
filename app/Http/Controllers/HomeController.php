@@ -36,6 +36,7 @@ class HomeController extends Controller
             $header_value = strtoupper($site->name);
             $image = 'none';
         }
+
         //now we need to determine which projects are to show. 
         $projects = array();
         for ($i = 1; $i < 4; $i++) {

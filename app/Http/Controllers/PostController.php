@@ -76,7 +76,7 @@ class PostController extends Controller
         	
             $post->content = $dom->saveHTML();
             $post->category_id = $request->category;
-            if ($request->file('main_image')) {
+            if ($request->hasFile('main_image')) {
                 $root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
                 $file = $request->file('main_image');
                 $f_name = $file->getClientOriginalName();

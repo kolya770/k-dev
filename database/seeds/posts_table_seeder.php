@@ -17,7 +17,6 @@ class posts_table_seeder extends Seeder
 	            'title' => $faker->sentence,
 	            'content' => $faker->paragraph,
 	            'category_id' => $faker->numberBetween(1, 3),
-                'page_id' => ceil($index / 5),
                 'preview' => 'img/blog.png'
 	        ]);
         }

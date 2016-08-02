@@ -77,6 +77,19 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="#"> <i class="fa fa-file-text"></i><span class="nav-label">Content</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li>
+                            <a href="/adm/blocks">Blocks</a>
+                        </li>
+                        <li>
+                            <a href="/adm/groups">Groups</a>
+                        </li>
+                        
+                       
+                    </ul>
+                </li>
+                <li>
                     <a href="#"> <i class="fa fa-pencil"></i><span class="nav-label">Blog</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse" aria-expanded="false">
                         <li>
