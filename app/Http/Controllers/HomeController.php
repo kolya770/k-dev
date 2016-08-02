@@ -9,10 +9,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\Post;
-
 use App\Models\Project;
 use App\Models\UTMValue;
 use App\Models\UTMMark;
+use App\Models\Site;
 use \DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -26,11 +26,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        $site = Site::where('isActive', '1')->first();
+
         if (Input::has('utm_source')) {
             $source = Input::get('utm_source');
-            $header_value = UTMValue::where('utm_value', $source)->first()->value;
+            $header_value = UTMValue::where('utm_value', $source)->where('type', 'text')->first()->value;
+            $image = UTMValue::where('utm_value', $source)->where('type', 'image')->first()->value;
         } else {
-            $header_value = 'KIEV-DEV';
+            $header_value = strtoupper($site->name);
+            $image = 'none';
         }
         //now we need to determine which projects are to show. 
         $projects = array();
@@ -46,6 +50,8 @@ class HomeController extends Controller
             'projects' => $projects,
             'post' => $post,
             'header' => $header_value,
+            'image' => $image,
+            'site' => $site
         )); 
     }
 

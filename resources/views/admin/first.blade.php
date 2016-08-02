@@ -164,7 +164,7 @@ First screen
       @foreach ($values->all()->where('type', 'image') as $value)
       <tr>
          <td>{{ $value->id }}</td>
-         <td>{{ $value->value }}</td>
+         <td><img src="{{ '/'.$value->value }}" width='100px'></td>
          <td>{{ $value->utm_value }}</td>
          <td>{{ $value->mark->mark }}</td>
          <td><a href="{{ action('UTMController@edit', ['value'=>$value->id]) }}"><button class="btn btn-primary">Edit</button></a></td>

@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     	$this->call(users_table_seeder::class);
         $this->call(roles_table_seeder::class);
         $this->call(categories_table_seeder::class);
-        $this->call(pages_table_seeder::class);
         $this->call(permissions_table_seeder::class);
         $this->call(posts_table_seeder::class);
         $this->call(role_user_table_seeder::class);
@@ -30,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(settings_table_seeder::class);
         $this->call(image_table_seeder::class);
         $this->call(utm_table_seeder::class);
+        $this->call(value_table_seeder::class);
     }
 }

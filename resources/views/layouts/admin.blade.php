@@ -70,6 +70,9 @@
                         <li>
                             <a href="/adm/settings">Settings</a>
                         </li>
+                        <li>
+                            <a href="/adm/config">Site configuration</a>
+                        </li>
                        
                     </ul>
                 </li>

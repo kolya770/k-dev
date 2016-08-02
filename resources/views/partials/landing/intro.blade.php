@@ -20,10 +20,16 @@
 </div>
 <div id="intro" class="hidden-xs">
   <div id="video-wrap">
+    @if ($image == 'none') 
     <video id="cover-video" preload="metadata" autoplay loop>
         <source src="cover/landing/Hello-World.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
         <source src="cover/landing/Hello-World.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
     </video>
+    @else 
+    <div class="img-bg-wrap">
+    <img class ="img-bg" src="{{ $image }}">
+    </div>
+    @endif
     <section class="intro wrap">
         <div class="container">
             <div class="row">
