@@ -97,7 +97,7 @@ Groups
 
 <!-- SHOW GROUP -->
 <div class="modal inmodal" id="{{ "showgroup".$group->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-           <div class="modal-dialog">
+           <div class="modal-dialog modal-lg">
            <div class="modal-content animated bounceInRight">
                    <div class="modal-header">
                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -107,7 +107,27 @@ Groups
                    </div>
 
                    <div class="modal-body">
-                  
+                    @foreach ($group->blocks as $block)
+                      <div class="row">
+                        <center>
+                          <h2>{{ $block->name }}</h2>
+                        </center>
+                      </div>
+                      <hr>
+                      @if ($block->content->type == 'image') 
+                        <div class="row">
+                        <center>
+                          <img src="{{ '/'.$block->content->value }}">
+                        </center>
+                        </div>
+                        <hr>
+                      @else 
+                        <div class="row">
+                          {!! $block->content->value !!}
+                        </div>
+                        <hr>
+                      @endif
+                    @endforeach
                    </div>
                    <div class="modal-footer">
                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>

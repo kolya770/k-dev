@@ -34,8 +34,6 @@
 			Route::get('/messages', function () {
 				return view('admin.messages');
 			});
-			Route::get('/first/', 'ScreenController@first');
-			Route::post('/first/addutm/', 'ScreenController@storeUTM');
 			Route::get('/users/', 'UserController@index');
 			Route::post('/projects/images', 'ProjectController@imageStore');
 			Route::get('/forms/answers', 'FormController@answers');
@@ -45,6 +43,8 @@
 			Route::post('/config/choose', 'ConfigController@choose');
 
 			//Route::get('categories/')
+
+			Route::resource('utm', 'UTMController');
 			Route::resource('blocks', 'BlockController');
 			Route::resource('groups', 'GroupController');
 			Route::resource('config', 'ConfigController');
@@ -54,8 +54,6 @@
 			Route::resource('forms','FormController');
 			Route::resource('reviews', 'ReviewController');
 			Route::resource('projects', 'ProjectController');
-			Route::resource('first', 'ScreenController');
-			Route::resource('first/utm', 'UTMController');
 			Route::resource('categories','CategoriesController');
 			Route::resource('tags','TagController');
 			Route::get('/', function()

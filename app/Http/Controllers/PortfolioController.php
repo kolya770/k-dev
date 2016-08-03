@@ -11,11 +11,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Image;
+use App\Models\Site;
 use App\Http\Requests;
 
 class PortfolioController extends Controller
 {
     public function index() {
+        $site = Site::where('isActive', '1')->first();
     	$projects = Project::all();
     	$mainImages = array();
     	foreach ($projects as $project) {
@@ -23,15 +25,18 @@ class PortfolioController extends Controller
     	}
 
     	return view('portfolio')->with(array(
+            'site' => $site,
     		'mainImages' => $mainImages
     		));
     }
 
     public function show($id) {
+        $site = Site::where('isActive', '1')->first();
     	$project = Project::find($id);
     	$mainImage = Image::find($project->main_image_id);
         
     	return view('portfolio-item')->with(array(
+            'site' => $site,
     		'project' => $project,
     		'mainImage' => $mainImage
     		));

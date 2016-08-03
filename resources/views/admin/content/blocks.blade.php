@@ -106,6 +106,7 @@ Blocks
                               @foreach ($groups->all() as $group)
                               <option value="{{ $group->id }}">{{ $group->name }}</option>
                               @endforeach
+                              <option value="1">No group needed</option>
                       </select>
                   </div>
               </div>
@@ -160,6 +161,7 @@ Blocks
                               @foreach ($groups->all() as $group)
                               <option value="{{ $group->id }}">{{ $group->name }}</option>
                               @endforeach
+                              <option value="1">No group needed</option>
                       </select>
                   </div>
               </div>
@@ -184,6 +186,7 @@ Blocks
                               @foreach ($groups->all() as $group)
                               <option value="{{ $group->id }}">{{ $group->name }}</option>
                               @endforeach
+                              <option value="1">No group needed</option>
                       </select>
                   </div>
               </div>
@@ -291,6 +294,7 @@ Blocks
                                                     @foreach ($groups->all() as $group)
                                                     <option value="{{ $group->id }}">{{ $group->name }}</option>
                                                     @endforeach
+                                                    <option value="1">No group needed</option>
                                             </select>
                                         </div>
                                     </div>
@@ -330,6 +334,7 @@ Blocks
                                                     @foreach ($groups->all() as $group)
                                                     <option value="{{ $group->id }}">{{ $group->name }}</option>
                                                     @endforeach
+                                                    <option value="1">No group needed</option>
                                             </select>
                                         </div>
                                     </div>
@@ -367,6 +372,7 @@ Blocks
                                                     @foreach ($groups->all() as $group)
                                                     <option value="{{ $group->id }}">{{ $group->name }}</option>
                                                     @endforeach
+                                                    <option value="1">No group needed</option>
                                             </select>
                                         </div>
                                     </div>
@@ -404,6 +410,7 @@ Blocks
                                                     @foreach ($groups->all() as $group)
                                                     <option value="{{ $group->id }}">{{ $group->name }}</option>
                                                     @endforeach
+                                                    <option value="1">No group needed</option>
                                             </select>
                                         </div>
                                     </div>

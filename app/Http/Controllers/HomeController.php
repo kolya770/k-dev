@@ -10,9 +10,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Models\Post;
 use App\Models\Project;
-use App\Models\UTMValue;
-use App\Models\UTMMark;
+use App\Models\UTM;
 use App\Models\Site;
+use App\Models\Block;
 use \DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -28,14 +28,8 @@ class HomeController extends Controller
     public function index() {
         $site = Site::where('isActive', '1')->first();
 
-        if (Input::has('utm_source')) {
-            $source = Input::get('utm_source');
-            $header_value = UTMValue::where('utm_value', $source)->where('type', 'text')->first()->value;
-            $image = UTMValue::where('utm_value', $source)->where('type', 'image')->first()->value;
-        } else {
-            $header_value = strtoupper($site->name);
-            $image = 'none';
-        }
+        $header_value = Block::where('name', 'header')->first()->content->value;
+        $image = 'none';
 
         //now we need to determine which projects are to show. 
         $projects = array();
@@ -66,11 +60,13 @@ class HomeController extends Controller
     }
 
     public function blog() {
+        $site = Site::where('isActive', '1')->first();
         $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
         $postsPerPage = $postsPerPageArray[0];      
         $posts = Post::paginate($postsPerPage);
 
         return view('blog')->with(array(
+                    'site' => $site,
                     'posts' => $posts
         ));
     }
