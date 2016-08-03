@@ -46,7 +46,7 @@
 
 			//Route::get('categories/')
 			Route::resource('blocks', 'BlockController');
-			Route::resource('group', 'GroupController');
+			Route::resource('groups', 'GroupController');
 			Route::resource('config', 'ConfigController');
 			Route::resource('users', 'UserController');
 			Route::resource('settings', 'SettingsController');

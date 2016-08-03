@@ -45,7 +45,7 @@ class PostController extends Controller
     		$images = $dom->getElementsByTagName('img');
     		
     		// foreach <img> in the submited message
-    		foreach($images as $img){
+    		foreach($images as $img) {
     			$src = $img->getAttribute('src');
     			
     			// if the img source is 'data-url'
