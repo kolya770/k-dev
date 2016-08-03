@@ -17,7 +17,7 @@
 
 </head>
     <body>
-
+@inject('groups','App\Models\Group')
     <div id="wrapper">
 
     <nav class="navbar-default navbar-static-side" role="navigation">
@@ -70,7 +70,11 @@
                         <li>
                             <a href="/adm/config">Site configuration</a>
                         </li>
-                       
+                        @foreach ($groups->all() as $group)
+                        <li>
+                            <a href="{{ '/adm/group/'.$group->id }}">{{ $group->name }}</a>
+                        </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li>

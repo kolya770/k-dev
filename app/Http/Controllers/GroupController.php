@@ -37,4 +37,10 @@ class GroupController extends Controller
 
     	return back()->withMessage('Group was successfully updated!');
     }
+
+    public function show($id) {
+        $group = Group::find($id);
+
+        return view('admin.content.show')->withGroup($group);
+    }
 }

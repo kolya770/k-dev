@@ -41,7 +41,7 @@
 			Route::get('/users/assign_{id}_{role}', 'UserController@assignRole');
 			Route::get('/users/revoke_{id}_{role}', 'UserController@revokeRole');
 			Route::post('/config/choose', 'ConfigController@choose');
-
+			Route::get('/group/{id}', 'GroupController@show');
 			//Route::get('categories/')
 
 			Route::resource('utm', 'UTMController');
