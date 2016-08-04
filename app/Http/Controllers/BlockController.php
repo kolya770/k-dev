@@ -89,6 +89,7 @@ class BlockController extends Controller
 	    }
 	    $content->save();
 	    $block->content_id = $content->id;
+	    $block->utm_content_id = $content->id;
 		$block->save();
 
     	return back()->withMesssage('Your content block was succesfully saved!');

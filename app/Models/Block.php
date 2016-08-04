@@ -19,4 +19,8 @@ class Block extends Model
     public function utm() {
     	return $this->hasMany('App\Models\UTM');
     }
+
+    public function utm_content() {
+        return $this->belongsTo('App\Models\Content', 'utm_content_id');
+    }
 }

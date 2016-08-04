@@ -14,16 +14,9 @@ class block_table_seeder extends Seeder
     {
     	DB::table('blocks')->insert([
 	            'name' => 'header',
+                'utm_content_id' => 1,
 	            'content_id' => 1,
 	            'group_id' => 1
 	        ]);
-        $faker = Faker::create();
-        foreach (range(1, 10) as $index) {
-	        DB::table('blocks')->insert([
-	            'name' => $faker->word,
-	            'content_id' => $faker->numberBetween(1, 10),
-	            'group_id' => $faker->numberBetween(1, 4)
-	        ]);
-        }
     }
 }

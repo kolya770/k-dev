@@ -18,7 +18,7 @@ class utm_table_seeder extends Seeder
 	            'utm_name' => 'utm_source',
 	            'utm_value' => $faker->word,
 	            'content_id' => $faker->numberBetween(1, 10),
-	            'block_id' => $faker->numberBetween(1, 10)
+	            'block_id' => 1
 	        ]);
         }
     }

@@ -26,9 +26,32 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        /*
+         * Отлавливание меток. Работает таким образом: у каждого блока есть 
+         * ссылка на свой контент и на ютм-контент. В начале у каждого блока  
+         * эти ссылки одинаковые. Если мы отлавливаем метку, то мы подменяем
+         * ссылку-ютм на ссылку из метки. Таким образом, контент из блока 
+         * подменяется на контент из метки.
+         *
+         * Catching marks. Each of blocks has two fields - content_id, 
+         * utm_content_id, both of them pointing to a same content at first. 
+         * When caught, the second link is changed to the link to mark 
+         * content. 
+         */
+        $all_blocks = Block::all();
+        foreach($all_blocks as $block) {
+            $block->utm_content_id = $block->content_id;
+        }
         $site = Site::where('isActive', '1')->first();
-
-        $header_value = Block::where('name', 'header')->first()->content->value;
+        $all_marks = UTM::all();
+        foreach($all_marks as $mark) {
+            if (Input::get($mark->utm_name) == $mark->utm_value) {
+                $block = Block::find($mark->block_id);
+                $block->utm_content_id = $mark->content_id;
+                $block->save();
+            }
+        }
+        $header_value = Block::where('name', 'header')->first()->utm_content->value;
         $image = 'none';
 
         //now we need to determine which projects are to show. 
