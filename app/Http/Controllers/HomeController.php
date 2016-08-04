@@ -52,10 +52,12 @@ class HomeController extends Controller
 
 
     public function show($id) {
+        $site = Site::where('isActive', '1')->first();
         $posts = Post::where('id', '!=', $id); //TODO: make other posts
         $post = Post::find($id);
         return view('show')->with(array(
-            'post'  => $post
+            'post'  => $post,
+            'site' => $site
         ));
     }
 
