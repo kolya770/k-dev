@@ -31,23 +31,39 @@
         }
 
         .nav-tabs>li.active {
-          
             .image-how { 
                   -webkit-filter: grayscale(0%);
                   filter: grayscale(0%);
                 }
-              
           }
-        
+
+        .nav-tabs {
+          li {
+            .active {
+              a {
+                .blocks-how {
+                  .image-how { 
+                    -webkit-filter: grayscale(0%) !important;
+                    filter: grayscale(0%) !important;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+        .nav-tabs>li.active>a>.blocks-how>.img-how {
+          -webkit-filter: grayscale(0%) !important;
+                    filter: grayscale(0%) !important;
+        }
         .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:active {
             border: none;
             background: transparent;
             
                .image-how { 
-                  -webkit-filter: grayscale(0%);
-                  filter: grayscale(0%);
+                  -webkit-filter: grayscale(0%) !important;
+                  filter: grayscale(0%) !important;
                 }
-              
         }
         .nav-tabs>li>a>.blocks-how>.img-active {
             display: none;
