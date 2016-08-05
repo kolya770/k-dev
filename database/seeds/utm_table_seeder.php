@@ -12,14 +12,13 @@ class utm_table_seeder extends Seeder
      */
     public function run()
     {
-    	$faker = Faker::create();
-        foreach (range(1, 5) as $index) {
+        
 	        DB::table('utm')->insert([
-	            'utm_name' => 'utm_source',
-	            'utm_value' => $faker->word,
-	            'content_id' => $faker->numberBetween(1, 10),
+	            'utm_name' => 'utm_content',
+	            'utm_value' => 'kitten',
+	            'content_id' => 1,
 	            'block_id' => 1
 	        ]);
-        }
+    
     }
 }

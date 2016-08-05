@@ -41,14 +41,17 @@ class HomeController extends Controller
         $all_blocks = Block::all();
         foreach($all_blocks as $block) {
             $block->utm_content_id = $block->content_id;
+            $block->save();
         }
         $site = Site::where('isActive', '1')->first();
         $all_marks = UTM::all();
-        foreach($all_marks as $mark) {
-            if (Input::get($mark->utm_name) == $mark->utm_value) {
-                $block = Block::find($mark->block_id);
-                $block->utm_content_id = $mark->content_id;
-                $block->save();
+        if (count($all_marks) > 0) {
+            foreach($all_marks as $mark) {
+                if (Input::get($mark->utm_name) == $mark->utm_value) {
+                    $block = Block::find($mark->block_id);
+                    $block->utm_content_id = $mark->content_id;
+                    $block->save();
+                }
             }
         }
         $header_value = Block::where('name', 'header')->first()->utm_content->value;
@@ -94,5 +97,9 @@ class HomeController extends Controller
                     'site' => $site,
                     'posts' => $posts
         ));
+    }
+
+    public function forms() {
+        return view('forms'); 
     }
 }

@@ -85,11 +85,7 @@
                         </li>
                         <li>
                             <a href="/adm/groups">Groups</a>
-                        </li>
-                        <li>
-                            <a href="/adm/utm">UTM marks</a>
-                        </li>
-                       
+                        </li>                      
                     </ul>
                 </li>
                 <li>

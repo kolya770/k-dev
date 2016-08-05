@@ -15,7 +15,7 @@ class block_table_seeder extends Seeder
     	DB::table('blocks')->insert([
 	            'name' => 'header',
                 'utm_content_id' => 1,
-	            'content_id' => 1,
+	            'content_id' => 2,
 	            'group_id' => 1
 	        ]);
     }

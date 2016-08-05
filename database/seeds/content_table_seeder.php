@@ -12,6 +12,10 @@ class content_table_seeder extends Seeder
     public function run()
     {
         DB::table('content')->insert([
+                'value' => 'KITTENS',
+                'type' => 'input'
+            ]);
+        DB::table('content')->insert([
 	        	'value' => 'KIEVDEV',
 	        	'type' => 'input'
 	        ]);
