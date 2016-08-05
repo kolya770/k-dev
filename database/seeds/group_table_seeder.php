@@ -13,13 +13,8 @@ class group_table_seeder extends Seeder
     public function run()
     {
     	DB::table('groups')->insert([
-	            'name' => 'no_group'
+	            'name' => 'First screen'
 	        ]);
-        $faker = Faker::create();
-        foreach (range(1, 4) as $index) {
-	        DB::table('groups')->insert([
-	            'name' => $faker->word,
-	        ]);
-        }
+        
     }
 }

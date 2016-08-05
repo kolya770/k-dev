@@ -31,6 +31,6 @@ class CreateUtmTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('utm');
     }
 }

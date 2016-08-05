@@ -55,7 +55,7 @@ class HomeController extends Controller
             }
         }
         $header_value = Block::where('name', 'header')->first()->utm_content->value;
-        $image = 'none';
+        $image = Block::where('name', 'header_image')->first()->utm_content->value;
 
         //now we need to determine which projects are to show. 
         $projects = array();

@@ -11,26 +11,21 @@ class content_table_seeder extends Seeder
      */
     public function run()
     {
-        DB::table('content')->insert([
+        DB::table('content')->insert([ //id = 1
                 'value' => 'KITTENS',
                 'type' => 'input'
             ]);
-        DB::table('content')->insert([
+        DB::table('content')->insert([ //id = 2
 	        	'value' => 'KIEVDEV',
 	        	'type' => 'input'
 	        ]);
-		$faker = Faker::create();
-        foreach (range(1, 5) as $index) {
-	        DB::table('content')->insert([
-	        	'value' => $faker->paragraph,
-	        	'type' => 'textarea'
-	        ]);
-        }
-        foreach (range(1, 5) as $index) {
-	        DB::table('content')->insert([
-	        	'value' => 'img/1.jpg',
-	        	'type' => 'image'
-	        ]);
-        }
+        DB::table('content')->insert([ //id = 3
+                'value' => 'none',
+                'type' => 'image'
+            ]);
+		DB::table('content')->insert([ //id = 4
+                'value' => 'img/kit.jpg',
+                'type' => 'image'
+            ]);
     }
 }
