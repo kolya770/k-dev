@@ -5,7 +5,7 @@
             
                 
                 <div class="col-md-offset-1 col-md-1 col-xs-12">
-                <p class="ft-email">EMAIL</p>
+                <p class="ft-email">EMAIL:</p>
                 </div>
                 <div class="col-md-2 email">
                 <span><a href="mailto:talk@kievdev.com" target="_top" style="text-decoration: none; color: #54b2ce;">talk@kievdev.com</a></span>
