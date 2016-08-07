@@ -14,7 +14,7 @@
 
 
 	Route::get('/', 'HomeController@index');
-	Route::get('/show/{id}','HomeController@show');
+	Route::get('/blog/{id}','HomeController@show');
 	Route::get('/forms/', 'HomeController@forms');
 	Route::get('/blog/', 'HomeController@blog');
 	Route::get('/tags/{id}', 'TagController@find');

@@ -6,10 +6,10 @@
         </div>
         <div class="row see-more">
             <h3>
-                <div class="col-sm-offset-3 col-sm-3" style="text-align: right;">
+                <div class="col-sm-offset-3 col-sm-3">
                 WANT TO SEE MORE?   
                 </div>
-                <div class="col-sm-3" style="text-align: left;">
+                <div class="col-sm-3">
                     <a href="/portfolio/">VIEW ALL WORKS</a>
                 </div>
             </h3>
