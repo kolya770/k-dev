@@ -469,6 +469,10 @@
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
+.panel-group .active .panel-title a img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
 .panel-group .panel-heading {
   text-decoration: none;
   text-align: center;
@@ -499,6 +503,10 @@
 .my-works h1 {
   font-family: 'UniSansHeavy';
   margin-bottom: 30px;
+}
+.my-works h1 a {
+  text-decoration: none;
+  color: white;
 }
 .my-works .see-more {
   font-family: 'UniSansThinItalic';

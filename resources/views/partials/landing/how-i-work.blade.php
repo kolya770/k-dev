@@ -131,7 +131,7 @@
         
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
-              <div class="panel-heading">
+              <div class="panel-heading active">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#chat">
                     <img src="img/chat.png" class="image-how">

@@ -186,6 +186,7 @@
   .panel {
     background-color: transparent;
     border: none;
+
   }
 
   .panel-default {
@@ -227,13 +228,23 @@
     width: 100%;
     left: 0;
   }
+  .active {
+      .panel-title {
+        a {
+          img {
+          -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+          }
+        }
+        
+      }
+    }
   .panel-heading {
     text-decoration: none;
     text-align: center;
     color: #fff;
     background-color: transparent;
     border: none;
-
   }
   .panel-body {
     h3 {

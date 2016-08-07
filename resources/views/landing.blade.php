@@ -82,6 +82,12 @@
         })
     });        
   </script>
+  <script>
+      $('.panel-heading a').click(function() {
+        $('.panel-heading').removeClass('active');
+        $(this).parents('.panel-heading').addClass('active');
+      });
+  </script>
 {!! HTML::script('js/landing/jquery.easing.min.js') !!}
 {!! HTML::script('js/landing/scrolling-nav.js') !!}
 {!! HTML::script('js/landing/js/backgroundVideo.min.js') !!}
