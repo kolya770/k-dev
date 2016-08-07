@@ -43,44 +43,51 @@ body {
     background-color: #4b98ae;
   }
 }
-.navbar-inverse.navbarCustom {
+.navbar-inverse .navbar-nav > .active > a {
+  color: #fff;
+  background-color: #4cb5cd;
+}
+.navbarCustom {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 1;
   border: none;
-  border-radius: 0;
   /* For Safari 5.1 to 6.0 */
   /* For Opera 11.1 to 12.0 */
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, rgba(107, 171, 211, 0.3), rgba(34, 194, 196, 0.3));
   /* Standard syntax */
 }
-.navbar-inverse.navbarCustom li {
+.navbarCustom li {
   list-style: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
-.navbar-inverse.navbarCustom li:hover {
-  background-color: #158282;
+.navbarCustom li:hover {
+  background-color: #61aed1;
 }
-.navbar-inverse.navbarCustom li a {
+.navbarCustom li a {
+  color: white !important;
+  font-family: 'PT Sans';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 11px;
+  text-transform: uppercase;
   padding: 5px 20px;
   line-height: 50px;
   text-decoration: none;
   font-size: 16px;
-  color: #d3e1e7;
 }
-.navbar-inverse.navbarCustom li a:hover {
-  color: white;
+.navbarCustom li a:hover {
+  color: white !important;
 }
 .portfolio {
   background-image: url('/img/hiw-bg.png');
   height: 100%;
 }
-@media only screen and (max-width: 700px) {
-  .portfolio .title {
-    margin-top: 10%;
-  }
+.portfolio .title {
+  margin-top: 10%;
 }
 .portfolio h1 {
   margin-top: 10%;
@@ -90,6 +97,11 @@ body {
   font-size: 36px;
   font-weight: 700;
   line-height: 35px;
+}
+@media only screen and (max-width: 700px) {
+  .portfolio h1 {
+    margin-top: 80px;
+  }
 }
 .first-bg {
   position: absolute;

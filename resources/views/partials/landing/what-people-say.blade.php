@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1>What people say</h1>
+                <h1 class="title">What people say</h1>
             </div>
         </div>
         <!-- Slider main container -->

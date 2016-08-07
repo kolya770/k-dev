@@ -9,6 +9,7 @@
 	{!! Html::style('css/landing/preloader.css') !!}
 
     <style type="text/css">
+        @media all and (max-width: 1190px) {
         .nav-tabs>li::after {
             content:" ";
             background: url(img/str.png) no-repeat;
@@ -25,6 +26,7 @@
         .nav-tabs>li:last-child:after {
            display: none;
         }
+    }
     </style>
 	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

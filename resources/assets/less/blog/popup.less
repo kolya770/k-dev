@@ -1,17 +1,15 @@
 .popup {
   display:none;
+  z-index:28;
   .popup-wrapper{
     position: fixed;
     width: 100%;
     height: 100%;
     background: rgba(69, 79, 85, 0.5);
-    z-index: 5;
+    z-index: 28;
     box-sizing: border-box;
     form {
-      .close {
-        font-size: 48px;
-      }
-      @media all and (min-width: 320px) and (max-width: 780px) {
+    @media all and (min-width: 320px) and (max-width: 780px) {
         width:100%;
         height: 100%;
         position: fixed;
@@ -26,6 +24,7 @@
       border-radius: 5px;
       background-color: #95a3aa;
       label {
+        margin-top: 20px;
         font-family: 'PT Sans';
         font-size: 16px;
         color: #415058;
@@ -40,13 +39,14 @@
         }
       }
       .send-message-popup {
+        
         float: right;
         display: block;
         width: 240px;
         margin-top: 30px;
         padding: 5px;
         font-size: 24px;
-        font-family: 'UniSansThin';
+        font-family: 'RobotoCondensed';
         background: transparent;
         border: 2px solid white;
         border-radius: 5px;
@@ -63,18 +63,17 @@
   }
 }
 
-.popup-success {
+.popup-success{
   z-index:28;
 
   .popup-wrapper{
-    position: fixed;   
+    position: fixed;
     width: 100%;
     height: 100%;
     background: rgba(69, 79, 85, 0.5);
     z-index: 28;
     box-sizing: border-box;
-    
-    .text-box {
+    .text-box{
       position: relative;
       width: 55%;
       top: 50%;
@@ -84,9 +83,9 @@
       z-index: 10;
       border-radius: 5px;
       background-color: #95a3aa;
-      font-family: 'PT Sans';
-      font-size: 16px;
-      color: #415058;
+        font-family: 'PT Sans';
+        font-size: 16px;
+        color: #415058;
     }
   }
 }

@@ -1,17 +1,21 @@
-<section class="blog wrap">
+<section class="blog wrap" id="blog">
 <div class="bg-holder"></div>
     <div class="container">
     <div class="visible-xs">
         <div class="row">
             <div class="blog-heading col-xs-12">
-            <a href="{{action('HomeController@show',['id'=>$post->id])}}">
-                <h1>Blog</h1>
-            </a>
+            
+                <h1 class="title">Blog</h1>
+
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6 col-sm-offset-0 col-xs-offset-1 col-xs-10 blog-text">
-                <h3>{{$post->title}}</h3>
+            <h3>
+            <a href="{{action('HomeController@show',['id'=>$post->id])}}">
+                {{$post->title}}
+            </a>
+            </h3>
             </div>  
             <div class="blog-image col-sm-5 col-sm-offset-1 col-xs-offset-1 col-xs-10">
                 <a href="{{action('HomeController@show',['id'=>$post->id])}}">
@@ -25,9 +29,13 @@
                         <p style="text-align: center; padding-top: 20px;">
                         {!! $post->content !!}
                         </p>
+                        <div class="row" style="text-align:center;">
+                        
                         <a href="{{action('HomeController@show',['id'=>$post->id])}}">
                         <button class="btn border-btn">READ MORE</button>
                         </a>
+                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -35,7 +43,7 @@
         <div class="row">
             <div class="blog-heading col-xs-12">
             
-                <h1>Blog</h1>
+                <h1 class="title">Blog</h1>
         
             </div>
         </div>
