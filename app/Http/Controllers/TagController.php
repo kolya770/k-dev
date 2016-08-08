@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Models\Site;
 use App\Models\Category;
 use App\Http\Requests;
 
@@ -40,16 +41,14 @@ class TagController extends Controller
      */
     public function find($id) {
         //paginating posts finded
+        $site = Site::where('isActive', '1')->first();
         $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
         $postsPerPage = $postsPerPageArray[0];
     	$posts = Tag::find($id)->posts()->paginate($postsPerPage);
-        $tags = Tag::all();
-        $categories = Category::all();
 
     	return view('blog')->with(array(
             'posts' => $posts, 
-            'tags'  => $tags,
-            'categories' => $categories
+            'site' => $site
         ));
     }
 }
