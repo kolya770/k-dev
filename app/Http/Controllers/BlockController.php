@@ -2,7 +2,8 @@
 /**
  * Author:      Elizabeth Blyumska
  * DateTime:    19:36 02 August 2016 (Tuesday)
- * Description: Controller for managing blocks of content.
+ * Description: Controller for managing blocks of content. Each block is tied 
+ * to content with content_id and to a group with grouo_id.
  */
 
 namespace App\Http\Controllers;

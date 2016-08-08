@@ -38,6 +38,11 @@ class UserController extends Controller
     	return back()->withMessage('User deleted!');
     }
 
+    /*
+     * You can assign and revoke roles from user. Root user can assign users, 
+     * roots and admins; admin user can assign admins and users. Root user can 
+     * revoke any role.
+     */
     public function assignRole($id, $role) {
         $user = User::find($id);
         $user->assignRole($role);

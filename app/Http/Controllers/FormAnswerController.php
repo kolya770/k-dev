@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author:      Elizabeth Blyumska
+ * DateTime:    10:49 08 August 2016 (Monday)
+ * Description: Controller for managing user answers for forms.
+ */
 
 namespace App\Http\Controllers;
 
@@ -12,6 +17,9 @@ class FormAnswerController extends Controller
 {
 
 	 public function __construct() {
+        /*
+         * You need to authenticate to answer briefs.
+         */
     	$this->middleware('auth');
     }
 

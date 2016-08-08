@@ -16,6 +16,9 @@ use App\Http\Requests;
 
 class PortfolioController extends Controller
 {
+    /*
+     * Method for index portfolio page with all projects.
+     */
     public function index() {
         $site = Site::where('isActive', '1')->first();
     	$projects = Project::all();
@@ -30,6 +33,9 @@ class PortfolioController extends Controller
     		));
     }
 
+    /*
+     * Method for showing a single project.
+     */
     public function show($id) {
         $site = Site::where('isActive', '1')->first();
     	$project = Project::find($id);

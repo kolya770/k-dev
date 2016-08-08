@@ -2,7 +2,7 @@
 /**
  * Author:      Elizabeth Blyumska
  * DateTime:    14:59 01 August 2016 (Monday)
- * Description: 
+ * Description: Method for managing UTM. Each UTM is tied to content with content_id.
  */
 
 namespace App\Http\Controllers;
@@ -22,21 +22,29 @@ class UTMController extends Controller
     	return view('admin.content.utm');
     }
 
+    /*
+     * Method for storing new UTMs. 
+     */
     public function store(Request $request) {
+        //First, we create new UTM and new Content objects.
     	$utm = new UTM();
     	$content = new Content();
+        //Get from request everything we can get at once.
     	$utm->utm_name = $request->get('utm_name');
     	$utm->utm_value = $request->get('utm_value');
     	$utm->block_id = $request->get('block');
     	$content->type = $type = $request->get('type'); 
+        //Then, variations. If content type is image, we save it as image.
     	if ($type == 'image') {
     		$root = $_SERVER['DOCUMENT_ROOT'] . "/img/"; 
             $file = $request->file('content');
             $f_name = $file->getClientOriginalName();
             $file->move($root, $f_name);
             $content->value = 'img/' . $f_name;
+
     	} elseif ($type == 'input' || $type == 'code') {
     		$content->value = $request->get('content');
+        //special save for Summernote editor - we save all images
     	} else {
     		$dom = new DomDocument();
         	libxml_use_internal_errors(true);
@@ -87,6 +95,10 @@ class UTMController extends Controller
     	return back()->withMessage('UTM was successfully deleted!');
     }
 
+    /*
+     * Update method - practically similar to store method with slight 
+     * differences.
+     */
     public function update(Request $request, $id) {
         $mark = UTM::find($id);
         $mark->utm_name = $request->get('utm_name');

@@ -76,7 +76,10 @@ class HomeController extends Controller
         )); 
     }
 
-
+    /*
+     * Method for showing a single post in blog.
+     *
+     */
     public function show($id) {
         $site = Site::where('isActive', '1')->first();
         $posts = Post::where('id', '!=', $id); //TODO: make other posts
@@ -87,6 +90,10 @@ class HomeController extends Controller
         ));
     }
 
+    /*
+     * Method for getting main blog page with paginated posts
+     * and site configuration (meta-tags etc.).
+     */
     public function blog() {
         $site = Site::where('isActive', '1')->first();
         $postsPerPageArray = \DB::table('settings')->where('id', '1')->lists('postsPerPage');
