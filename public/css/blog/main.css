@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'PT Sans';
-  src: url("/fonts/Pt%20sans%20reg.ttf");
-}
-@font-face {
   font-family: 'RobotoCondensed';
   src: url("/fonts/RobotoCondensedRegular.ttf");
 }
 @font-face {
-  font-family: 'PTSans';
-  src: url("/fonts/pt-sans.bold.ttf");
-}
-@font-face {
   font-family: 'RobotoCondensedBold';
   src: url("/fonts/RobotoCondensedBold.ttf");
+}
+@font-face {
+  font-family: 'PT Sans';
+  src: url("/fonts/Pt%20sans%20reg.ttf");
+}
+@font-face {
+  font-family: 'PT Sans Bold';
+  src: url("/fonts/pt-sans.bold.ttf");
 }
 @font-face {
   font-family: 'UniSansHeavy';
@@ -34,6 +34,10 @@
   src: url("/fonts/UniSansThinItalicCAPS.eot?#iefix") format("embedded-opentype"), url("/fonts/Uni%20Sans%20Thin%20Italic.otf") format("opentype"), url("/fonts/UniSansThinItalicCAPS.woff") format("woff"), url("/fonts/UniSansThinItalicCAPS.ttf") format("truetype"), url("/fonts/UniSansThinItalicCAPS.svg#UniSansThin") format("svg");
   font-weight: normal;
   font-style: normal;
+}
+body {
+  font-size: 16px;
+  /* global font */
 }
 .navbar-inverse .navbar-toggle {
   border-color: #0e5656;
@@ -161,37 +165,32 @@
   }
 }
 .block-center {
-  padding: 3% 5% 5% 5%;
-  margin-bottom: 50px;
+  padding: 5%;
   margin-top: 60px;
-  margin-left: 3%;
 }
-.block-center .position-content {
-  margin-top: 3%;
-}
-.block-center .position-content .no-posts {
+.block-center .no-posts {
   background-color: white;
   border-radius: 5px;
   padding: 3% 5% 5% 5%;
   font-family: 'RobotoCondensedBold';
 }
-.block-center .position-content a:hover {
+.block-center a:hover {
   opacity: 0.75;
   text-decoration: none;
 }
-.block-center .position-content .top-block img {
+.block-center .top-block img {
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.block-center .position-content .bot-block {
+.block-center .bot-block {
   padding: 3% 5% 5% 5%;
   height: 100%;
   background-color: white;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.block-center .position-content .bot-block h1 {
+.block-center .bot-block h1 {
   font-family: 'RobotoCondensedBold';
   color: #000000;
   line-height: 30px;
@@ -200,7 +199,7 @@
   text-align: left;
   margin-bottom: 20px;
 }
-.block-center .position-content .bot-block p {
+.block-center .bot-block p {
   font-family: 'PT Sans';
   color: #000000;
   font-size: 1em;
@@ -208,7 +207,7 @@
   text-align: left;
   margin-bottom: 5%;
 }
-.block-center .position-content .bot-block h4 {
+.block-center .bot-block h4 {
   font-family: 'PT Sans';
   color: #999999;
   font-size: 1em;
@@ -217,11 +216,11 @@
   text-align: left;
   margin: 20px 0;
 }
-.block-center .position-content .bot-block .share {
+.block-center .bot-block .share {
   display: inline-block;
   float: left;
 }
-.block-center .position-content .bot-block .share h3 {
+.block-center .bot-block .share h3 {
   font-family: RobotoCondensedBold;
   color: #cccccc;
   font-size: 1em;
@@ -229,10 +228,10 @@
   text-align: left;
   margin: 15px 0;
 }
-.block-center .position-content .bot-block .left-btn {
+.block-center .bot-block .left-btn {
   display: inline-block;
 }
-.block-center .position-content .bot-block .left-btn .share-btn {
+.block-center .bot-block .left-btn .share-btn {
   border-radius: 5px;
   border: 2px solid #cccccc;
   background-color: rgba(255, 255, 255, 0);
@@ -240,17 +239,17 @@
   height: 44px;
   margin-left: 10px;
 }
-.block-center .position-content .bot-block .right-btn {
+.block-center .bot-block .right-btn {
   display: inline-block;
   float: right;
 }
 @media all and (min-width: 320px) and (max-width: 780px) {
-  .block-center .position-content .bot-block .right-btn {
+  .block-center .bot-block .right-btn {
     float: left;
     margin-left: 3%;
   }
 }
-.block-center .position-content .bot-block .right-btn .read-more {
+.block-center .bot-block .right-btn .read-more {
   margin-top: 5%;
   border-radius: 5px;
   border: 2px solid #20c3c4;
@@ -299,7 +298,6 @@
   /* Standard syntax */
 }
 .write-to-me .write-heading {
-  /* Text style for "write to me" */
   color: white;
   font-family: 'RobotoCondensed';
   font-size: 36px;
@@ -307,15 +305,22 @@
   line-height: 11px;
   text-transform: uppercase;
 }
-.write-to-me .write-heading h1 {
-  text-align: center;
+@media (max-width:767px) {
+  .write-to-me .write-heading h2 {
+    text-align: center;
+  }
+}
+@media (min-width:768px) {
+  .write-to-me .write-heading h2 {
+    text-align: right;
+  }
 }
 .write-to-me .send-message {
   display: block;
   width: 240px;
-  margin: 3% auto;
   padding: 20px;
   color: black;
+  margin: 8px 0;
   font-family: 'RobotoCondensed';
   font-size: 24px;
   font-weight: 700;
@@ -335,6 +340,17 @@
   color: white;
   border-color: #7cc5e6;
   outline: none;
+}
+@media (max-width:767px) {
+  .write-to-me .send-message {
+    display: inline-block;
+  }
+}
+@media (max-width:767px) {
+  .write-to-me .btn-send-block {
+    text-align: center;
+    width: 100%;
+  }
 }
 footer {
   padding-top: 30px;
@@ -361,14 +377,6 @@ footer p {
   text-align: center;
   font-family: 'RobotoCondensed';
   font-size: 24px;
-}
-@media (min-width: 750px) {
-  .write-heading h1 {
-    text-align: right !important;
-  }
-  .send-message {
-    margin: 3% !important;
-  }
 }
 .popup {
   display: none;
@@ -475,10 +483,6 @@ footer p {
   color: white;
   border-color: #7cc5e6;
   outline: none;
-}
-body {
-  font-size: 16px;
-  /* global font */
 }
 
 /*# sourceMappingURL=main.css.map */

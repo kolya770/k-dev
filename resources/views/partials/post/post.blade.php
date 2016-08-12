@@ -57,17 +57,17 @@
                         @foreach($post->comments as $comment)
                         <hr/>
                         <div class="row">
-                            <div class="col-sm-2 avatar">
+                            <div class="col-sm-3 col-md-2 avatar">
                                 <img src="/img/avatar.png">
                             </div>
-                            <div class="col-sm-8">
-                                <div class="row date">
+                            <div class="col-sm-7 col-md-8">
+                                <div class="date">
                                     {{$comment->created_at}}
                                 </div>
-                                <div class="row name">
+                                <div class="name">
                                     <h3>{{$comment->name}}</h3>
                                 </div>
-                                <div class="row content">
+                                <div class="content">
                                     {{$comment->comment}}
                                 </div>
                             </div>

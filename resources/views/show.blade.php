@@ -7,7 +7,7 @@
 @inject ('tags', 'App\Models\Tag')
 @include ('partials.landing.success')
 @include('partials.landing.popup')
-@include('partials.navbar')
+@include('partials.navbar-other-pages')
 @include('partials.post.post')
 @include('partials.write-to-me')
 @include('partials.footer')

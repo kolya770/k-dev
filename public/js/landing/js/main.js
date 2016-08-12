@@ -1,10 +1,11 @@
 window.onload = function() {
     
-    var popup = document.getElementById('popup');
-    $("#send-message").on("click", function() {
-      popup.style.display = "block";
+    var popup = $('#popup');
 
-      $("#close-popup").on("click", function(){
+    $("#send-message").on("click", function() {
+        popup.style.display = "block";
+
+        $("#close-popup").on("click", function(){
         popup.style.display = "none";
       });
     });
@@ -24,27 +25,30 @@ window.onload = function() {
         popup.style.display = "none";
       });
     });
-  var popup_success = document.getElementById('popup-success');
-  var span_success = document.getElementsByClassName("closesuccess")[0];
 
-  span_success.onclick = function() { 
+    var popup_success = $("#popup-success");
+    var span_success = $(".closesuccess");
+
+    span_success.on('click', function() {
       popup_success.style.display = "none";
-  }
+    });
 
-   
-  var span = document.getElementsByClassName("closepopup")[0];
-  span.onclick = function() { 
+    var span = $(".closepopup");
+
+    span.on('click', function() {
       popup.style.display = "none";
-  }
+    });
 
-	  //changing color of label in popup form
-		$(".popup input, .popup textarea").on("focus", function() {
-			$(this).prev('label').css('color', '#7cc5e6');
-		});
 
-	  $(".popup input, .popup textarea").on("focusout", function() {
-		  $(this).prev('label').css('color', '#415058');
-	  });
+    var popup_input_textarea =  $(".popup input, .popup textarea");
+    //changing color of label in popup form
+    popup_input_textarea.on("focus", function() {
+        $(this).prev('label').css('color', '#7cc5e6');
+    });
+
+    popup_input_textarea.on("focusout", function() {
+        $(this).prev('label').css('color', '#415058');
+    });
 };
 
 $(document).ready(function() {
@@ -56,7 +60,6 @@ $(document).ready(function() {
      * Script made for slider element in the landing page with kenwheeler/slick
      * tool.
      */
-    
   });
 });
 
@@ -97,13 +100,12 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-          $('.images').slick({
-            infinite: true,
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            dots: true,
-            responsive: [
-
+    $('.images').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        responsive: [
             {
                 breakpoint: 1200,
                 settings: {
@@ -129,35 +131,34 @@ $(document).ready(function(){
             }
 
         ]
-            });
-        });
-
+    });
+});
 
 /*
  * Script for modals in image gallery on portfolio-item page.
  */
-var modal = document.getElementById('myModal');
+var modal = $('#myModal');
 
-  // Get the image and insert it inside the modal - use its "alt" text as a caption
-  var images = document.getElementsByClassName('image-item');
-  var modalImg = document.getElementById("img01");
-  var captionText = document.getElementById("caption");
-  var i;
-  for (i = 0; i < images.length; i++) {
-    images[i].onclick = function(){
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      modalImg.alt = this.alt;
-      captionText.innerHTML = this.alt;
-    }
-  }
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("closemodal")[0];
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var images = $('.image-item');
+var modalImg = $("#img01");
+var captionText = $("#caption");
+var i;
+for (i = 0; i < images.length; i++) {
+images[i].onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  modalImg.alt = this.alt;
+  captionText.innerHTML = this.alt;
+}
+}
+// Get the <span> element that closes the modal
+var span = $(".closemodal");
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() { 
-      modal.style.display = "none";
-  }
+// When the user clicks on <span> (x), close the modal
+span.on('click', function() {
+  modal.style.display = "none";
+});
 
 
 

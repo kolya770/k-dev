@@ -3,44 +3,103 @@
   font-family: 'RobotoCondensed';
   color: #ffffff;
   background: url('/img/my-works-bg-1.png') center center no-repeat @bg-gray;
-  h1 {
-
+  h2 {
     font-family: 'RobotoCondensed';
     margin-bottom: 30px;
   }
-
-  .see-more {
-    .see {
-      @media all and (min-width: 320px) and (max-width: 780px) {
-        margin-bottom: 20px;
-      }
-    }
+  .see {
     font-family: 'RobotoCondensed';
     font-size: 20px;
     font-weight: 400;
-    line-height: 11px;
+    line-height: 20px;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 50px;
-    a {
-      color: #54b2ce;
-      &:hover {
-        color: white;
-        text-decoration: blink;
-      }
+    color: #FFFFFF;
+    margin-top: 0;
+    @media @bootstrap-xs {
+      margin-bottom: 10px;
+    }
+    @media @bootstrap-sm {
+      margin-bottom: 10px;
+    }
+    @media @bootstrap-md {
+      float: right;
+      margin-bottom: 50px;
     }
   }
-  .text-wrapper {
-    margin-bottom: 20px;
+  .view-blocks {
+    color: #54b2ce;
+    text-decoration: underline;
+    @media @bootstrap-xs {
+      display: block;
+    }
+    @media @bootstrap-sm {
+      display: block;
+    }
+    @media @bootstrap-md {
+      float: left;
+      display: inline-block;
+    }
   }
+
   .img-wrapper {
     margin-bottom: 20px;
     img:last-of-type {
       right: 0;
     }
   }
+  .project-img {
+    @media @bootstrap-xs {
+      padding-left: 0;
+      width: 80%;
+    }
+    @media @bootstrap-sm {
+      padding-left: 0;
+      width: 80%;
+    }
+    @media @bootstrap-md {
+      padding-left: 50px;
+      width: 100%;
+    }
+  }
+  .title-about {
+    margin: 0 0 30px 0;
+    font-family: 'RobotoCondensed';
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+    @media @bootstrap-xs {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    @media @bootstrap-sm {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    @media @bootstrap-md {
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+  .my-work-block-1 {
+    text-align: center;
+  }
 }
-.text-wrapper {
+.about-project {
+  @media @bootstrap-xs {
+    text-align: center;
+  }
+  @media @bootstrap-sm {
+    text-align: center;
+  }
+  @media @bootstrap-md {
+    text-align: left;
+  }
   img {
     @media all and (min-width: 320px) and (max-width: 780px) {
         
@@ -52,27 +111,22 @@
     text-decoration: none;
       color: white;
   }
-  h3 {
-    margin: 0 0 15px 0;
-    font-family: 'RobotoCondensed';
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 11px;
-    text-transform: uppercase;
-     @media all and (min-width: 320px) and (max-width: 780px) {
-        text-align: center;
-        margin-top: 30px;
-      }
-    text-decoration: none;
-    color: white;
-  }
   p {
     line-height: 20px;
     font-family: 'PT Sans';
     font-size: 16px;
+    margin-top: 20px;
+    @media @bootstrap-xs {
+      text-align: center;
+    }
+    @media @bootstrap-sm {
+      text-align: center;
+    }
+    @media @bootstrap-md {
+      text-align: left;
+    }
   }
   .border-btn-pro {
-    /* Text style for "border-button" */
     color: white;
     font-family: 'RobotoCondensed';
     font-size: 16px;
@@ -83,10 +137,8 @@
     height: 44px;
     margin: 15px 0;
     background: transparent;
-    border-width: 1px;
-    border: none;
+    border: 2px solid @aquamarine;
     border-radius: 4px;
-    background: url('/img/button-border.png') center center no-repeat transparent;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     outline: none;
     &:hover {

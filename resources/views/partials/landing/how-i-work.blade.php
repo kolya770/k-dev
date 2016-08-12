@@ -4,14 +4,14 @@
             <h2 class="title">HOW I WORK</h2>
         </div>
         <div class="row">
-            <div class="col-xs-10 col-xs-offset-1 tabs">
+            <div class="col-xs-12 tabs">
                 <ul id="myTab" class="nav nav-tabs">
                     <li class="active">
                         <a href="#panel1">
                             <div class="blocks-how">
                                 <img src="img/chat.png" class="image-how">
                                 <p>Chatting<br /> with client</p>
-                                <img src="img/str2.png" class="img-active">
+                                <img src="/img/str2.png" class="img-active">
                             </div>
                         </a>
                     </li>
@@ -45,7 +45,7 @@
                     <li>
                         <a href="#panel5">
                             <div class="blocks-how">
-                                
+
                                 <img src="img/code.png" class="image-how">
                                 <p>Coding &amp;<br />fixing bugs</p>
                                 <img src="img/str2.png" class="img-active">
@@ -244,7 +244,7 @@
               <div id="product" class="panel-collapse collapse">
                 <div class="panel-body">
                 <h3>CHATTING WITH CLIENT</h3>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                1111Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
               </div>
@@ -252,13 +252,13 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#product">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#test">
                     <img src="img/tests.png" class="image-how">
                     <p>Tests</p>
                   </a>
                 </h4>
               </div>
-              <div id="product" class="panel-collapse collapse">
+              <div id="test" class="panel-collapse collapse">
                 <div class="panel-body">
                 <h3>TESTS</h3>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit,

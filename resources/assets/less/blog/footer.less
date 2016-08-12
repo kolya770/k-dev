@@ -1,24 +1,28 @@
 .write-to-me {
   padding: 3% 0;
   .gradient(#6babd3 , #22c2c4);
-  .write-heading {  
-        /* Text style for "write to me" */
+  .write-heading {
     color: white;
     font-family: 'RobotoCondensed';
     font-size: 36px;
     font-weight: 400;
     line-height: 11px;
     text-transform: uppercase;
-    h1 {
-      text-align: center;
+    h2 {
+      @media @bootstrap-xs {
+        text-align: center;
+      }
+      @media @bootstrap-sm {
+        text-align: right;
+      }
     }
   }
   .send-message {
     display: block;
     width: 240px;
-    margin: 3% auto;
     padding: 20px;
     color: black;
+    margin: 8px 0;
     font-family: 'RobotoCondensed';
     font-size: 24px;
     font-weight: 700;
@@ -33,6 +37,15 @@
     border-color 0.3s ease-in-out;
     &:hover {  background: #d0edf2;  }
     &:active {  .button-active;  }
+    @media @bootstrap-xs {
+      display: inline-block;
+    }
+  }
+  .btn-send-block {
+    @media @bootstrap-xs {
+      text-align: center;
+      width: 100%;
+    }
   }
 }
 footer {
@@ -40,11 +53,11 @@ footer {
   padding-bottom: 30px;
   background-color: #22282b;
   .phone {
-    color: #54b2ce;  
+    color: #54b2ce;
     text-align: center;
     font-family: 'PT Sans';
     font-weight: bold;
-    font-size: 24px;      
+    font-size: 24px;
   }
   .email {
     text-align: center;
@@ -60,10 +73,4 @@ footer {
     font-family: 'RobotoCondensed';
     font-size: 24px;
   }
-}
-@media (min-width: 750px) {
-  .write-heading {
-    h1 {  text-align: right !important;  }
-  }
-  .send-message {  margin: 3% !important;  }
 }

@@ -1,10 +1,9 @@
-<div id="about">
-<section class="about-me wrap">
+<section id="about" class="about-me wrap">
     <div class="container">
         <div class="row">
-            <h1 class="title">About me</h1>
-        </div>
-        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="title">About me</h2>
+            </div>
             <div class="col-sm-4 col-sm-offset-0 col-xs-offset-1 col-xs-10">
                 <div class="info-item">
                     <h3>Education</h3>
@@ -46,4 +45,3 @@
         </div>
     </div>
 </section>
-</div>

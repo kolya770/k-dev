@@ -4,7 +4,7 @@
     {!! Html::style('css/lightgallery.css') !!}
 @endsection
 @section ('content')
-@include('partials.navbar')
+@include('partials.navbar-other-pages')
 @include('partials.portfolio.portfolio-item')
 @endsection
 @section('js')

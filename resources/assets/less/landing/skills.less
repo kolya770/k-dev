@@ -3,72 +3,62 @@
   font-family: 'UniSansThin';
   color: #ffffff;
   background-image: url('/img/hiw-bg.png');
-  .skill-wrapper {
-    margin-bottom: 20px;
-    .lang-name {
-      height: 40px;
-      font-size: 16px;
-      .gradient(#364955, #215051 );
-      p {
-        margin: 10px 0;
-        span {  /* Text style for "lang names" */
-          
-          font-family: 'RobotoCondensed';
-        }
-      }
+  .skills-block {
+    width: 100%;
+    @media @bootstrap-xs {
+      padding-left: 30%;
+      padding-right: 20%;
     }
-    .progress-line {
-      height: 40px;
-      margin-left: 2px;
-      .gradient(#6babd3 , #22c2c4);
+    @media @bootstrap-sm {
+      padding-left: 20px;
     }
-    .percentage {
-      display: table;
-      height: 40px;
-      width: 100%;
-      font-family: 'UniSansThinItalic';
-      font-size: 24px;
-      span {
-        display: table-cell;
-        vertical-align: middle;
+    .percents {
+      display: block;
+      .text-skills {
         text-align: center;
+        color: white;
+        font-family: 'PT Sans';
+        font-size: 18px;
+        font-style: italic;
+        line-height: 20px;
+      }
+    }
+    .list {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      color: white;
+      font-family: 'PT Sans';
+      font-size: 16px;
+      font-style: italic;
+      line-height: 30px;
+      span {
+        color: #54b2ce;
+        margin-right: 15px;
+        font-size: 20px;
       }
     }
   }
-}
-
-.charts {
-  @media (max-width: 750px) {
-    margin-left: 25%;
-  }
-  margin-top: 40px;
-  .percents { 
-    @media (max-width: 750px) {
-      margin-left: 40%;
+  .last-skills {
+    @media @bootstrap-sm {
+      .last-1 {
+        padding-left: 160px;
+      }
+      .last-2 {
+        padding-left: 50px;
+        padding-right: 110px;
+      }
     }
-    @media (min-width: 750px) {
-      margin-left: 55%;
+    @media @bootstrap-md {
+      .last-1 {
+        padding-left: 0;
+      }
+      .last-2 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .skills-block {
+        padding-left: 20px;
+      }
     }
-    color: white;
-    font-family: 'PT Sans';
-    font-size: 18px;
-    font-style: italic;
-    line-height: 20px;
   }
-  .list {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    span {
-      color: #54b2ce;
-      margin-right: 15px;
-      font-size: 20px;
-    }
-    margin-left: 15px;
-    color: white;
-    font-family: 'PT Sans';
-    font-size: 16px;
-    font-style: italic;
-    line-height: 30px;
-  }
-
 }

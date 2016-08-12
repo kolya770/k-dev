@@ -3,11 +3,13 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6">
                 <div class="write-heading">
-                    <h1>Write to me</h1>
+                    <h2>Write to me</h2>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <button class="send-message" id="send-message">SEND MESSAGE</button>
+                <div class="btn-send-block">
+                    <button class="send-message" id="send-message">SEND MESSAGE</button>
+                </div>
             </div>
         </div>
     </div>

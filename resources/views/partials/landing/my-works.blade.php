@@ -2,60 +2,38 @@
 <section class="my-works wrap">
     <div class="container">
         <div class="row">
-            <h5 class="title">MY WORKS</h1>
-        </div>
-        <div class="row see-more">
-            <h3>
-                <div class="see col-sm-offset-3 col-sm-3">
-                WANT TO SEE MORE?   
-                </div>
-                <div class="col-sm-3">
-                    <a href="/portfolio/">VIEW ALL WORKS</a>
-                </div>
-            </h3>
-        </div>
-        <div class="row hidden-xs">
-        <div class="col-sm-5 col-xs-10 col-xs-offset-1 text-wrapper">
-                <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
-                    <h3>{{$projects[0]->title}}</h3>
-                </a>
-                <p>
-                {{$projects[0]->brief}}
-                </p>
-                <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
-                <button class="border-btn-pro">VIEW PROJECT</button>
-                </a>
+            <div class="col-xs-12">
+                <h2 class="title">MY WORKS</h2>
             </div>
-            <div class="hidden-xs col-sm-5 col-xs-10 col-xs-offset-1">
-                <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
-                    <img style="width:100%;" src="/img/browser_phone.png" alt="Project preview"/>
-                </a>
+            <div class="col-xs-12 col-sm-6">
+                <h2 class="see">WANT TO SEE MORE?</h2>
             </div>
-            
+            <div class="col-xs-12 col-sm-6">
+                <a href="/portfolio/" class="see view-blocks">VIEW ALL WORKS</a>
+            </div>
         </div>
-        <div class="row visible-xs">
-            <div class="col-xs-10 col-xs-offset-1 text-wrapper">
-                <div class="row">
-                        <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
-                            <h3>{{$projects[0]->title}}</h3>
-                        </a>
+        <div class="row">
+            <div class="col-xs-12 col-md-7 col-md-push-5">
+                <div class="my-work-block-1">
+                    <a class="title-about visible-xs visible-sm" href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
+                        {{$projects[0]->title}}
+                    </a>
+                    <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
+                        <img class="project-img" src="/img/project-photo.png" alt="Project preview"/>
+                    </a>
                 </div>
-                <div class="row">
-                        <a class="visible-xs" href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
-                            <img style="width:100%;" src="/img/browser_phone.png" alt="Project preview"/>
-                        </a>
-                </div>
-                <div class="row">
-                        <p>
+            </div>
+            <div class="col-xs-12 col-md-5 col-md-pull-7">
+                <div class="about-project">
+                    <a class="title-about hidden-xs hidden-sm" href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
+                        {{$projects[0]->title}}
+                    </a>
+                    <p>
                         {{$projects[0]->brief}}
-                        </p>
-                </div>
-                <div class="row" style="text-align:center;">
-                
-                        <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
+                    </p>
+                    <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
                         <button class="border-btn-pro">VIEW PROJECT</button>
-                        </a>
-            
+                    </a>
                 </div>
             </div>
         </div>

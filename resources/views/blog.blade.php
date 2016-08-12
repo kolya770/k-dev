@@ -9,7 +9,7 @@
 @include('partials.landing.success')
 @include('partials.landing.preloader')
 @include('partials.landing.popup')
-@include('partials.navbar')
+@include('partials.navbar-other-pages')
 @include('partials.blog.blog')
 @include('partials.write-to-me')
 @include('partials.footer')

@@ -67,113 +67,105 @@
   }      
   
 .block-center {
-  padding: 3% 5% 5% 5%;
-  margin-bottom: 50px;
+  padding: 5%;
   margin-top: 60px;
-  margin-left: 3%;
+  .no-posts {
+    background-color: white;
+    border-radius: 5px;
+    padding: 3% 5% 5% 5%;
+    font-family: 'RobotoCondensedBold';
+  }
+  a:hover{
+    opacity: 0.75;
+    text-decoration: none;
+  }
 
-  .position-content {
-    margin-top: 3%;
-    
-    .no-posts {
-      background-color: white;
-      border-radius: 5px;
-      padding: 3% 5% 5% 5%;
+  .top-block {
+    img {
+      width: 100%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+
+    }
+  }
+  .bot-block {
+    padding: 3% 5% 5% 5%;
+    height: 100%;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    h1 {
       font-family: 'RobotoCondensedBold';
+      color: #000000;
+      line-height: 30px;
+      font-size: 1.5em;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 20px;
     }
-    a:hover{
-      opacity: 0.75;
-      text-decoration: none;
+    p {
+      font-family: 'PT Sans';
+      color: #000000;
+      font-size: 1em;
+      line-height: 30px;
+      text-align: left;
+      margin-bottom: 5%;
     }
+    h4 {
+      font-family: 'PT Sans';
+      color: #999999;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+      margin: 20px 0;
+    }
+    .share {
+      display: inline-block;
+      float: left;
 
-    .top-block {
-      img {
-        width: 100%;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-
+      h3 {
+        font-family: RobotoCondensedBold;
+        color: #cccccc;
+        font-size: 1em;
+        line-height: 16px;
+        text-align: left;
+        margin: 15px 0;
       }
     }
-    .bot-block {
-      padding: 3% 5% 5% 5%;
-      height: 100%;
-      background-color: white;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      h1 {
-        font-family: 'RobotoCondensedBold';
-        color: #000000;
-        line-height: 30px;
-        font-size: 1.5em;
-        font-weight: 700;
-        text-align: left;
-        margin-bottom: 20px;
+    .left-btn {
+      display: inline-block;
+
+      .share-btn {
+        border-radius: 5px;
+        border: 2px solid #cccccc;
+        background-color:
+        rgba(255, 255, 255, 0);
+        width: 44px;
+        height: 44px;
+        margin-left: 10px;
       }
-      p {
-        font-family: 'PT Sans';
-        color: #000000;
-        font-size: 1em;
-        line-height: 30px;
-        text-align: left;
-        margin-bottom: 5%;
-      }
-      h4 {
-        font-family: 'PT Sans';
-        color: #999999;
-        font-size: 1em;
-        font-weight: 400;
-        line-height: 20px;
-        text-align: left;
-        margin: 20px 0;
-      }
-      .share {
-        display: inline-block;
+    }
+    .right-btn {
+      display: inline-block;
+      @media all and (min-width: 320px) and (max-width: 780px) {
         float: left;
-
-        h3 {
-          font-family: RobotoCondensedBold;
-          color: #cccccc;
-          font-size: 1em;
-          line-height: 16px;
-          text-align: left;
-          margin: 15px 0;
-        }
+        margin-left: 3%;
       }
-      .left-btn {
-        display: inline-block;
-
-        .share-btn {
-          border-radius: 5px;
-          border: 2px solid #cccccc;
-          background-color:
-          rgba(255, 255, 255, 0);
-          width: 44px;
-          height: 44px;
-          margin-left: 10px;
-        }
+      float: right;
+      .read-more {
+        margin-top: 5%;
+        border-radius: 5px;
+        border:2px solid @aquamarine;
+        background-color:
+        rgba(255, 255, 255, 0);
+        width: 150px;
+        height: 44px;
+        font-family: RobotoCondensed;
+        color: #31383c;
+        font-size: 1em;
+        font-weight: 700;
       }
-      .right-btn {
-        display: inline-block;
-        @media all and (min-width: 320px) and (max-width: 780px) {
-          float: left;
-          margin-left: 3%;
-        }
-        float: right;
-        .read-more {
-          margin-top: 5%;
-          border-radius: 5px;
-          border:2px solid @aquamarine;
-          background-color:
-          rgba(255, 255, 255, 0);
-          width: 150px;
-          height: 44px;
-          font-family: RobotoCondensed;
-          color: #31383c;
-          font-size: 1em;
-          font-weight: 700;
-        }
-      }
-
     }
   }
 }
