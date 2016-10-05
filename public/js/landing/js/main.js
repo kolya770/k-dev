@@ -3,27 +3,27 @@ window.onload = function() {
     var popup = $('#popup');
 
     $("#send-message").on("click", function() {
-        popup.style.display = "block";
+        popup.css("display", "block");
 
         $("#close-popup").on("click", function(){
-        popup.style.display = "none";
+            popup.css("display", "none");
       });
     });
 
     $("#hire-me").on("click", function() {
-      popup.css("display", "block");
+        popup.css("display", "block");
 
-      $("#close-popup").on("click", function(){
-        popup.css("display", "none");
-      });
+        $("#close-popup").on("click", function(){
+          popup.css("display", "none");
+        });
     });
 
     $("#hire-me-desk").on("click", function() {
         popup.css("display", "block");
 
-      $("#close-popup").on("click", function(){
+        $("#close-popup").on("click", function(){
           popup.css("display", "none");
-      });
+        });
     });
 
     var popup_success = $("#popup-success");
@@ -52,19 +52,26 @@ window.onload = function() {
 };
 
 $(document).ready(function() {
-    $($ ('#cover-video')).backgroundVideo();
-    $("#myTab a").click(function(e){
-    e.preventDefault();
-    $(this).tab('show');
-    /**
-     * Script made for slider element in the landing page with kenwheeler/slick
-     * tool.
-     */
-  });
-});
 
-$(document).ready(function(){ 
-  $('.reviews').slick({
+    /**
+     * BackgroundVideo
+     */
+    $($ ('#cover-video')).backgroundVideo();
+
+    $("#myTab a").click(function(e){
+        e.preventDefault();
+        $(this).tab('show');
+        /**
+         * Script made for slider element in the landing page with kenwheeler/slick
+         * tool.
+         */
+    });
+
+    /**
+     * Slick slider
+     */
+
+    $('.reviews').slick({
       dots: true,
       infinite:true,
       autoplay: true,
@@ -97,9 +104,7 @@ $(document).ready(function(){
 
         ]
     });
-});
 
-$(document).ready(function(){
     $('.images').slick({
         infinite: true,
         slidesToShow: 2,
@@ -116,7 +121,7 @@ $(document).ready(function(){
             {
                 breakpoint: 767,
                 settings: {
-                  arrows: false,
+                    arrows: false,
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
@@ -134,6 +139,7 @@ $(document).ready(function(){
     });
 });
 
+
 /*
  * Script for modals in image gallery on portfolio-item page.
  */
@@ -144,20 +150,22 @@ var images = $('.image-item');
 var modalImg = $("#img01");
 var captionText = $("#caption");
 var i;
+
 for (i = 0; i < images.length; i++) {
-images[i].onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  modalImg.alt = this.alt;
-  captionText.innerHTML = this.alt;
+    images[i].onclick = function(){
+        modal.css('display', 'block');
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+        captionText.innerHTML = this.alt;
+    }
 }
-}
+
 // Get the <span> element that closes the modal
 var span = $(".closemodal");
 
 // When the user clicks on <span> (x), close the modal
 span.on('click', function() {
-  modal.style.display = "none";
+  modal.css('display', 'none');
 });
 
 
