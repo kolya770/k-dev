@@ -54,54 +54,39 @@ body {
     width: 20%;
   }
 }
-.popup {
-  display: none;
-  z-index: 28;
+.modal-dialog {
+  margin-top: 10vh;
 }
-.popup .popup-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(69, 79, 85, 0.5);
-  z-index: 28;
-  box-sizing: border-box;
+.modal-dialog .modal-content {
+  background-color: #31383c;
 }
-.popup .popup-wrapper form {
-  position: relative;
-  width: 55%;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 5%;
-  margin: auto;
-  z-index: 10;
-  border-radius: 5px;
-  background-color: #95a3aa;
+.modal-dialog .modal-content .modal-header {
+  border-bottom: none;
 }
-@media all and (min-width: 320px) and (max-width: 780px) {
-  .popup .popup-wrapper form {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-  }
+.modal-dialog .modal-content .modal-header .close {
+  color: #FFFFFF;
 }
-.popup .popup-wrapper form label {
+.modal-dialog .modal-content .modal-body {
+  padding: 45px;
+}
+.modal-dialog .modal-content .modal-body label {
   margin-top: 20px;
   font-family: 'PT Sans';
   font-size: 16px;
-  color: #415058;
+  color: #FFFFFF;
 }
-.popup .popup-wrapper form input,
-.popup .popup-wrapper form textarea {
-  background-color: #d9d6d6;
+.modal-dialog .modal-content .modal-body input,
+.modal-dialog .modal-content .modal-body textarea {
+  background-color: #eeebeb;
   border-radius: 2px;
 }
-.popup .popup-wrapper form input:focus,
-.popup .popup-wrapper form textarea:focus {
+.modal-dialog .modal-content .modal-body input:focus,
+.modal-dialog .modal-content .modal-body textarea:focus {
   outline: none !important;
   border: 1px solid white;
   box-shadow: 0 0 10px #719ECE;
 }
-.popup .popup-wrapper form .send-message-popup {
+.modal-dialog .modal-content .modal-body .send-message-popup {
   float: right;
   display: block;
   width: 240px;
@@ -115,39 +100,11 @@ body {
   color: white;
   transition: background-color 0.3s ease-in-out;
 }
-.popup .popup-wrapper form .send-message-popup:hover {
+.modal-dialog .modal-content .modal-body .send-message-popup:hover {
   background: #798a93;
 }
-.popup .popup-wrapper form .send-message-popup:active {
+.modal-dialog .modal-content .modal-body .send-message-popup:active {
   background: #617078;
-}
-.popup .popup-wrapper form .txt-area-wrap {
-  margin-top: 15px;
-}
-.popup-success {
-  z-index: 28;
-}
-.popup-success .popup-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(69, 79, 85, 0.5);
-  z-index: 28;
-  box-sizing: border-box;
-}
-.popup-success .popup-wrapper .text-box {
-  position: relative;
-  width: 55%;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 5%;
-  margin: auto;
-  z-index: 10;
-  border-radius: 5px;
-  background-color: #95a3aa;
-  font-family: 'PT Sans';
-  font-size: 16px;
-  color: #415058;
 }
 .navbar-inverse .navbar-toggle {
   border-color: #0e5656;
