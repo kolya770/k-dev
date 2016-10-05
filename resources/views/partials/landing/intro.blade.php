@@ -1,4 +1,3 @@
-    
 <div id="intro" class="visible-xs">
     <div class="first-bg"></div>
     <div class="main-screen-bg"></div>
@@ -12,7 +11,7 @@
             </div>
             <div class="row">
                 <div class="col-ms-12 col-xs-12">
-                    <button class="btn contact-me" id='hire-me'>HIRE ME</button>
+                    <button class="btn contact-me" data-toggle="modal" data-target="#popup1">HIRE ME</button>
                 </div>
             </div>
         </div>
@@ -40,7 +39,7 @@
             </div>
             <div class="row">
                 <div class="col-ms-12 col-xs-12">
-                    <button class="btn contact-me" id='hire-me-desk'>HIRE ME</button>
+                    <button class="btn contact-me" data-toggle="modal" data-target="#popup1">HIRE ME</button>
                 </div>
             </div>
         </div>

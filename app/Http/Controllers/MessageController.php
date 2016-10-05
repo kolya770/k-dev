@@ -15,10 +15,6 @@ use \Session;
 
 class MessageController extends Controller
 {
-	public function __construct() {
-        $this->middleware('auth');
-        $this->middleware('role');
-    }
     public function store(Request $request) {
     	$message = new Message();
     	$message->name = $request->get('name');

@@ -11,18 +11,18 @@ window.onload = function() {
     });
 
     $("#hire-me").on("click", function() {
-      popup.style.display = "block";
+      popup.css("display", "block");
 
       $("#close-popup").on("click", function(){
-        popup.style.display = "none";
+        popup.css("display", "none");
       });
     });
 
     $("#hire-me-desk").on("click", function() {
-      popup.style.display = "block";
+        popup.css("display", "block");
 
       $("#close-popup").on("click", function(){
-        popup.style.display = "none";
+          popup.css("display", "none");
       });
     });
 
@@ -30,13 +30,13 @@ window.onload = function() {
     var span_success = $(".closesuccess");
 
     span_success.on('click', function() {
-      popup_success.style.display = "none";
+      popup_success.css("display", "none");
     });
 
     var span = $(".closepopup");
 
     span.on('click', function() {
-      popup.style.display = "none";
+      popup.css("display", "none");
     });
 
 
