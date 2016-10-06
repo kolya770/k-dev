@@ -1,4 +1,4 @@
-<section class="project-2 my-works wrap">
+<div class="project-2 my-works wrap">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-7 col-md-push-5">
@@ -19,11 +19,9 @@
                     <p>
                         {{$projects[2]->brief}}
                     </p>
-                    <a href="{{action('PortfolioController@show',['id'=>$projects[2]->id])}}">
-                        <button class="border-btn-pro">VIEW PROJECT</button>
-                    </a>
+                    <a href="{{action('PortfolioController@show',['id'=>$projects[2]->id])}}" class="border-btn-pro">VIEW PROJECT</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>

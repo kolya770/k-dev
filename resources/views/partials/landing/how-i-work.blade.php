@@ -9,36 +9,36 @@
                     <li class="active">
                         <a href="#panel1">
                             <div class="blocks-how">
-                                <img src="img/chat.png" class="image-how">
-                                <p>Chatting<br /> with client</p>
-                                <img src="/img/str2.png" class="img-active">
+                                <img src="img/chat.png" class="image-how" alt="">
+                                <span>Chatting<br /> with client</span>
+                                <img src="/img/str2.png" class="img-active" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#panel2">
                         <div class="blocks-how">
-                            <img src="img/analytics.png" class="image-how">
-                            <p>Analytics</p>
-                            <img src="img/str2.png" class="img-active">
+                            <img src="img/analytics.png" class="image-how" alt="">
+                            <span>Analytics</span>
+                            <img src="img/str2.png" class="img-active" alt="">
                         </div>
                         </a>
                     </li>
                     <li>
                         <a href="#panel3">
                             <div class="blocks-how">
-                                <img src="img/task.png" class="image-how">
-                                <p>Technical<br /> task</p>
-                                <img src="img/str2.png" class="img-active">
+                                <img src="img/task.png" class="image-how" alt="">
+                                <span>Technical<br /> task</span>
+                                <img src="img/str2.png" class="img-active" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#panel4">
                             <div class="blocks-how">
-                                <img src="img/prototype.png" class="image-how">
-                                <p>Prototyping</p>
-                                <img src="img/str2.png" class="img-active">
+                                <img src="img/prototype.png" class="image-how" alt="">
+                                <span>Prototyping</span>
+                                <img src="img/str2.png" class="img-active" alt="">
                             </div>
                         </a>
                     </li>
@@ -46,27 +46,27 @@
                         <a href="#panel5">
                             <div class="blocks-how">
 
-                                <img src="img/code.png" class="image-how">
-                                <p>Coding &amp;<br />fixing bugs</p>
-                                <img src="img/str2.png" class="img-active">
+                                <img src="img/code.png" class="image-how" alt="">
+                                <span>Coding &amp;<br />fixing bugs</span>
+                                <img src="img/str2.png" class="img-active" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#panel6">
                             <div class="blocks-how">
-                                <img src="img/product.png" class="image-how">
-                                <p>Ready<br />product</p>
-                                <img src="img/str2.png" class="img-active">
+                                <img src="img/product.png" class="image-how" alt="">
+                                <span>Ready<br />product</span>
+                                <img src="img/str2.png" class="img-active" alt="">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="#panel7">
                             <div class="blocks-how">
-                                <img src="img/tests.png" class="image-how">
-                                <p>Tests</p>
-                                <img src="img/str2.png" class="img-active">
+                                <img src="img/tests.png" class="image-how" alt="">
+                                <span>Tests</span>
+                                <img src="img/str2.png" class="img-active" alt="">
                             </div>
                         </a>
                     </li>
@@ -151,7 +151,7 @@
               <div class="panel-heading active">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#chat">
-                    <img src="img/chat.png" class="image-how">
+                    <img src="img/chat.png" class="image-how" alt="">
                     <p>Chatting<br /> with client</p>
                   </a>
                 </h4>
@@ -168,7 +168,7 @@
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#analytics">
-                      <img src="img/analytics.png" class="image-how">
+                      <img src="img/analytics.png" class="image-how" alt="">
                       <p>Analytics</p>
                   </a>
                 </h4>
@@ -185,7 +185,7 @@
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#tech">
-                    <img src="img/task.png" class="image-how">
+                    <img src="img/task.png" class="image-how" alt="">
                     <p>Technical<br /> task</p>
                   </a>
                 </h4>
@@ -202,7 +202,7 @@
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#prototyping">
-                    <img src="img/prototype.png" class="image-how">
+                    <img src="img/prototype.png" class="image-how" alt="">
                     <p>Prototyping</p>
                   </a>
                 </h4>
@@ -219,7 +219,7 @@
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#code">
-                    <img src="img/code.png" class="image-how">
+                    <img src="img/code.png" class="image-how" alt="">
                     <p>Coding &amp;<br />fixing bugs</p>
                   </a>
                 </h4>
@@ -236,7 +236,7 @@
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#product">
-                    <img src="img/product.png" class="image-how">
+                    <img src="img/product.png" class="image-how" alt="">
                     <p>Ready<br />product</p>
                   </a>
                 </h4>
@@ -253,7 +253,7 @@
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#test">
-                    <img src="img/tests.png" class="image-how">
+                    <img src="img/tests.png" class="image-how" alt="">
                     <p>Tests</p>
                   </a>
                 </h4>

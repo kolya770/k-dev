@@ -31,9 +31,7 @@
                     <p>
                         {{$projects[0]->brief}}
                     </p>
-                    <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}">
-                        <button class="border-btn-pro">VIEW PROJECT</button>
-                    </a>
+                    <a href="{{action('PortfolioController@show',['id'=>$projects[0]->id])}}" class="border-btn-pro">VIEW PROJECT</a>
                 </div>
             </div>
         </div>

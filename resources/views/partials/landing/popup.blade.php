@@ -50,20 +50,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="name">NAME</label>
-                            <input type="text" class="form-control" name="name"  required>
+                            <input type="text" class="form-control" id="name"  required>
                         </div>
                         <div class="col-md-1">
                         </div>
                         <div class="col-md-6">
                             <label for="email">EMAIL</label>
-                            <input type="email" class="form-control" name="email"  required>
+                            <input type="email" class="form-control" id="email"  required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="txt-area-wrap">
                                 <label for="message">MESSAGE</label>
-                                <textarea class="form-control" name="message" rows="5" required></textarea>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
                             </div>
                         </div>
                     </div>
