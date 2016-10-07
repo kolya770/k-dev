@@ -6,7 +6,7 @@
             <div class="col-sm-8 col-sm-offset-1 position-content">
                 
                 <div class="top-block">
-                    <img src="{{'/'.$post->preview}}">
+                    <img src="{{'/'.$post->preview}}" alt="">
                 </div>
                 <div class="bot-block">
                     <div class="row">
@@ -22,13 +22,13 @@
                                 </div>
                                 <div class="left-btn">
                                     <button class="btn btn-default share-btn">
-                                        <img src="/img/fb.png">
+                                        <img src="/img/fb.png" alt="">
                                     </button>
                                     <button class="btn btn-default share-btn">
-                                        <img src="/img/tw.png">
+                                        <img src="/img/tw.png" alt="">
                                     </button>
                                     <button class="btn btn-default share-btn">
-                                        <img src="/img/vk.png">
+                                        <img src="/img/vk.png" alt="">
                                     </button>
                                 </div>
                             </div>
@@ -38,9 +38,7 @@
                                 </div>
                                  <div class="right-btn">
                                     @foreach ($post->tags as $tag)
-                                    <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
-                                    <button class="btn btn-primary small-button">{{$tag->tag_name}}</button>
-                                    </a>
+                                    <a href="{{action('TagController@find', ['tags' => $tag->id])}}" class="small-button">{{$tag->tag_name}}</a>
                                     @endforeach
                                 </div>
                             </div>
@@ -58,7 +56,7 @@
                         <hr/>
                         <div class="row">
                             <div class="col-sm-3 col-md-2 avatar">
-                                <img src="/img/avatar.png">
+                                <img src="/img/avatar.png" alt="">
                             </div>
                             <div class="col-sm-7 col-md-8">
                                 <div class="date">
@@ -72,9 +70,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-2">
-                                <a href="#leave-comment">
-                                <button class="btn btn-primary small-button">REPLY</button>
-                                </a>
+                                <a href="#leave-comment" class="small-button">REPLY</a>
                                 @if (Auth::check())
                                 @if (Auth::User()->is('root'))
                                 <form method="POST" action="{{action('CommentController@destroy', ['comments'=>$comment->id])}}">
@@ -119,7 +115,7 @@
                         <div class="form-group">
                             {!! Form::label('comment', 'Comment', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                <textarea name="comment"  class="form-control" required>
+                                <textarea id="comment" name="comment"  class="form-control" required>
                                 </textarea>
                             </div>
                         </div>
@@ -136,28 +132,23 @@
                 
             </div>
             <div class="col-sm-3 position-block">
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 side-block">
-                    <h3>Tags</h3>
-                    @foreach ($tags->all() as $tag) 
-                    <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
-                    <button class="btn btn-primary t-button">{{$tag->tag_name}}</button>
-                    </a>
-                    @endforeach
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 side-block">
+                        <h3>Tags</h3>
+                        @foreach ($tags->all() as $tag)
+                        <a href="{{action('TagController@find', ['tags' => $tag->id])}}" class="t-button">{{$tag->tag_name}}</a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 side-block">
+                        <h3>Categories</h3>
+                        @foreach ($categories->all() as $category)
+                        <a href="{{action('CatPageController@find', ['categories' => $category->id])}}" class="t-button">{{$category->title}}</a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 side-block">
-                    <h3>Categories</h3>
-                    @foreach ($categories->all() as $category)
-                    <a href="{{action('CatPageController@find', ['categories' => $category->id])}}">
-                    <button class="btn btn-primary t-button">{{$category->title}}</button>
-                    </a>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        </div>
         </div>
     </div>
 </section>

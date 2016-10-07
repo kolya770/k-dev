@@ -135,6 +135,8 @@ body {
   font-family: 'RobotoCondensedBold';
 }
 .comments .small-button {
+  display: inline-block;
+  padding: 5px;
   border-radius: 5px;
   border: 2px solid #54b2ce;
   float: right;
@@ -174,10 +176,11 @@ body {
   margin-bottom: 30px;
 }
 .position-block .side-block .t-button {
+  display: inline-block;
+  padding: 5px;
   border-radius: 5px;
   border: 1px solid #20c3c4;
-  margin-right: 3px;
-  font-family: RobotoCondensed;
+  font-family: 'RobotoCondensed';
   color: #31383c;
   font-size: 1em;
   line-height: 1em;
@@ -334,6 +337,8 @@ body {
   }
 }
 .block-center .position-content .bot-block .right-block .right-btn .small-button {
+  display: inline-block;
+  padding: 5px;
   border-radius: 5px;
   border: 1px solid #999999;
   margin-right: 3px;
@@ -361,7 +366,7 @@ body {
   margin: 0 5% 5% 0;
 }
 .block-center .position-content .center-button {
-  float: center;
+  float: none;
   text-align: center;
   width: 60%;
   border-radius: 5px;
