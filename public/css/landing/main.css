@@ -425,7 +425,8 @@ body {
 .panel-group .panel-title a:active {
   text-decoration: none;
 }
-.panel-group .panel-title p {
+.panel-group .panel-title span {
+  display: block;
   opacity: 0.3;
   font-family: 'RobotoCondensed';
   font-size: 14px;
@@ -452,7 +453,7 @@ body {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
-.panel-group .active .panel-title a p {
+.panel-group .active .panel-title a span {
   opacity: 1.0;
 }
 .panel-group .panel-heading {
@@ -1623,26 +1624,26 @@ body {
     text-align: left;
   }
 }
-.blog a {
+.blog .link-a {
   text-decoration: none;
   color: #fff;
   font-size: 24px;
   font-family: 'RobotoCondensed';
 }
 @media (max-width:767px) {
-  .blog a {
+  .blog .link-a {
     text-align: center;
     margin-bottom: 20px;
   }
 }
 @media (min-width:768px) {
-  .blog a {
+  .blog .link-a {
     text-align: left;
     margin-bottom: 20px;
   }
 }
 @media (min-width:992px) {
-  .blog a {
+  .blog .link-a {
     text-align: left;
     margin-bottom: 0;
   }
@@ -1657,19 +1658,20 @@ body {
   padding: 7px;
 }
 .border-btn {
+  display: block;
   font-family: 'RobotoCondensed';
   font-size: 16px;
+  text-align: center;
   font-weight: 700;
-  line-height: 11px;
+  line-height: 40px;
   text-transform: uppercase;
   width: 150px;
   height: 44px;
   margin: 15px 0;
   background: transparent;
-  color: white;
-  padding: 0px;
-  border-width: 2px;
-  border-color: #61aed1;
+  color: #FFFFFF;
+  padding: 0;
+  border: 2px solid #61aed1;
   border-radius: 4px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   outline: none;

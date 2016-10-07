@@ -152,7 +152,7 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#chat">
                     <img src="img/chat.png" class="image-how" alt="">
-                    <p>Chatting<br /> with client</p>
+                    <span>Chatting<br /> with client</span>
                   </a>
                 </h4>
               </div>
@@ -169,7 +169,7 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#analytics">
                       <img src="img/analytics.png" class="image-how" alt="">
-                      <p>Analytics</p>
+                      <span>Analytics</span>
                   </a>
                 </h4>
               </div>
@@ -186,7 +186,7 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#tech">
                     <img src="img/task.png" class="image-how" alt="">
-                    <p>Technical<br /> task</p>
+                    <span>Technical<br /> task</span>
                   </a>
                 </h4>
               </div>
@@ -203,7 +203,7 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#prototyping">
                     <img src="img/prototype.png" class="image-how" alt="">
-                    <p>Prototyping</p>
+                    <span>Prototyping</span>
                   </a>
                 </h4>
               </div>
@@ -220,7 +220,7 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#code">
                     <img src="img/code.png" class="image-how" alt="">
-                    <p>Coding &amp;<br />fixing bugs</p>
+                    <span>Coding &amp;<br />fixing bugs</span>
                   </a>
                 </h4>
               </div>
@@ -237,7 +237,7 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#product">
                     <img src="img/product.png" class="image-how" alt="">
-                    <p>Ready<br />product</p>
+                    <span>Ready<br />product</span>
                   </a>
                 </h4>
               </div>
@@ -254,7 +254,7 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#test">
                     <img src="img/tests.png" class="image-how" alt="">
-                    <p>Tests</p>
+                    <span>Tests</span>
                   </a>
                 </h4>
               </div>

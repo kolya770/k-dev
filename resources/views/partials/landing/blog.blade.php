@@ -7,7 +7,7 @@
             </div>
             <div class="col-xs-12 col-sm-4">
                 <div class="blog-image">
-                    <a class="visible-xs" href="{{action('HomeController@show',['id'=>$post->id])}}">
+                    <a class="visible-xs link-a" href="{{action('HomeController@show',['id'=>$post->id])}}">
                         {{$post->title}}
                     </a>
                     <a href="{{action('HomeController@show',['id'=>$post->id])}}">
@@ -17,13 +17,11 @@
             </div>
             <div class="col-xs-12 col-sm-8">
                 <div class="blog-text">
-                    <a class="hidden-xs" href="{{action('HomeController@show',['id'=>$post->id])}}">
+                    <a class="hidden-xs link-a" href="{{action('HomeController@show',['id'=>$post->id])}}">
                         {{$post->title}}
                     </a>
                     <p>{!! $post->content !!}</p>
-                    <a href="{{action('HomeController@show',['id'=>$post->id])}}">
-                        <button class="btn border-btn">READ MORE</button>
-                    </a>
+                    <a href="{{action('HomeController@show',['id'=>$post->id])}}" class="border-btn">READ MORE</a>
                 </div>
             </div>
         </div>
