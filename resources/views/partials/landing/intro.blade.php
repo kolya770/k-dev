@@ -22,7 +22,7 @@
     @if ($image == 'none')
     <video id="cover-video" preload="metadata" autoplay loop>
         <source src="cover/landing/Hello-World.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
-        <source src="cover/landing/Hello-World.ogg" type="video/ogg">Your browser does not support the video tag. I suggest you upgrade your browser.
+        {{--<source src="cover/landing/Hello-World.ogg" type="video/ogg">Your browser does not support the video tag. I suggest you upgrade your browser.--}}
     </video>
     @else 
     <div class="img-bg-wrap">
