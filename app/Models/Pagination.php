@@ -70,8 +70,8 @@ class Pagination extends BootstrapThreePresenter
      */
     public function getAvailablePageWrapper($url, $page, $rel = null)
     {
-        return '<li class="btn-group ps-search" aria-label="">
-                    <a href="'.$url.'"><button type="button" class="btn btn-default search-btn middle">'.$page.'</button></a>
+        return '<li class="btn-group ps-search" aria-label="">          
+                    <a href="'.$url.'" type="button" class="btn btn-default search-btn middle">'.$page.'</a>                 
                 </li>';
     }
 }
