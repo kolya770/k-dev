@@ -10,7 +10,7 @@
         <div class="row block-center">
             <div class="col-xs-12 position-portfolio">
                 <div class="top-block">
-                    <img src="{{ $mainImage->path }}">
+                    <img src="{{ $mainImage->path }}" alt="">
                 </div>
                 <div class="bot-block">
                     <h2>{{ $project->title }}</h2>
@@ -26,7 +26,6 @@
                         </a>
                     @endforeach    
                 </div>
-            </div>
             </div>
         </div>
     </div>
