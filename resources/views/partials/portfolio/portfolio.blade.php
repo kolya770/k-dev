@@ -14,7 +14,7 @@
                     <div class="col-sm-4 position-portfolio">
                         <a href="{{action('PortfolioController@show',['id'=>$project->id])}}">
                             <div class="top-block">
-                                 <img src="{{ $mainImages[$project->id] }}">
+                                 <img src="{{ $mainImages[$project->id] }}" alt="">
                             </div>
                             <div class="bot-block">
                                 <h1>{{$project->title}}</h1>
