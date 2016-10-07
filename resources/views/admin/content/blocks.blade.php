@@ -1,11 +1,5 @@
 @extends('layouts.admin')
 @section ('css')
-<!-- Toastr style -->
-{!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
-{{ Html::style('css/summernote.css') }}
-{{ Html::style('admin/css/plugins/codemirror/codemirror.css') }}
-{{ Html::style('admin/css/plugins/codemirror/ambiance.css') }}
-
 <style type="text/css">
     .btn-default {
             color: #333 !important; 

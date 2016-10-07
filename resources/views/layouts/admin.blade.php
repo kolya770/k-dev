@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Kiev-dev admin</title>
-    {!! Html::style('admin/css/bootstrap.min.css') !!}
-    {!! Html::style('admin/font-awesome/css/font-awesome.css') !!}
-      
-    {!! Html::style('admin/css/animate.css') !!}
-    {!! Html::style('admin/css/style.min.css') !!}
+
+        {{ Html::style('admin/css/all.css') }}
+
     @yield ('css')
 </head>
 <body>

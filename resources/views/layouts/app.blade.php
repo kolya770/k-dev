@@ -11,8 +11,6 @@
     <meta name="url" content="{{ $site->url }}">
     <title>{{ $site->name }}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
-    
-    {!! Html::style('css/bootstrap.min.css') !!}
 
     @yield ('css')
 </head>

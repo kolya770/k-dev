@@ -1,6 +1,7 @@
 @extends('layouts.app')
-
-<!-- Main Content -->
+@section('css')
+    {!! Html::style('css/bootstrap.min.css') !!}
+@endsection
 @section('content')
 <div class="container">
     <div class="row">

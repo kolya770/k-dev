@@ -1,8 +1,5 @@
 @extends('layouts.admin')
-@section ('css')
-  <!-- Toastr style -->
-   {!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
-@endsection
+
 @section ('title')
 Create category
 @endsection

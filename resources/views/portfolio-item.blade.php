@@ -1,7 +1,6 @@
 @extends ('layouts.app')
 @section ('css')
-    {!! Html::style('css/portfolio/main.css') !!}
-    {!! Html::style('css/lightgallery.css') !!}
+    {!! Html::style('css/portfolio/all.css') !!}
 @endsection
 @section ('content')
 @include('partials.navbar-other-pages')

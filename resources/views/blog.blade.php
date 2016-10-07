@@ -1,7 +1,6 @@
 @extends ('layouts.app')
 @section('css')
-{!! Html::style('css/blog/main.css') !!}
-{!! Html::style('css/landing/preloader.css') !!}
+{!! Html::style('css/blog/all.css') !!}
 @endsection
 @section ('content')
 @inject ('tags', 'App\Models\Tag')

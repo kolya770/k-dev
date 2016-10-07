@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 @section ('css')
-{!! Html::style('css/post/main.css') !!}
+{!! Html::style('css/post/all.css') !!}
 @endsection
 @section ('content')
 @inject ('categories', 'App\Models\Category')

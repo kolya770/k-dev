@@ -2,11 +2,6 @@
 @section ('title')
 Settings
 @endsection
-@section ('css')
-  <!-- Toastr style -->
-{!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
-{!! Html::style('admin/css/plugins/iCheck/custom.css') !!}
-@endsection
 @section('content')
 @inject ('posts', 'App\Models\Post')
 @inject ('projects', 'App\Models\Project')

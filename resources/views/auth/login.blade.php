@@ -9,11 +9,7 @@
 
     <title>KIEVDEV | Login</title>
 
-    <link href="admin/css/bootstrap.min.css" rel="stylesheet">
-    <link href="admin/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <link href="admin/css/animate.css" rel="stylesheet">
-    <link href="admin/css/style.css" rel="stylesheet">
+    {{ Html::style('admin/css/all.css') }}
 
 </head>
 

@@ -2,10 +2,6 @@
 @section ('title')
 Portfolio
 @endsection
-@section ('css')
-     <!-- Toastr style -->
-{!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
-@endsection
 @section('content')
 {!! Form::open(array(
     'action' => 'ProjectController@imageStore',

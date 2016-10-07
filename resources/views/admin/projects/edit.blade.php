@@ -1,7 +1,5 @@
 @extends('layouts.admin')
-@section ('css')
-{!! Html::style('css/lightgallery.css') !!}
-@endsection
+
 @section ('title')
 Portfolio
 @endsection

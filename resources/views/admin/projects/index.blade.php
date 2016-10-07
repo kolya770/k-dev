@@ -1,10 +1,5 @@
 @extends('layouts.admin')
-@section ('css')
-  <!-- Toastr style -->
-{!! Html::style('admin/css/plugins/toastr/toastr.min.css') !!}
-<!-- Lightgallery -->
-{!! Html::style('css/lightgallery.css') !!}
-@endsection
+
 @section ('title')
 Portfolio
 @endsection

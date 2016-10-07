@@ -2,12 +2,7 @@
 @section ('css')
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    {!! Html::style('css/slick.css') !!}
-    {!! Html::style('css/slick-theme.css') !!}
-    {!! Html::style('css/landing/main.css') !!}
-	{!! Html::style('css/landing/some-stuff.css') !!}
-	{!! Html::style('css/landing/preloader.css') !!}
-
+    {!! Html::style('css/landing/all.css') !!}
 
 	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
