@@ -19,10 +19,10 @@
 </div>
 <div id="intro-1" class="hidden-xs">
   <div id="video-wrap">
-    @if ($image == 'none') 
+    @if ($image == 'none')
     <video id="cover-video" preload="metadata" autoplay loop>
         <source src="cover/landing/Hello-World.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
-        <source src="cover/landing/Hello-World.webm" type="video/webm">Your browser does not support the video tag. I suggest you upgrade your browser.
+        <source src="cover/landing/Hello-World.ogg" type="video/ogg">Your browser does not support the video tag. I suggest you upgrade your browser.
     </video>
     @else 
     <div class="img-bg-wrap">
