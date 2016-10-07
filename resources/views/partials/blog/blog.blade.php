@@ -10,11 +10,11 @@
                     <div class = "col-xs-12">
                         <div class="block-center">
                             <div class="top-block">
-                                <img src="{{'/'.$post->preview}}" class="img-responsive">
+                                <img src="{{'/'.$post->preview}}" class="img-responsive" alt="">
                             </div>
                             <div class="bot-block">
                                 <h1>{{$post->title}}</h1>
-                                <h4>{{$post->created_at}}</h4>
+                                {{--<h4>{{$post->created_at}}</h4>--}}
                                 <p>{!!$post->content!!}</p>
 
                                 <div class="row">
@@ -23,9 +23,9 @@
                                             <h3>SHARE:</h3>
                                         </div>
                                         <div class="left-btn">
-                                            <button class="btn btn-default share-btn"><img src="/img/fb.png"></button>
-                                            <button class="btn btn-default share-btn"><img src="/img/tw.png"></button>
-                                            <button class="btn btn-default share-btn"><img src="/img/vk.png"></button>
+                                            <button class="btn btn-default share-btn"><img src="/img/fb.png" alt=""></button>
+                                            <button class="btn btn-default share-btn"><img src="/img/tw.png" alt=""></button>
+                                            <button class="btn btn-default share-btn"><img src="/img/vk.png" alt=""></button>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 ">
@@ -58,9 +58,7 @@
                     <div class="col-xs-10 col-xs-offset-1 side-block">
                         <h3>Tags</h3>
                         @foreach ($tags->all() as $tag)
-                            <a href="{{action('TagController@find', ['tags' => $tag->id])}}">
-                                <button class="btn btn-primary t-button">{{$tag->tag_name}}</button>
-                            </a>
+                            <a href="{{action('TagController@find', ['tags' => $tag->id])}}" class="t-button">{{$tag->tag_name}}</a>
                         @endforeach
                     </div>
                 </div>
@@ -68,9 +66,7 @@
                     <div class="col-xs-10 col-xs-offset-1 side-block">
                         <h3>Categories</h3>
                         @foreach ($categories->all() as $category)
-                            <a href="{{action('CatPageController@find', ['categories' => $category->id])}}">
-                                <button class="btn btn-primary t-button">{{$category->title}}</button>
-                            </a>
+                            <a href="{{action('CatPageController@find', ['categories' => $category->id])}}" class="t-button">{{$category->title}}</a>
                         @endforeach
                     </div>
                 </div>

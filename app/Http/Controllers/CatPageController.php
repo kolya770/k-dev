@@ -22,7 +22,7 @@ class CatPageController extends Controller
         $posts = Category::find($id)->posts()->paginate($postsPerPage);
         
         return view('blog')->with(array(
-            'site'=> $site
+            'site'=> $site,
             'posts' => $posts
         ));
 

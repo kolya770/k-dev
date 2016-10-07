@@ -48,7 +48,7 @@ class Pagination extends BootstrapThreePresenter
      */
     protected function getActivePageWrapper($text)
     {
-        return "<li class='btn-group ps-search' role='group' aria-label=''>
+        return "<li class='btn-group ps-search' aria-label=''>
                     <button type='button' class='btn btn-default search-btn middle'>".$text."</button>
                 </li>";
     }
@@ -70,7 +70,7 @@ class Pagination extends BootstrapThreePresenter
      */
     public function getAvailablePageWrapper($url, $page, $rel = null)
     {
-        return '<li class="btn-group ps-search" role="group" aria-label="">
+        return '<li class="btn-group ps-search" aria-label="">
                     <a href="'.$url.'"><button type="button" class="btn btn-default search-btn middle">'.$page.'</button></a>
                 </li>';
     }

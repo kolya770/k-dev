@@ -141,10 +141,11 @@ body {
   margin-bottom: 30px;
 }
 .position-block .side-block .t-button {
+  padding: 5px;
+  display: inline-block;
   border-radius: 5px;
   border: 1px solid #20c3c4;
-  margin-right: 3px;
-  font-family: RobotoCondensed;
+  font-family: 'RobotoCondensed';
   color: #31383c;
   font-size: 1em;
   line-height: 1em;
