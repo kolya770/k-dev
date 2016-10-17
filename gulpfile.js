@@ -27,28 +27,40 @@ elixir(function(mix) {
          webp: false
         }
     )
+    //Landing
     .styles([
         'libraries/bootstrap.min.css',
+        'libraries/swiper.min.css',
         'libraries/slick.css',
         'libraries/slick-theme.css',
-        'libraries/some-stuff.css',
         'libraries/preloader.css',
+        'libraries/swiper.min.css',
+        'libraries/scrolling-nav.css',
+        'libraries/some-stuff.css',
         'landing/main.css'
     ], 'public/css/landing')
+
+    // Blog
     .styles([
         'libraries/bootstrap.min.css',
         'libraries/preloader.css',
         'blog/main.css'
     ], 'public/css/blog')
+
+    // Portfolio
     .styles([
         'libraries/bootstrap.min.css',
         'libraries/lightgallery.css',
         'portfolio/main.css'
     ], 'public/css/portfolio')
+
+    // Post
     .styles([
         'libraries/bootstrap.min.css',
         'post/main.css'
     ], 'public/css/post')
+
+    // Admin
     .styles([
         'libraries/bootstrap.min.css',
         'libraries/font-awesome.css',
@@ -60,5 +72,23 @@ elixir(function(mix) {
         'admin/toastr.min.css',
         'admin/animate.css',
         'admin/style.css'
-    ], 'public/admin/css');
+    ], 'public/admin/css')
+
+    // Landing
+    .scripts([
+        'libraries/slick.min.js',
+        'libraries/swiper.min.js',
+        'landing/jquery.easing.min.js',
+        'landing/scrolling-nav.js',
+        'landing/backgroundVideo.min.js',
+        'landing/main.js'
+    ], 'public/js/landing/all.js')
+
+    //Portfolio-item
+    .scripts([
+        'libraries/lightgallery.js',
+        'libraries/lg-thumbnail.js',
+        'libraries/lg-fullscreen.js',
+        'portfolio-item/main.js'
+    ], 'public/js/portfolio-item/all.js')
 });

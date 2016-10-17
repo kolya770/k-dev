@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section ('title')
-Edit a form
+    Edit a form
 @endsection
 @section('content')
- <div class="wrapper wrapper-content">
+    <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox float-e-margins">
@@ -17,9 +17,6 @@ Edit a form
                                 </ul>
                             </div>
                         @endif
-
-                       
-                        <
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -28,10 +25,8 @@ Edit a form
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
+                                <li><a href="#">Config option 1</a></li>
+                                <li><a href="#">Config option 2</a></li>
                             </ul>
                             <a class="close-link">
                                 <i class="fa fa-times"></i>
@@ -67,8 +62,7 @@ Edit a form
                            	</div>
                         </div>
                         <div class="form-group">
-                           <div class="col-lg-9" id="questions">
-                           </div>
+                           <div class="col-lg-9" id="questions"></div>
                         </div>
                         <input type="hidden" id="size" name="size" value="{{$form->size}}">
                         <div class="form-group">
@@ -83,10 +77,6 @@ Edit a form
         </div>
     </div>
 @endsection
-
-
- 
-
 @section ('js')
 <script type="text/javascript">
 	var i = document.getElementById('size').value;

@@ -1,7 +1,6 @@
 @extends('layouts.admin')
-
 @section ('title')
-Edit a post
+    Edit a post
 @endsection
 @section('content')
     @if (count($errors) > 0)
@@ -12,9 +11,8 @@ Edit a post
                 @endforeach
             </ul>
         </div>
-    @endif     
-  
-  <div class="wrapper wrapper-content">
+    @endif
+    <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox float-e-margins">
@@ -61,9 +59,9 @@ Edit a post
                         <div class="form-group"><label class="col-sm-2 control-label">Category</label>
                             <div class="col-sm-10">
                                 <select class="form-control m-b" name="category">
-                                        @foreach ($categories as $category)
+                                    @foreach ($categories as $category)
                                         <option value="{{$category->id}}">{{$category->title}}</option>
-                                        @endforeach
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -81,44 +79,34 @@ Edit a post
                         </div>
                         {!! Form::close() !!}
                         <div class="row">
-                        <div class="col-lg-offset-2 col-lg-10">
-                        <h3>Main image now:</h3>
-                    <img src="{{'/'.$post->preview}}" height="150">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <h3>Main image now:</h3>
+                                <img src="{{'/'.$post->preview}}" height="150">
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    </div>
-                    
-                    
-                 
                 </div>
             </div>
         </div>
     </div> 
 @endsection
-
 @section('js')
+    {!! Html::script('admin/js/plugins/iCheck/icheck.min.js') !!}
+    {!! Html::script('admin/js/plugins/slick/slick.min.js') !!}
+    {!! Html::script('js/summernote.min.js') !!}
+    {!! Html::script('admin/js/admin.js') !!}
     <script type="text/javascript">
-            $(document).ready(function() {
-                $('#summernote').summernote({
-                    height: 300,                 // set editor height
-                    minHeight: null,             // set minimum height of editor
-                    maxHeight: null,             // set maximum height of editor
-                    focus: true                  // set focus to editable area after initializing summernote
-                });
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 300,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: true                  // set focus to editable area after initializing summernote
             });
-    </script>
-    <script>
-        $(document).ready(function () {
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
+                radioClass: 'iradio_square-green'
             });
         });
     </script>
-    <!-- SUMMERNOTE --> 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
-    {!! Html::script('admin/js/admin.js') !!}
-    {!! Html::script('admin/js/plugins/iCheck/icheck.min.js') !!}
-    {!! Html::script('admin/js/plugins/slick/slick.min.js') !!}
-
 @endsection

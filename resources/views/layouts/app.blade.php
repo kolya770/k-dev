@@ -11,16 +11,14 @@
     <meta name="url" content="{{ $site->url }}">
     <title>{{ $site->name }}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
-
     @yield ('css')
 </head>
 <body>
     @yield('content')
 
-{!! HTML::script('js/jquery.min.js') !!}
-{!! HTML::script('js/bootstrap.min.js') !!}
+    {!! HTML::script('js/jquery.min.js') !!}
+    {!! HTML::script('js/bootstrap.min.js') !!}
 
-@yield ('js')
-
+    @yield ('js')
 </body>
 </html>

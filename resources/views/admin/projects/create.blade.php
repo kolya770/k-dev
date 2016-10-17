@@ -1,10 +1,9 @@
 @extends('layouts.admin')
-
 @section ('title')
-Portfolio
+    Portfolio
 @endsection
 @section ('content')
-<div class="wrapper wrapper-content">
+    <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox float-e-margins">
@@ -26,7 +25,6 @@ Portfolio
                             'class' => 'form-horizontal',
                             'enctype' => 'multipart/form-data',
                             'files' => true
-
                         )) !!}
                         <div class="form-group">
                             {!! Form::label('title', 'Title', ['class' => 'col-lg-3 control-label']) !!}
@@ -58,7 +56,6 @@ Portfolio
                                 {!! Form::submit('Add project', ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
-                        
                         {!! Form::close() !!}
                         @if (count($errors) > 0)
                             @foreach ($errors->all() as $error)
@@ -66,54 +63,49 @@ Portfolio
                             @endforeach                  
                         @endif
                         @if (Session::has('message')) 
-                           <input class="hidden" value="{{ Session::get('message') }}" id="message">
+                            <input class="hidden" value="{{ Session::get('message') }}" id="message">
                         @endif
                         @if (Session::has('alert')) 
-                           <input class="hidden" value="{{ Session::get('alert') }}" id="alert">
+                            <input class="hidden" value="{{ Session::get('alert') }}" id="alert">
                         @endif
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
 @endsection
-
 @section('js')
-
- <!-- Toastr script -->
-{!! Html::script('admin/js/plugins/toastr/toastr.min.js') !!}
-<script type="text/javascript">
- $(function () {
-    toastr.options = {
-          "closeButton": true,
-          "debug": false,
-          "progressBar": true,
-          "positionClass": "toast-top-right",
-          "onclick": null,
-          "showDuration": "10000",
-          "hideDuration": "10000",
-          "timeOut": "70000",
-          "extendedTimeOut": "10000",
-          "showEasing": "swing",
-          "hideEasing": "linear",
-          "showMethod": "fadeIn",
-          "hideMethod": "fadeOut"
-    }
-    if (document.getElementById('message')) {  
-        toastr["success"](document.getElementById('message').value, 'Message')
-    }
-    if (document.getElementById('alert')) {
-        toastr["error"](document.getElementById('alert').value, 'Error')
-    }
-
-    if (document.getElementsByClassName('alert')) {
-        var x = document.getElementsByClassName('alert');
-        var i;
-        for (i = 0; i < x.length; i++) {
-            toastr["error"](x[i].value, 'Error');
-        }
-    }
-});
-</script>
+    {!! Html::script('admin/js/plugins/toastr/toastr.min.js') !!}
+    <script type="text/javascript">
+        $(function () {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "onclick": null,
+                "showDuration": "10000",
+                "hideDuration": "10000",
+                "timeOut": "70000",
+                "extendedTimeOut": "10000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            if (document.getElementById('message')) {
+                toastr["success"](document.getElementById('message').value, 'Message')
+            }
+            if (document.getElementById('alert')) {
+                toastr["error"](document.getElementById('alert').value, 'Error')
+            }
+            if (document.getElementsByClassName('alert')) {
+                var x = document.getElementsByClassName('alert');
+                var i;
+                for (i = 0; i < x.length; i++) {
+                    toastr["error"](x[i].value, 'Error');
+                }
+            }
+        });
+    </script>
 @endsection

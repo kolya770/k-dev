@@ -1,18 +1,15 @@
 @extends('layouts.admin')
 @section ('title')
-Settings
+    Settings
 @endsection
 @section('content')
-@inject ('posts', 'App\Models\Post')
-@inject ('projects', 'App\Models\Project')
-<div class="wrapper wrapper-content">
+    @inject ('posts', 'App\Models\Post')
+    @inject ('projects', 'App\Models\Project')
+    <div class="wrapper wrapper-content">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        
-
-                       
                         <h5>Settings</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
@@ -47,7 +44,7 @@ Settings
                         </div>
                         <div class="form-group">
                             {!! Form::label('blog', 'Blog for main page:', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">                          
+                            <div class="col-lg-9">
                                 <select name="blog_id">
                                      @foreach ($posts->all() as $post)
                                         <option value="{{$post->id}}">{{$post->title}}</option>
@@ -57,25 +54,23 @@ Settings
                         </div>
                         <div class="form-group">
                             {!! Form::label('projects', 'Projects for main page: (3)', ['class' => 'col-lg-3 control-label']) !!}
-                            <div class="col-lg-9">                          
+                            <div class="col-lg-9">
                                 @foreach ($projects->all() as $project)
-                                    <label class="checkbox-inline i-checks"> 
-                                    <input type="checkbox" name="projects[]" value="{{$project->id}}">{{$project->title}} </label>               
+                                    <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" name="projects[]" value="{{$project->id}}">{{$project->title}} </label>
                                 @endforeach
                             </div>
                         </div>
-                        
-                        
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
                                 {!! Form::submit('Save settings', ['class' => 'btn btn-sm']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}
-                        @if (Session::has('message')) 
+                        @if (Session::has('message'))
                            <input class="hidden" value="{{ Session::get('message') }}" id="message">
                            @endif
-                        @if (Session::has('alert')) 
+                        @if (Session::has('alert'))
                            <input class="hidden" value="{{ Session::get('alert') }}" id="alert">
                            @endif
 
@@ -90,62 +85,56 @@ Settings
                         @endif
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
 @endsection
-
 @section ('js')
-<script>
-        $(document).ready(function () {
-            $('.i-checks').iCheck({
-                checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
-            });
-        });
-</script>
-{!! HTML::script('admin/js/plugins/iCheck/icheck.min.js') !!}
- <!-- Toastr script -->
+{!! Html::script('admin/js/plugins/iCheck/icheck.min.js') !!}
 {!! Html::script('admin/js/plugins/toastr/toastr.min.js') !!}
-<script type="text/javascript">
- $(function () {
-    if (document.getElementById('message')) {
-        toastr.options = {
-          "closeButton": true,
-          "debug": false,
-          "progressBar": true,
-          "positionClass": "toast-top-right",
-          "onclick": null,
-          "showDuration": "10000",
-          "hideDuration": "1000",
-          "timeOut": "7000",
-          "extendedTimeOut": "1000",
-          "showEasing": "swing",
-          "hideEasing": "linear",
-          "showMethod": "fadeIn",
-          "hideMethod": "fadeOut"
+
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green'
+        });
+        if (document.getElementById('message')) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "onclick": null,
+                "showDuration": "10000",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr["success"]('Message', document.getElementById('message').value)
         }
-        toastr["success"]('Message', document.getElementById('message').value)
-    }
-    if (document.getElementById('alert')) {
-        toastr.options = {
-          "closeButton": true,
-          "debug": false,
-          "progressBar": true,
-          "positionClass": "toast-top-right",
-          "onclick": null,
-          "showDuration": "10000",
-          "hideDuration": "10000",
-          "timeOut": "70000",
-          "extendedTimeOut": "10000",
-          "showEasing": "swing",
-          "hideEasing": "linear",
-          "showMethod": "fadeIn",
-          "hideMethod": "fadeOut"
+        if (document.getElementById('alert')) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "onclick": null,
+                "showDuration": "10000",
+                "hideDuration": "10000",
+                "timeOut": "70000",
+                "extendedTimeOut": "10000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr["error"]('Error', document.getElementById('alert').value)
         }
-        toastr["error"]('Error', document.getElementById('alert').value)
-    }
-});
+    });
 </script>
 @endsection

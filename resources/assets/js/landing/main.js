@@ -165,10 +165,6 @@ $(document).ready(function() {
         modal.css('display', 'none');
     });
 
-    /**
-     * Drop tabs
-     */
-
     $("#myTab a").click(function(e){
         e.preventDefault();
         $(this).tab('show');
