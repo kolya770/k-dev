@@ -8,7 +8,7 @@
             </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="btn-send-block">
-                    <button class="send-message" id="send-message">SEND MESSAGE</button>
+                    <button class="send-message" id="send-message" data-toggle="modal" data-target="#popup">SEND MESSAGE</button>
                 </div>
             </div>
         </div>

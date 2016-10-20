@@ -6,6 +6,7 @@
     .modal-header {
       border-bottom: none;
       .close {
+        outline: none;
         color: #FFFFFF;
       }
     }
@@ -41,6 +42,18 @@
         transition: background-color 0.3s ease-in-out;
         &:hover {  background: darken(#95a3aa, 10%);  }
         &:active {  background: darken(#95a3aa, 20%);  }
+      }
+      .thanks-message {
+        display: none;
+        opacity: 1;
+        h2 {
+          margin-top: 0;
+          margin-bottom: 20px;
+          font-family: 'PT Sans';
+          font-size: 24px;
+          color: #FFFFFF;
+          text-align: center;
+        }
       }
     }
   }

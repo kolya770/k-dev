@@ -691,6 +691,7 @@ body {
   border-bottom: none;
 }
 .modal-dialog .modal-content .modal-header .close {
+  outline: none;
   color: #FFFFFF;
 }
 .modal-dialog .modal-content .modal-body {
@@ -732,6 +733,18 @@ body {
 }
 .modal-dialog .modal-content .modal-body .send-message-popup:active {
   background: #617078;
+}
+.modal-dialog .modal-content .modal-body .thanks-message {
+  display: none;
+  opacity: 1;
+}
+.modal-dialog .modal-content .modal-body .thanks-message h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: 'PT Sans';
+  font-size: 24px;
+  color: #FFFFFF;
+  text-align: center;
 }
 .navbar-inverse .navbar-toggle {
   border-color: #0e5656;
@@ -863,7 +876,7 @@ body {
   margin: 4vh 4vw 0 0;
   border-color: white;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 4px;
   background: transparent;
   font-weight: 700;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
@@ -871,6 +884,7 @@ body {
 .intro .container .contact-me {
   background-color: transparent;
   color: #3c3c3c;
+  outline: none;
 }
 .intro .container .contact-me:hover {
   background-color: #61aed1;
@@ -2307,12 +2321,15 @@ body {
   background-color: #61aed1;
   color: white;
   border-color: #61aed1;
+  outline: none;
+  text-decoration: none;
 }
 .border-btn:active {
   background-color: #7cc5e6;
   color: white;
   border-color: #7cc5e6;
   outline: none;
+  text-decoration: none;
 }
 .write-to-me {
   padding: 3% 0;
@@ -2353,8 +2370,8 @@ body {
   text-transform: uppercase;
   border: none;
   border-radius: 5px;
-  border-color: white;
   background: #fff;
+  outline: none;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 .write-to-me .send-message:hover {

@@ -1,31 +1,8 @@
+
+
 window.onload = function() {
     
     var popup = $('#popup');
-
-    $("#send-message").on("click", function() {
-        popup.css("display", "block");
-
-        $("#close-popup").on("click", function(){
-            popup.css("display", "none");
-      });
-    });
-
-    $("#hire-me").on("click", function() {
-        popup.css("display", "block");
-
-        $("#close-popup").on("click", function(){
-          popup.css("display", "none");
-        });
-    });
-
-    $("#hire-me-desk").on("click", function() {
-        popup.css("display", "block");
-
-        $("#close-popup").on("click", function(){
-          popup.css("display", "none");
-        });
-    });
-
     var popup_success = $("#popup-success");
     var span_success = $(".closesuccess");
 
@@ -52,6 +29,43 @@ window.onload = function() {
 };
 
 $(document).ready(function() {
+
+    $("#form-message").on('submit', function() {
+
+        // get the form data
+        // there are many ways to get this data using jQuery (you can use the class or id also)
+        var formData = {
+            'name'              : $('#name').val(),
+            'email'             : $('#email').val(),
+            'message'           : $('#message').val()
+        };
+
+        // process the form
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : '/messages-send', // the url where we want to POST
+            data        : formData, // our data object
+            // dataType    : 'json', // what type of data do we expect back from the server
+            encode      : true,
+            headers     : { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Something went to wrong.Please Try again later...');
+                console.log(textStatus, errorThrown);
+                console.warn(jqXHR.responseText);
+            },
+            success: thanksMessage()
+        })
+        // using the done promise callback
+            .done(function(data) {
+                // log data to the console so we can see
+                console.log(data);
+
+                // here we will handle errors and validation messages
+            });
+
+        // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+    } );
 
     /**
      * BackgroundVideo
@@ -196,3 +210,13 @@ $(document).ready(function() {
         $(this).parents('.panel-heading').addClass('active');
     });
 });
+
+function thanksMessage() {
+
+    $("#form-message").fadeOut();
+    $("#thanks-message").fadeIn(3000);
+
+    setTimeout(function () {
+        $("#popup").modal('hide');
+    }, 5000);
+}
