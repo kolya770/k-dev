@@ -1,5 +1,3 @@
-
-
 window.onload = function() {
     
     var popup = $('#popup');
@@ -219,4 +217,12 @@ function thanksMessage() {
     setTimeout(function () {
         $("#popup").modal('hide');
     }, 5000);
+
+    setTimeout(function () {
+        $("#thanks-message").css('display', 'none');
+        $('#form-message').css('display', 'block');
+    }, 7000);
+
+    $("#form-message #name, #form-message #email, #form-message textarea").val('');
+
 }
